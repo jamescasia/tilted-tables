@@ -4,7 +4,7 @@ extends KinematicBody
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text" 
-var gravity = Vector3(0, 0, 3)
+var gravity = Vector3(0, 0,16)
 var canMove = false
 var isMoving = false
 var inSticky = false
@@ -47,20 +47,31 @@ func _process(delta):
 	if canMove:
 		vel2 = self.move_and_slide(gravity) 
 	else:
+		self.vel2 =  Vector3(round(self.vel2.x), round(self.vel2.y), round(self.vel2.z) )
+		self.translation = Vector3(round(self.translation.x), round(self.translation.y), round(self.translation.z) )
 		gravity = Vector3.ZERO
 #
 	if vel2.z != 0: 
-		gravity.z += 9*delta
+		gravity.z += 28*delta
 	else: 
-		gravity.z = 3
+		gravity.z = 16
+		
+	if vel2.x < 0.001:
+		vel2.x = 0
+	if vel2.y < 0.001:
+		vel2.y = 0
+	if vel2.z < 0.001:
+		vel2.z = 0
+		 
 #	 
 	isMoving =  vel2 != Vector3.ZERO
 
-#	print(  "sticky", inSticky)
+	print(  vel2, gravity)
 
 
 func _on_Area_area_entered(area):
 	print("collided")
+	
 #	print(area.get_parent().get_parent().get_rotation_degrees().y)
 #	inSticky = true
 #	currStickyRot = area.get_parent().get_parent().get_rotation_degrees()

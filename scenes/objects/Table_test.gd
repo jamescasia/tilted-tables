@@ -85,7 +85,7 @@ func _on_Tween_tween_all_completed():
 	add_child(timer)
 	timer.connect("timeout", self, "_on_Timer_timeout")
 	timer.one_shot = true
-	timer.start(0.1)
+	timer.start(0.01)
 	pass # Replace with function body.
 
 
