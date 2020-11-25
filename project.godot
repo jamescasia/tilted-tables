@@ -16,12 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="tilted-tables"
-run/main_scene="res://scenes/levels/level1.tscn"
+run/main_scene="res://scenes/levels/level_test/level_test.tscn"
 config/icon="res://icon.png"
 
 [debug]
 
-settings/fps/force_fps=60
+settings/fps/force_fps=80
 
 [input]
 

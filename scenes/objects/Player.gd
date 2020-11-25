@@ -25,9 +25,9 @@ func _process(delta):
 		self.move_and_collide(gravity*0.45) 
 #
 	if vel.z != 0: 
-		gravity.z += 1*delta
+		gravity.z += 9*delta
 	else: 
-		gravity.z =1  
+		gravity.z = 1  
 #	
 	print(self.get_floor_velocity())
 	isMoving =  vel != Vector3.ZERO
