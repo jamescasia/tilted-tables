@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/spike.obj-c3e8269be7037a7440b51a6ad63448ee.mesh"
+
+[deps]
+
+files=[ "res://.import/spike.obj-c3e8269be7037a7440b51a6ad63448ee.mesh" ]
+
+source_file="res://assets/obstacles/spike.obj"
+dest_files=[ "res://.import/spike.obj-c3e8269be7037a7440b51a6ad63448ee.mesh", "res://.import/spike.obj-c3e8269be7037a7440b51a6ad63448ee.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
