@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/maps/table.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/maps/map1.obj" type="ArrayMesh" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/objects/Player_test.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/objects/Table_test.gd" type="Script" id=5]
 [ext_resource path="res://assets/obstacles/sticky.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://assets/obstacles/spike.obj" type="ArrayMesh" id=7]
 
 [sub_resource type="PhysicsMaterial" id=5]
 friction = 0.0
@@ -56,20 +57,93 @@ physics_material_override = SubResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="Table_test/Map/MeshInstance/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="Sticky" type="Spatial" parent="Table_test/Map/MeshInstance"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3 )
+[node name="Sticky" type="Spatial" parent="Table_test/Map"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -3, 0, 1 )
+visible = false
 
-[node name="MeshInstance" type="MeshInstance" parent="Table_test/Map/MeshInstance/Sticky"]
+[node name="MeshInstance" type="MeshInstance" parent="Table_test/Map/Sticky"]
 mesh = ExtResource( 6 )
 material/0 = null
 
-[node name="Area" type="Area" parent="Table_test/Map/MeshInstance/Sticky/MeshInstance"]
+[node name="Area" type="Area" parent="Table_test/Map/Sticky/MeshInstance"]
+linear_damp = 0.0
 
-[node name="CollisionShape" type="CollisionShape" parent="Table_test/Map/MeshInstance/Sticky/MeshInstance/Area"]
+[node name="CollisionShape" type="CollisionShape" parent="Table_test/Map/Sticky/MeshInstance/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 shape = SubResource( 3 )
 
-[node name="Spike" type="Spatial" parent="Table_test/Map/MeshInstance"]
+[node name="Sticky3" type="Spatial" parent="Table_test/Map"]
+transform = Transform( 1, 0, 3.12639e-13, 0, 1, 0, -3.12639e-13, 0, 1, -2, 0, 3.25842e-07 )
+visible = false
+
+[node name="MeshInstance" type="MeshInstance" parent="Table_test/Map/Sticky3"]
+mesh = ExtResource( 6 )
+material/0 = null
+
+[node name="Area" type="Area" parent="Table_test/Map/Sticky3/MeshInstance"]
+linear_damp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Table_test/Map/Sticky3/MeshInstance/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 3 )
+
+[node name="Sticky4" type="Spatial" parent="Table_test/Map"]
+transform = Transform( -1, 0, -3.25842e-07, 0, 1, 0, 3.25842e-07, 0, -1, -2, 0, 6 )
+visible = false
+
+[node name="MeshInstance" type="MeshInstance" parent="Table_test/Map/Sticky4"]
+mesh = ExtResource( 6 )
+material/0 = null
+
+[node name="Area" type="Area" parent="Table_test/Map/Sticky4/MeshInstance"]
+linear_damp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Table_test/Map/Sticky4/MeshInstance/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 3 )
+
+[node name="Sticky2" type="Spatial" parent="Table_test/Map"]
+transform = Transform( 4.88762e-07, 0, -1, 0, 1, 0, 1, 0, 4.88762e-07, 3, 0, 1 )
+visible = false
+
+[node name="MeshInstance" type="MeshInstance" parent="Table_test/Map/Sticky2"]
+mesh = ExtResource( 6 )
+material/0 = null
+
+[node name="Area" type="Area" parent="Table_test/Map/Sticky2/MeshInstance"]
+linear_damp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Table_test/Map/Sticky2/MeshInstance/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 3 )
+
+[node name="Sticky5" type="Spatial" parent="Table_test/Map"]
+transform = Transform( 4.88762e-07, 0, -1, 0, 1, 0, 1, 0, 4.88762e-07, 3, 0, -3 )
+visible = false
+
+[node name="MeshInstance" type="MeshInstance" parent="Table_test/Map/Sticky5"]
+mesh = ExtResource( 6 )
+material/0 = null
+
+[node name="Area" type="Area" parent="Table_test/Map/Sticky5/MeshInstance"]
+linear_damp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Table_test/Map/Sticky5/MeshInstance/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 3 )
+
+[node name="Spike" type="Spatial" parent="Table_test/Map"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Table_test/Map/Spike"]
+mesh = ExtResource( 7 )
+material/0 = null
+
+[node name="Area" type="Area" parent="Table_test/Map/Spike/MeshInstance"]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Table_test/Map/Spike/MeshInstance/Area"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0.5, 0 )
+shape = SubResource( 3 )
 
 [node name="Player_test" parent="Table_test/Map" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -3, 0, -7 )
@@ -82,8 +156,21 @@ projection = 1
 current = true
 size = 14.0
 
+[node name="Camera2" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 16.6964, 0 )
+projection = 1
+size = 14.0
+
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.00839752, -0.059498, 0.998193, -0.000500523, 0.998228, 0.0594959, -0.999965, 0, -0.00841243, 12.3867, 13.0327, -2.44881 )
 [connection signal="tween_all_completed" from="Table_test/Tween" to="Table_test" method="_on_Tween_tween_all_completed"]
-[connection signal="area_entered" from="Table_test/Map/MeshInstance/Sticky/MeshInstance/Area" to="." method="_on_Area_area_entered"]
-[connection signal="body_entered" from="Table_test/Map/MeshInstance/Sticky/MeshInstance/Area" to="." method="_on_Area_body_entered"]
+[connection signal="area_entered" from="Table_test/Map/Sticky/MeshInstance/Area" to="." method="_on_Area_area_entered"]
+[connection signal="body_entered" from="Table_test/Map/Sticky/MeshInstance/Area" to="." method="_on_Area_body_entered"]
+[connection signal="area_entered" from="Table_test/Map/Sticky3/MeshInstance/Area" to="." method="_on_Area_area_entered"]
+[connection signal="body_entered" from="Table_test/Map/Sticky3/MeshInstance/Area" to="." method="_on_Area_body_entered"]
+[connection signal="area_entered" from="Table_test/Map/Sticky4/MeshInstance/Area" to="." method="_on_Area_area_entered"]
+[connection signal="body_entered" from="Table_test/Map/Sticky4/MeshInstance/Area" to="." method="_on_Area_body_entered"]
+[connection signal="area_entered" from="Table_test/Map/Sticky2/MeshInstance/Area" to="." method="_on_Area_area_entered"]
+[connection signal="body_entered" from="Table_test/Map/Sticky2/MeshInstance/Area" to="." method="_on_Area_body_entered"]
+[connection signal="area_entered" from="Table_test/Map/Sticky5/MeshInstance/Area" to="." method="_on_Area_area_entered"]
+[connection signal="body_entered" from="Table_test/Map/Sticky5/MeshInstance/Area" to="." method="_on_Area_body_entered"]

@@ -11,13 +11,16 @@ var rotateIndex = 0
 var isRotating = false
 var canRotate = true
 var tween
+var timer : Timer
+var curRState
 # Called when the node enters the scene tree for the first time.
 func _ready(): 
-	tween = get_node("Tween")
+	tween = get_node("Tween") 
 	pass
 	 
  
 func _process(delta):
+#	print(self.get_rotation_degrees())
 #	print(canRotate)
 	pass
 
@@ -38,7 +41,7 @@ func _input(event):
 			 
 
 func rotateAnimation(prev): 
-	var curRState = ROTATE_STATES[rotateIndex]
+	curRState = ROTATE_STATES[rotateIndex]
 	var prevRState = ROTATE_STATES[prev]
 	isRotating = true
 	if prevRState == RotateState.Zero and curRState == RotateState.P90: 
@@ -78,5 +81,17 @@ func rotateAnimation(prev):
 
 
 func _on_Tween_tween_all_completed():
+	timer = Timer.new()
+	add_child(timer)
+	timer.connect("timeout", self, "_on_Timer_timeout")
+	timer.one_shot = true
+	timer.start(0.1)
+	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	print("done")
+	
 	isRotating = false
+	
 	pass # Replace with function body.

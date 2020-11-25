@@ -8,6 +8,9 @@ var gravity = Vector3(0, 0, 3)
 var canMove = false
 var isMoving = false
 var inSticky = false
+
+var currStickyRot
+var currSticky
 var vel
 var vel2
 # Called when the node enters the scene tree for the first time.
@@ -39,26 +42,50 @@ func _ready():
 #	print(get_floor_velocity(),isMoving, is_on_floor(), is_on_wall())
 func _process(delta):
 	vel = self.get_floor_velocity()
+	self.rotation_degrees = Vector3.ZERO
 
 	if canMove:
 		vel2 = self.move_and_slide(gravity) 
+	else:
+		gravity = Vector3.ZERO
 #
 	if vel2.z != 0: 
 		gravity.z += 9*delta
 	else: 
 		gravity.z = 3
 #	 
-	isMoving = not is_on_wall()
+	isMoving =  vel2 != Vector3.ZERO
 
-	print(  is_on_wall())
+#	print(  "sticky", inSticky)
 
 
 func _on_Area_area_entered(area):
-	print(area.get_parent().get_parent())
-	inSticky = true
+	print("collided")
+#	print(area.get_parent().get_parent().get_rotation_degrees().y)
+#	inSticky = true
+#	currStickyRot = area.get_parent().get_parent().get_rotation_degrees()
+#	currSticky = area.get_parent().get_parent()
 	pass # Replace with function body.
 
 
 func _on_Area_area_exited(area):
 	inSticky = false
+	currStickyRot = null
+	currSticky = null
 	pass # Replace with function body.
+	
+	
+#func convertRotationToNormal(rot_deg):
+#	if rot_deg == Vector3(0, 0, 0):
+#		return Vector3(0, 0, 1)
+#
+#	if rot_deg == Vector3(0, 180, 0):
+#		return Vector3(0, 0, -1)
+#
+#	if rot_deg == Vector3(0, 90, 0):
+#		return Vector3(0, 1,0 ) 
+#	if rot_deg == Vector3(0, -1, 0):
+#		pass
+#
+#
+	pass
