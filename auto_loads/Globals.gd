@@ -13,7 +13,8 @@ var LEVELS = [
 		"blocks": 1,
 		"size": Vector2(),
 		"finish_coord": Vector3(0,0,0),
-		"block_0_start_coord": Vector3(0, 0, 0)
+		"block_0_start_coord": Vector3(0, 0, 0),
+		"location": "res://scenes/levels/level_0/level_0.tscn"
 		
 	},
 	
@@ -25,7 +26,8 @@ var LEVELS = [
 		"size": Vector2(),
 		"finish_coord": Vector3(0,0,0),
 		"block_0_start_coord": Vector3(0, 0, 0),
-		"block_1_start_coord": Vector3(0, 0, 0)
+		"block_1_start_coord": Vector3(0, 0, 0),
+		"location": "res://scenes/levels/level_1/level_1.tscn"
 		
 	},
 	
@@ -38,7 +40,8 @@ var LEVELS = [
 		"finish_coord": Vector3(0,0,0),
 		"block_0_start_coord": Vector3(0, 0, 0),
 		"block_1_start_coord": Vector3(0, 0, 0),
-		"block_2_start_coord": Vector3(0, 0, 0)
+		"block_2_start_coord": Vector3(0, 0, 0), 
+		"location": "res://scenes/levels/level_2/level_2.tscn"
 		
 	},
 	{
@@ -47,11 +50,12 @@ var LEVELS = [
 		"is_order": true,
 		"blocks": 3,
 		"size": Vector2(),
-		"finish_coord": Vector3(0,0,0),
+		"finish_coord": Vector3(-3, 0, -7),
 		
 		"block_0_start_coord": Vector3(1, 0, 3),
 		"block_1_start_coord": Vector3(2, 0, 3),
-		"block_2_start_coord": Vector3(3, 0,3)
+		"block_2_start_coord": Vector3(3, 0,3), 
+		"location": "res://scenes/levels/level_3/level_3.tscn"
 		
 	},
 	
@@ -64,7 +68,8 @@ var LEVELS = [
 		"finish_coord": Vector3(0,0,0),
 		"block_0_start_coord": Vector3(1, 0, 3),
 		"block_1_start_coord": Vector3(2, 0, 3),
-		"block_2_start_coord": Vector3(3, 0,3)
+		"block_2_start_coord": Vector3(3, 0,3), 
+		"location": "res://scenes/levels/level_4/level_4.tscn"
 		
 	},
 	
@@ -77,12 +82,13 @@ var LEVELS = [
 		"finish_coord": Vector3(0,0,0),
 		"block_0_start_coord": Vector3(0, 0, 0),
 		"block_1_start_coord": Vector3(0, 0, 0),
-		"block_2_start_coord": Vector3(0, 0, 0)
+		"block_2_start_coord": Vector3(0, 0, 0), 
+		"location": "res://scenes/levels/level_5/level_5.tscn"
 		
 	},
 	
 	{
-		"level": 5,
+		"level":6,
 		"terrain": "sand", 
 		"is_order": true,
 		"blocks": 3,
@@ -90,7 +96,8 @@ var LEVELS = [
 		"finish_coord": Vector3(0,0,0),
 		"block_0_start_coord": Vector3(0, 0, 0),
 		"block_1_start_coord": Vector3(0, 0, 0),
-		"block_2_start_coord": Vector3(0, 0, 0)
+		"block_2_start_coord": Vector3(0, 0, 0), 
+		"location": "res://scenes/levels/level_6/level_6.tscn"
 		
 	},
 	

@@ -28,9 +28,9 @@ var winState = WinState.NONE
 
 func _ready():  
 	levelNumber =int (self.get_name().rsplit("_")[0]) 
-	print(self.get_name())
+	print(self.get_name(), levelNumber)
 	levelInfo = GLOBALS.LEVELS[levelNumber]
-	map = get_node("Table_test/Map")
+	map = get_node("table_base/Map")
 	print(levelInfo)
 	gameState = get_parent().gameState
 	 
@@ -45,9 +45,9 @@ func _ready():
 #	player2 = get_node("Table_test/Map/player_2")
 #	player3 = get_node("Table_test/Map/player_3")
 	 
-	goal = get_node("Table_test/Map/Goal")
+	goal = get_node("table_base/Map/Goal")
 	goal.translation = levelInfo["finish_coord"]
-	table = get_node("Table_test")
+	table = get_node("table_base")
 	
 	
 	 

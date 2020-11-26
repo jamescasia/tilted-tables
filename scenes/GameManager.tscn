@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/levels/level_test/level_test.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/Exo_2/Exo2-VariableFont_wght.ttf" type="DynamicFontData" id=3]
 
@@ -198,6 +197,9 @@ margin_right = 177.367
 margin_bottom = 120.51
 custom_fonts/font = SubResource( 2 )
 text = "Home"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ActivateWM" type="Control" parent="Viewport"]
 modulate = Color( 1, 1, 1, 0 )
@@ -224,7 +226,7 @@ margin_bottom = 408.771
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Activate 
-monetization?"
+superpowers?"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -275,8 +277,6 @@ __meta__ = {
 [node name="fly" type="Tween" parent="Viewport"]
 
 [node name="fade" type="Tween" parent="Viewport"]
-
-[node name="3_level" parent="." instance=ExtResource( 1 )]
 [connection signal="pressed" from="Viewport/Win/retry" to="." method="_won_on_retry_pressed"]
 [connection signal="pressed" from="Viewport/Win/home" to="." method="_won_on_home_pressed"]
 [connection signal="pressed" from="Viewport/Win/next" to="." method="_won_on_next_pressed"]
