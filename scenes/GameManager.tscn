@@ -276,7 +276,7 @@ __meta__ = {
 
 [node name="fade" type="Tween" parent="Viewport"]
 
-[node name="Level" parent="." instance=ExtResource( 1 )]
+[node name="3_level" parent="." instance=ExtResource( 1 )]
 [connection signal="pressed" from="Viewport/Win/retry" to="." method="_won_on_retry_pressed"]
 [connection signal="pressed" from="Viewport/Win/home" to="." method="_won_on_home_pressed"]
 [connection signal="pressed" from="Viewport/Win/next" to="." method="_won_on_next_pressed"]

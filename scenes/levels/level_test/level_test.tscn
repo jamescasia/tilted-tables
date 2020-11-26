@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/maps/table-green.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/maps/map1.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://scenes/levels/level_test/level_test.gd" type="Script" id=3]
-[ext_resource path="res://scenes/objects/Player_test.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/objects/Table_test.gd" type="Script" id=5]
 [ext_resource path="res://assets/maps/map-goal.obj" type="ArrayMesh" id=6]
 [ext_resource path="res://assets/obstacles/spike.obj" type="ArrayMesh" id=7]
@@ -29,7 +28,7 @@ albedo_color = Color( 1, 0.176471, 0.176471, 1 )
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 0.5, 0.5, 0.001 )
 
-[node name="0_level" type="Spatial"]
+[node name="3_level" type="Spatial"]
 script = ExtResource( 3 )
 
 [node name="Table_test" type="Spatial" parent="."]
@@ -97,15 +96,6 @@ transform = Transform( 1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, 0, 0, 0 )
 [node name="CollisionShape2" type="CollisionShape" parent="Table_test/Map/Goal/MeshInstance/Area"]
 transform = Transform( -1, 0, -3.05474e-07, 0, 1, 0, 3.05474e-07, 0, -1, 0.0169995, 0.5, 0.5 )
 shape = SubResource( 7 )
-
-[node name="player_1" parent="Table_test/Map" instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1, 0, 3 )
-
-[node name="player_2" parent="Table_test/Map" instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 2, 0, 3 )
-
-[node name="player_3" parent="Table_test/Map" instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3, 0, 3 )
 
 [node name="Spatial" type="Spatial" parent="Table_test"]
 

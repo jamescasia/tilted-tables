@@ -10,10 +10,10 @@ var LEVELS = [
 		"level": 0,
 		"terrain": "grass", 
 		"is_order": false,
-		"players": 1,
+		"blocks": 1,
 		"size": Vector2(),
 		"finish_coord": Vector3(0,0,0),
-		"player_1_start_coord": Vector3(0, 0, 0)
+		"block_0_start_coord": Vector3(0, 0, 0)
 		
 	},
 	
@@ -21,11 +21,11 @@ var LEVELS = [
 		"level": 1,
 		"terrain": "grass", 
 		"is_order": false,
-		"players": 2,
+		"blocks": 2,
 		"size": Vector2(),
 		"finish_coord": Vector3(0,0,0),
-		"player_1_start_coord": Vector3(0, 0, 0),
-		"player_2_start_coord": Vector3(0, 0, 0)
+		"block_0_start_coord": Vector3(0, 0, 0),
+		"block_1_start_coord": Vector3(0, 0, 0)
 		
 	},
 	
@@ -33,24 +33,25 @@ var LEVELS = [
 		"level": 2,
 		"terrain": "grass", 
 		"is_order": false,
-		"players": 3,
+		"blocks": 3,
 		"size": Vector2(),
 		"finish_coord": Vector3(0,0,0),
-		"player_1_start_coord": Vector3(0, 0, 0),
-		"player_2_start_coord": Vector3(0, 0, 0),
-		"player_3_start_coord": Vector3(0, 0, 0)
+		"block_0_start_coord": Vector3(0, 0, 0),
+		"block_1_start_coord": Vector3(0, 0, 0),
+		"block_2_start_coord": Vector3(0, 0, 0)
 		
 	},
 	{
 		"level": 3,
 		"terrain": "grass", 
 		"is_order": true,
-		"players": 3,
+		"blocks": 3,
 		"size": Vector2(),
 		"finish_coord": Vector3(0,0,0),
-		"player_1_start_coord": Vector3(0, 0, 0),
-		"player_2_start_coord": Vector3(0, 0, 0),
-		"player_3_start_coord": Vector3(0, 0, 0)
+		
+		"block_0_start_coord": Vector3(1, 0, 3),
+		"block_1_start_coord": Vector3(2, 0, 3),
+		"block_2_start_coord": Vector3(3, 0,3)
 		
 	},
 	
@@ -58,12 +59,12 @@ var LEVELS = [
 		"level": 4,
 		"terrain": "sand", 
 		"is_order": true,
-		"players": 3,
+		"blocks": 3,
 		"size": Vector2(),
 		"finish_coord": Vector3(0,0,0),
-		"player_1_start_coord": Vector3(0, 0, 0),
-		"player_2_start_coord": Vector3(0, 0, 0),
-		"player_3_start_coord": Vector3(0, 0, 0)
+		"block_0_start_coord": Vector3(1, 0, 3),
+		"block_1_start_coord": Vector3(2, 0, 3),
+		"block_2_start_coord": Vector3(3, 0,3)
 		
 	},
 	
@@ -71,12 +72,12 @@ var LEVELS = [
 		"level": 5,
 		"terrain": "sand", 
 		"is_order": true,
-		"players": 3,
+		"blocks": 3,
 		"size": Vector2(),
 		"finish_coord": Vector3(0,0,0),
-		"player_1_start_coord": Vector3(0, 0, 0),
-		"player_2_start_coord": Vector3(0, 0, 0),
-		"player_3_start_coord": Vector3(0, 0, 0)
+		"block_0_start_coord": Vector3(0, 0, 0),
+		"block_1_start_coord": Vector3(0, 0, 0),
+		"block_2_start_coord": Vector3(0, 0, 0)
 		
 	},
 	
@@ -84,18 +85,19 @@ var LEVELS = [
 		"level": 5,
 		"terrain": "sand", 
 		"is_order": true,
-		"players": 3,
+		"blocks": 3,
 		"size": Vector2(),
 		"finish_coord": Vector3(0,0,0),
-		"player_1_start_coord": Vector3(0, 0, 0),
-		"player_2_start_coord": Vector3(0, 0, 0),
-		"player_3_start_coord": Vector3(0, 0, 0)
+		"block_0_start_coord": Vector3(0, 0, 0),
+		"block_1_start_coord": Vector3(0, 0, 0),
+		"block_2_start_coord": Vector3(0, 0, 0)
 		
 	},
 	
 #	
 ]
 
+var BLOCK_COLORS = [Color(1, 0, 0, 1) , Color(0,1,0,1), Color(0,0,1,1)]
 enum GameState{ NOTSTARTED, RUNNING, PAUSED, WIN, OVER}
 # Called when the node enters the scene tree for the first time.
 func _ready():

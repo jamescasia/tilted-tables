@@ -13,14 +13,21 @@ var currStickyRot
 var currSticky
 var vel
 var vel2 = Vector3()
+var blockInfo
+var particles
+
+var mesh
 
 var inPlay = true
 # Called when the node enters the scene tree for the first time.
-
 func _ready():
 	self.move_lock_x = true
 	self.move_lock_y = true
 	self.move_lock_z = true
+	mesh = get_node("mesh")
+	particles = get_node("particles")
+	
+	
 	
 	
 	
@@ -43,6 +50,24 @@ func _ready():
 #
 #
 #	print(get_floor_velocity(),isMoving, is_on_floor(), is_on_wall())
+
+
+func setBlockInfo(binfo):
+	blockInfo = binfo
+	
+	var material = SpatialMaterial.new()
+	material.albedo_color = GLOBALS.BLOCK_COLORS[blockInfo["number"]] 
+	mesh.set_material_override(material)
+	
+	var cubemesh = CubeMesh.new()
+	cubemesh.size = Vector3(0.4, 0.4, 0.4)
+	cubemesh.set_material(material)
+	particles.mesh = cubemesh
+	
+#	mesh.material
+	
+	
+	
 func _process(delta):
 	vel = self.get_floor_velocity()
 	self.rotation_degrees = Vector3.ZERO
