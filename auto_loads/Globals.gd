@@ -7,22 +7,75 @@ extends Node
 var LEVELS = [
 	
 	{
-		"terrain": "grass",
-		"number": 0,
-		"size":Vector2(0, 0), 
-		"start_coord" : Vector2(0, 0), 
-		"finish_coord" : Vector2(0, 0), 
-		"obstacles": [
-			{
-				"type": "spike",
-				"coord" : Vector2(0, 0)
-			}, 
-			{
-				"type": "sticky",
-				"coord": Vector2(0, 0)
-			}
-		]
-	}
+		"level": 0,
+		"terrain": "grass", 
+		"is_order": false,
+		"players": 1,
+		"size": Vector2(),
+		"finish_coord": Vector3(0,0,0)
+		
+	},
+	
+	{
+		"level": 1,
+		"terrain": "grass", 
+		"is_order": false,
+		"players": 2,
+		"size": Vector2(),
+		"finish_coord": Vector3(0,0,0)
+		
+	},
+	
+	{
+		"level": 2,
+		"terrain": "grass", 
+		"is_order": false,
+		"players": 3,
+		"size": Vector2(),
+		"finish_coord": Vector3(0,0,0)
+		
+	},
+	{
+		"level": 3,
+		"terrain": "grass", 
+		"is_order": true,
+		"players": 3,
+		"size": Vector2(),
+		"finish_coord": Vector3(0,0,0)
+		
+	},
+	
+	{
+		"level": 4,
+		"terrain": "sand", 
+		"is_order": true,
+		"players": 3,
+		"size": Vector2(),
+		"finish_coord": Vector3(0,0,0)
+		
+	},
+	
+	{
+		"level": 5,
+		"terrain": "sand", 
+		"is_order": true,
+		"players": 3,
+		"size": Vector2(),
+		"finish_coord": Vector3(0,0,0)
+		
+	},
+	
+	{
+		"level": 5,
+		"terrain": "sand", 
+		"is_order": true,
+		"players": 3,
+		"size": Vector2(),
+		"finish_coord": Vector3(0,0,0)
+		
+	},
+	
+#	
 ]
 
 enum GameState{ NOTSTARTED, RUNNING, PAUSED, WIN, OVER}

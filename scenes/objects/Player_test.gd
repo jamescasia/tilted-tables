@@ -13,6 +13,8 @@ var currStickyRot
 var currSticky
 var vel
 var vel2 = Vector3()
+
+var inPlay = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.move_lock_x = true
@@ -44,7 +46,7 @@ func _process(delta):
 	vel = self.get_floor_velocity()
 	self.rotation_degrees = Vector3.ZERO
 
-	if canMove:
+	if canMove and inPlay:
 		vel2 = self.move_and_slide(gravity) 
 	else:
 		self.vel2 =  Vector3(round(self.vel2.x), round(self.vel2.y), round(self.vel2.z) )

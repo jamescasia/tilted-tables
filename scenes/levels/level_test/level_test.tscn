@@ -27,9 +27,9 @@ data = PoolVector3Array( -6.5, 0, -4.5, -7.5, 0, -3.5, -6.5, 0, -3.5, -7.5, 0, -
 albedo_color = Color( 1, 0.176471, 0.176471, 1 )
 
 [sub_resource type="BoxShape" id=7]
-extents = Vector3( 0.5, 0.5, 0.5 )
+extents = Vector3( 0.5, 0.5, 0.001 )
 
-[node name="LevelTest" type="Spatial"]
+[node name="0_level" type="Spatial"]
 script = ExtResource( 3 )
 
 [node name="Table_test" type="Spatial" parent="."]
@@ -92,18 +92,19 @@ material/3 = null
 material/4 = null
 
 [node name="Area" type="Area" parent="Table_test/Map/Goal/MeshInstance"]
+transform = Transform( 1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, 0, 0, 0 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Table_test/Map/Goal/MeshInstance/Area"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0.5, 0 )
+transform = Transform( -1, 0, -3.05474e-07, 0, 1, 0, 3.05474e-07, 0, -1, 0.0169995, 0.5, 0.5 )
 shape = SubResource( 7 )
 
-[node name="Player_test" parent="Table_test/Map" instance=ExtResource( 4 )]
+[node name="player_1" parent="Table_test/Map" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1, 0, 3 )
 
-[node name="Player_test2" parent="Table_test/Map" instance=ExtResource( 4 )]
+[node name="player_2" parent="Table_test/Map" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 2, 0, 3 )
 
-[node name="Player_test3" parent="Table_test/Map" instance=ExtResource( 4 )]
+[node name="player_3" parent="Table_test/Map" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3, 0, 3 )
 
 [node name="Spatial" type="Spatial" parent="Table_test"]
@@ -123,4 +124,5 @@ size = 14.0
 transform = Transform( -0.00779666, -0.375545, 0.926771, -0.00315924, 0.926804, 0.375532, -0.999965, 2.79407e-09, -0.00841241, 12.3867, 13.0327, -2.44881 )
 light_bake_mode = 2
 [connection signal="tween_all_completed" from="Table_test/Tween" to="Table_test" method="_on_Tween_tween_all_completed"]
+[connection signal="area_entered" from="Table_test/Map/Goal/MeshInstance/Area" to="." method="_on_Area_area_entered"]
 [connection signal="area_exited" from="Table_test/Map/Goal/MeshInstance/Area" to="." method="_on_Area_area_exited"]

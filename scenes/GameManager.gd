@@ -46,6 +46,8 @@ func _ready():
 func _process(delta): 
 	
 	
+	
+	
 	if gameState == GLOBALS.GameState.WIN:
 		winPopup.visible = true
 		
