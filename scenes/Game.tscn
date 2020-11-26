@@ -8,17 +8,17 @@ size = 64
 outline_size = 2
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 64
 outline_size = 2
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 32
 outline_size = 1
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 24
 outline_size = 1
 font_data = ExtResource( 2 )
@@ -142,7 +142,7 @@ margin_left = 72.1249
 margin_top = 128.693
 margin_right = 392.125
 margin_bottom = 285.693
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "The Glades
 "
 __meta__ = {
@@ -172,7 +172,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/glade/Level0"]
@@ -180,7 +180,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -209,7 +209,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/glade/Level1"]
@@ -217,7 +217,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -246,7 +246,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/glade/Level2"]
@@ -254,7 +254,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -283,7 +283,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/glade/Level3"]
@@ -291,7 +291,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -320,7 +320,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/glade/Level4"]
@@ -328,7 +328,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -357,7 +357,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/glade/Level5"]
@@ -365,7 +365,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -394,7 +394,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/glade/Level6"]
@@ -402,7 +402,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -431,7 +431,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/glade/Level7"]
@@ -439,7 +439,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -460,7 +460,7 @@ margin_left = 83.5688
 margin_top = 114.099
 margin_right = 403.569
 margin_bottom = 271.099
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "The Sands
 "
 __meta__ = {
@@ -490,7 +490,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/sand/Level0"]
@@ -498,7 +498,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -527,7 +527,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/sand/Level1"]
@@ -535,7 +535,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -564,7 +564,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/sand/Level2"]
@@ -572,7 +572,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -601,7 +601,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/sand/Level3"]
@@ -609,7 +609,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -638,7 +638,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/sand/Level4"]
@@ -646,7 +646,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -675,7 +675,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/sand/Level5"]
@@ -683,7 +683,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -712,7 +712,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/sand/Level6"]
@@ -720,7 +720,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -749,7 +749,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/sand/Level7"]
@@ -757,7 +757,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -778,7 +778,7 @@ margin_left = 83.5688
 margin_top = 114.099
 margin_right = 403.569
 margin_bottom = 271.099
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "The Pyres
 "
 __meta__ = {
@@ -808,7 +808,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/pyres/Level0"]
@@ -816,7 +816,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -845,7 +845,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/pyres/Level1"]
@@ -853,7 +853,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -882,7 +882,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/pyres/Level2"]
@@ -890,7 +890,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -919,7 +919,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/pyres/Level3"]
@@ -927,7 +927,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -956,7 +956,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/pyres/Level4"]
@@ -964,7 +964,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -993,7 +993,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/pyres/Level5"]
@@ -1001,7 +1001,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1030,7 +1030,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/pyres/Level6"]
@@ -1038,7 +1038,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1067,7 +1067,7 @@ margin_left = 96.384
 margin_top = 61.7362
 margin_right = 136.384
 margin_bottom = 75.7362
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Level 0"
 
 [node name="stars" type="Label" parent="PickLevels/span/pyres/Level7"]
@@ -1075,7 +1075,7 @@ margin_left = 98.2738
 margin_top = 158.75
 margin_right = 144.274
 margin_bottom = 172.75
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "stars: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1135,5 +1135,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="PickLevels/span/glade/Level0/Button" to="." method="_glade_one_pressed"]
+[connection signal="pressed" from="PickLevels/span/glade/Level1/Button" to="." method="_glade_two_pressed"]
+[connection signal="pressed" from="PickLevels/span/glade/Level2/Button" to="." method="_glade_two_pressed"]
+[connection signal="pressed" from="PickLevels/span/glade/Level2/Button" to="." method="_glade_three_pressed"]
+[connection signal="pressed" from="PickLevels/span/glade/Level3/Button" to="." method="_glade_four_pressed"]
+[connection signal="pressed" from="PickLevels/span/glade/Level3/Button" to="." method="_glade_three_pressed"]
+[connection signal="pressed" from="PickLevels/span/glade/Level4/Button" to="." method="_glade_four_pressed"]
+[connection signal="pressed" from="PickLevels/span/glade/Level4/Button" to="." method="_glade_five_pressed"]
+[connection signal="pressed" from="PickLevels/span/sand/Level0/Button" to="." method="_sand_one_pressed"]
+[connection signal="pressed" from="PickLevels/span/sand/Level1/Button" to="." method="_sand_two_pressed"]
+[connection signal="pressed" from="PickLevels/span/sand/Level2/Button" to="." method="_sand_three_pressed"]
+[connection signal="pressed" from="PickLevels/span/sand/Level3/Button" to="." method="_sand_four_pressed"]
+[connection signal="pressed" from="PickLevels/span/sand/Level4/Button" to="." method="_sand_five_pressed"]
+[connection signal="pressed" from="PickLevels/span/pyres/Level0/Button" to="." method="_pyre_one_pressed"]
+[connection signal="pressed" from="PickLevels/span/pyres/Level1/Button" to="." method="_pyre_two_pressed"]
+[connection signal="pressed" from="PickLevels/span/pyres/Level2/Button" to="." method="_pyre_three_pressed"]
+[connection signal="pressed" from="PickLevels/span/pyres/Level3/Button" to="." method="_pyre_four_pressed"]
+[connection signal="pressed" from="PickLevels/span/pyres/Level4/Button" to="." method="_pyre_five_pressed"]
 [connection signal="pressed" from="PickLevels/PanLeft2/PanLeft" to="." method="_on_PanLeft_pressed"]
 [connection signal="pressed" from="PickLevels/PanRight2/PanRight" to="." method="_on_PanRight_pressed"]

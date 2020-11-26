@@ -1,10 +1,11 @@
 extends Node
 
-
+enum UserState { MENU, INGAME}
 
 var isMonetized = false
+var currentLevel = 0
+var userState = UserState.MENU
 var progress = [
-	
 	{
 		"level": 0,
 		"stars": 0,

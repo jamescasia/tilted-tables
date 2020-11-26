@@ -22,8 +22,10 @@ var level_game
 var Level_base
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	Level_base = load("res://scenes/levels/level_base/level_base.tscn")
+func _ready(): 
+	Level_base = load( GLOBALS.LEVELS[UserData.currentLevel]["location"])
+	
+	
 	
 	homeScene =  ("res://scenes/Game.tscn")
 	winPopup = get_node("Viewport/Win")
@@ -40,7 +42,8 @@ func _ready():
 	showPopup(monetizationPopup) 
 	print(get_name(), Level_base)
 	level_game = Level_base.instance()
-	level_game.set_name("3_level_base")
+	level_game.setLevelInfo(GLOBALS.LEVELS[UserData.currentLevel])
+	level_game.set_name(str(UserData.currentLevel) + "_level_base")
 	add_child(level_game)
 
 
@@ -84,6 +87,9 @@ func _won_on_home_pressed():
 
 
 func _won_on_next_pressed():
+	UserData.currentLevel+=1
+	get_tree().reload_current_scene() 
+	
 	
 	pass # Replace with function body.
 

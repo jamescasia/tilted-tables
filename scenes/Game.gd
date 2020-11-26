@@ -14,21 +14,17 @@ var span
 func _ready():
 	gameManagerScene = preload("res://scenes/GameManager.tscn")
 	pickLevels = get_node("PickLevels")
-	span = get_node("PickLevels/span")
-	pass # Replace with function body.
-
+	span = get_node("PickLevels/span") 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+#	UserData.userState = UserData.UserState.INGAME
 
 
 func _on_Play_pressed():
 	Utils.showPopup(pickLevels)
 #	get_tree().change_scene_to(gameManagerScene)
-	
-	pass # Replace with function body.
-
+	 
 
 
 func panRight():
@@ -40,13 +36,9 @@ func panRight():
 		else:
 			pickLocation = PickViewing.PYRES
 		
-		
-		pass
-		
-	print(pickLocation)
-		
-	pass
-	
+		 
+#	print(pickLocation)
+		 
 	
 func panLeft():
 	if pickLocation != PickViewing.GLADES:
@@ -55,32 +47,130 @@ func panLeft():
 			pickLocation = PickViewing.GLADES 
 		else:
 			pickLocation = PickViewing.SANDS
-		
-		pass
-	pass
+		 
 			
 	print(pickLocation)
 	
 func tweenPanLeft(obj): 
 	var tween = Tween.new()
 	add_child(tween)  
-	tween.interpolate_property(obj, "rect_position", obj.rect_position , obj.rect_position+ Vector2(  1600, 0), 1 , Tween.TRANS_LINEAR)
+	tween.interpolate_property(obj, "rect_position", obj.rect_position , obj.rect_position+ Vector2(  1600, 0), 1 , Tween.TRANS_CIRC)
 	tween.start() 
 	
 func tweenPanRight(obj): 
 	
 	var tween = Tween.new()
 	add_child(tween) 
-	tween.interpolate_property(obj, "rect_position", obj.rect_position, obj.rect_position+ Vector2(-1600, 0), 1 , Tween.TRANS_LINEAR)
-	tween.start() 
-	pass
-
+	tween.interpolate_property(obj, "rect_position", obj.rect_position, obj.rect_position+ Vector2(-1600, 0), 1 , Tween.TRANS_CIRC)
+	tween.start()  
 
 func _on_PanLeft_pressed(): 
-	panLeft()
-	pass # Replace with function body.
-
+	panLeft() 
 
 func _on_PanRight_pressed(): 
-	panRight()
-	pass # Replace with function body.
+	panRight() 
+
+
+#BUTTTTONSSSSSSSSS ----------------------------------------
+
+func _glade_one_pressed():
+	UserData.userState = UserData.UserState.INGAME
+	UserData.currentLevel = 0
+	print("pressed gladde one")
+	get_tree().change_scene_to(gameManagerScene)
+	 
+func _glade_two_pressed():
+	UserData.userState = UserData.UserState.INGAME 
+	UserData.currentLevel = 1
+	get_tree().change_scene_to(gameManagerScene)
+
+func _glade_three_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 2
+	get_tree().change_scene_to(gameManagerScene)
+	
+
+
+func _glade_four_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 3
+	get_tree().change_scene_to(gameManagerScene)
+	
+
+
+func _glade_five_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 4
+	get_tree().change_scene_to(gameManagerScene)
+	
+	
+ 
+
+func _sand_one_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 5
+
+	get_tree().change_scene_to(gameManagerScene)
+	
+	
+
+func _sand_two_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 6
+	get_tree().change_scene_to(gameManagerScene)
+	
+
+func _sand_three_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 7
+
+	get_tree().change_scene_to(gameManagerScene)
+	
+
+func _sand_four_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 8
+
+	get_tree().change_scene_to(gameManagerScene)
+	
+
+func _sand_five_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	
+	UserData.currentLevel = 9
+
+	get_tree().change_scene_to(gameManagerScene)
+
+func _pyre_one_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 10
+
+	get_tree().change_scene_to(gameManagerScene)
+	
+
+func _pyre_two_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 11
+
+	get_tree().change_scene_to(gameManagerScene)
+	
+
+func _pyre_three_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	
+	UserData.currentLevel = 12
+	get_tree().change_scene_to(gameManagerScene)
+
+
+func _pyre_four_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 13
+
+	get_tree().change_scene_to(gameManagerScene)
+	
+
+func _pyre_five_pressed():
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 14
+	get_tree().change_scene_to(gameManagerScene)
+	

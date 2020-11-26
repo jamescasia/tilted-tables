@@ -25,11 +25,12 @@ var levelInfo
 var levelNumber
 
 var winState = WinState.NONE
-
+func setLevelInfo(linf):
+	levelInfo = linf
 func _ready():  
-	levelNumber =int (self.get_name().rsplit("_")[0]) 
+#	levelNumber =int (self.get_name().rsplit("_")[0]) 
 	print(self.get_name(), levelNumber)
-	levelInfo = GLOBALS.LEVELS[levelNumber]
+#	levelInfo = GLOBALS.LEVELS[levelNumber]
 	map = get_node("table_base/Map")
 	print(levelInfo)
 	gameState = get_parent().gameState
