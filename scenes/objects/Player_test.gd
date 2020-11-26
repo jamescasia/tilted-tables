@@ -12,7 +12,7 @@ var inSticky = false
 var currStickyRot
 var currSticky
 var vel
-var vel2
+var vel2 = Vector3()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.move_lock_x = true
@@ -65,8 +65,7 @@ func _process(delta):
 		 
 #	 
 	isMoving =  vel2 != Vector3.ZERO
-
-	print(  vel2, gravity)
+ 
 
 
 func _on_Area_area_entered(area):

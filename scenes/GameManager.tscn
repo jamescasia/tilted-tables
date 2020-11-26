@@ -1,0 +1,286 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/levels/level_test/level_test.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/GameManager.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/Exo_2/Exo2-VariableFont_wght.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_size = 3
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 1
+font_data = ExtResource( 3 )
+
+[node name="GameManager" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Viewport" type="ViewportContainer" parent="."]
+margin_right = 1600.0
+margin_bottom = 900.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" type="Control" parent="Viewport"]
+anchor_left = 0.831
+anchor_top = 0.039
+anchor_right = 0.924
+anchor_bottom = 0.056
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Viewport/HUD"]
+margin_right = 79.0
+margin_bottom = 14.0
+text = "LOLOLOLOL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Win" type="Control" parent="Viewport"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.831
+anchor_top = 0.039
+anchor_right = 0.924
+anchor_bottom = 0.056
+margin_left = -1329.6
+margin_top = -1235.1
+margin_right = 121.6
+margin_bottom = -350.4
+
+[node name="Polygon2D" type="Polygon2D" parent="Viewport/Win"]
+position = Vector2( 668.263, -98.1629 )
+scale = Vector2( 1, 6 )
+color = Color( 0.00784314, 0.00784314, 0.00784314, 0.203922 )
+polygon = PoolVector2Array( -1603.5, -1082.35, -1495.71, 1404.72, 1675.87, 1378.02, 1569.08, -498.763 )
+
+[node name="Label" type="Label" parent="Viewport/Win"]
+margin_left = 593.97
+margin_top = 248.902
+margin_right = 1102.97
+margin_bottom = 524.902
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "You Won!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="retry" type="Button" parent="Viewport/Win"]
+margin_left = 355.246
+margin_top = 452.111
+margin_right = 607.246
+margin_bottom = 547.111
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Viewport/Win/retry"]
+margin_left = 79.3673
+margin_top = 19.5101
+margin_right = 177.367
+margin_bottom = 120.51
+custom_fonts/font = SubResource( 2 )
+text = "Retry
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="home" type="Button" parent="Viewport/Win"]
+margin_left = 1117.4
+margin_top = 455.478
+margin_right = 1369.4
+margin_bottom = 550.478
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Viewport/Win/home"]
+margin_left = 79.3673
+margin_top = 19.5101
+margin_right = 177.367
+margin_bottom = 120.51
+custom_fonts/font = SubResource( 2 )
+text = "Home"
+
+[node name="next" type="Button" parent="Viewport/Win"]
+margin_left = 706.577
+margin_top = 447.621
+margin_right = 958.577
+margin_bottom = 542.621
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Viewport/Win/next"]
+margin_left = 79.3673
+margin_top = 19.5101
+margin_right = 177.367
+margin_bottom = 120.51
+custom_fonts/font = SubResource( 2 )
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lose" type="Control" parent="Viewport"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.831
+anchor_top = 0.039
+anchor_right = 0.924
+anchor_bottom = 0.056
+margin_left = -1329.6
+margin_top = -1235.1
+margin_right = 121.6
+margin_bottom = -350.4
+
+[node name="Polygon2D" type="Polygon2D" parent="Viewport/Lose"]
+position = Vector2( 668.263, -98.1629 )
+scale = Vector2( 1, 6 )
+color = Color( 0.00784314, 0.00784314, 0.00784314, 0.454902 )
+polygon = PoolVector2Array( -1597.38, -1034.75, -1495.71, 1404.72, 1675.87, 1378.02, 1569.08, -498.763 )
+
+[node name="Label" type="Label" parent="Viewport/Lose"]
+margin_left = 593.97
+margin_top = 248.902
+margin_right = 1102.97
+margin_bottom = 524.902
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "You Lost!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="retry" type="Button" parent="Viewport/Lose"]
+margin_left = 666.818
+margin_top = 434.273
+margin_right = 918.818
+margin_bottom = 529.273
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Viewport/Lose/retry"]
+margin_left = 79.3673
+margin_top = 19.5101
+margin_right = 177.367
+margin_bottom = 120.51
+custom_fonts/font = SubResource( 2 )
+text = "Retry
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="home" type="Button" parent="Viewport/Lose"]
+margin_left = 672.635
+margin_top = 606.508
+margin_right = 924.635
+margin_bottom = 701.508
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Viewport/Lose/home"]
+margin_left = 79.3673
+margin_top = 19.5101
+margin_right = 177.367
+margin_bottom = 120.51
+custom_fonts/font = SubResource( 2 )
+text = "Home"
+
+[node name="ActivateWM" type="Control" parent="Viewport"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.831
+anchor_top = 0.039
+anchor_right = 0.924
+anchor_bottom = 0.056
+margin_left = -1329.6
+margin_top = -1235.1
+margin_right = 121.6
+margin_bottom = -350.4
+
+[node name="Polygon2D" type="Polygon2D" parent="Viewport/ActivateWM"]
+position = Vector2( 668.263, -98.1629 )
+scale = Vector2( 1, 6 )
+color = Color( 0.00784314, 0.00784314, 0.00784314, 0.454902 )
+polygon = PoolVector2Array( -1521.27, -1044.27, -1495.71, 1404.72, 1675.87, 1378.02, 1569.08, -498.763 )
+
+[node name="Label" type="Label" parent="Viewport/ActivateWM"]
+margin_left = 488.518
+margin_top = 132.771
+margin_right = 1143.52
+margin_bottom = 408.771
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Activate 
+monetization?"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="yes" type="Button" parent="Viewport/ActivateWM"]
+margin_left = 887.067
+margin_top = 451.626
+margin_right = 1139.07
+margin_bottom = 546.626
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Viewport/ActivateWM/yes"]
+margin_left = 79.3673
+margin_top = 19.5101
+margin_right = 177.367
+margin_bottom = 120.51
+custom_fonts/font = SubResource( 2 )
+text = "YES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="no" type="Button" parent="Viewport/ActivateWM"]
+margin_left = 512.454
+margin_top = 450.332
+margin_right = 764.454
+margin_bottom = 545.332
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Viewport/ActivateWM/no"]
+margin_left = 79.3673
+margin_top = 19.5101
+margin_right = 177.367
+margin_bottom = 120.51
+custom_fonts/font = SubResource( 2 )
+text = "NO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fly" type="Tween" parent="Viewport"]
+
+[node name="fade" type="Tween" parent="Viewport"]
+
+[node name="Level" parent="." instance=ExtResource( 1 )]
+[connection signal="pressed" from="Viewport/Win/retry" to="." method="_won_on_retry_pressed"]
+[connection signal="pressed" from="Viewport/Win/home" to="." method="_won_on_home_pressed"]
+[connection signal="pressed" from="Viewport/Win/next" to="." method="_won_on_next_pressed"]
+[connection signal="pressed" from="Viewport/Lose/retry" to="." method="_lose_on_retry_pressed"]
+[connection signal="pressed" from="Viewport/Lose/home" to="." method="_lose_on_home_pressed"]
+[connection signal="pressed" from="Viewport/ActivateWM/yes" to="." method="_monetization_on_yes_pressed"]
+[connection signal="pressed" from="Viewport/ActivateWM/no" to="." method="_monetization_on_no_pressed"]

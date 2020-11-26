@@ -16,12 +16,21 @@ _global_script_class_icons={
 [application]
 
 config/name="tilted-tables"
-run/main_scene="res://scenes/levels/level_test/level_test.tscn"
+run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GLOBALS="*res://auto_loads/GLOBALS.gd"
 
 [debug]
 
 settings/fps/force_fps=80
+
+[display]
+
+window/size/width=1600
+window/size/height=900
 
 [input]
 
@@ -42,4 +51,5 @@ ui_cw={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

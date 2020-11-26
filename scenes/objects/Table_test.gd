@@ -9,13 +9,15 @@ enum RotateState { Zero, P90, P180, P270}
 var ROTATE_STATES = [ RotateState.Zero, RotateState.P90, RotateState.P180, RotateState.P270] 
 var rotateIndex = 0
 var isRotating = false
-var canRotate = true
+var canRotate = false
 var tween
 var timer : Timer
 var curRState
+var map
 # Called when the node enters the scene tree for the first time.
 func _ready(): 
 	tween = get_node("Tween") 
+	map = get_node("Map")
 	pass
 	 
  
@@ -63,7 +65,7 @@ func rotateAnimation(prev):
 		tween.start() 
 	 
 	elif prevRState == RotateState.P270 and curRState == RotateState.P180: 
-		tween.interpolate_property(self, "rotation_degrees", Vector3(0, -90, 0), Vector3(0, -180, 0), 1, Tween.TRANS_EXPO)
+		tween.interpolate_property(self,"rotation_degrees", Vector3(0, -90, 0), Vector3(0, -180, 0), 1, Tween.TRANS_EXPO)
 		tween.start() 
 	elif prevRState == RotateState.P180 and curRState == RotateState.P90: 
 		tween.interpolate_property(self, "rotation_degrees", Vector3(0, -180, 0), Vector3(0, -270, 0), 1, Tween.TRANS_EXPO)

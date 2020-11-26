@@ -1,0 +1,17 @@
+# Created by Kenney (www.kenney.nl)
+
+newmtl _defaultMat(Clone)
+Kd 0.939 0.953 1
+
+newmtl wood(Clone)
+Kd 0.84 0.435 0.305
+
+newmtl bricks(Clone)
+Kd 1 0.392 0.306
+
+newmtl foliage(Clone)
+Kd 0 0.655 0.486
+
+newmtl metalLight(Clone)
+Kd 0.698 0.686 0.867
+
