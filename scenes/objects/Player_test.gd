@@ -71,7 +71,7 @@ func _process(delta):
 
 
 func _on_Area_area_entered(area):
-	print("collided")
+#	print("collided")
 	
 #	print(area.get_parent().get_parent().get_rotation_degrees().y)
 #	inSticky = true

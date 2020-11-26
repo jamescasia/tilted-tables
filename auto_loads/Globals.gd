@@ -12,7 +12,8 @@ var LEVELS = [
 		"is_order": false,
 		"players": 1,
 		"size": Vector2(),
-		"finish_coord": Vector3(0,0,0)
+		"finish_coord": Vector3(0,0,0),
+		"player_1_start_coord": Vector3(0, 0, 0)
 		
 	},
 	
@@ -22,7 +23,9 @@ var LEVELS = [
 		"is_order": false,
 		"players": 2,
 		"size": Vector2(),
-		"finish_coord": Vector3(0,0,0)
+		"finish_coord": Vector3(0,0,0),
+		"player_1_start_coord": Vector3(0, 0, 0),
+		"player_2_start_coord": Vector3(0, 0, 0)
 		
 	},
 	
@@ -32,7 +35,10 @@ var LEVELS = [
 		"is_order": false,
 		"players": 3,
 		"size": Vector2(),
-		"finish_coord": Vector3(0,0,0)
+		"finish_coord": Vector3(0,0,0),
+		"player_1_start_coord": Vector3(0, 0, 0),
+		"player_2_start_coord": Vector3(0, 0, 0),
+		"player_3_start_coord": Vector3(0, 0, 0)
 		
 	},
 	{
@@ -41,7 +47,10 @@ var LEVELS = [
 		"is_order": true,
 		"players": 3,
 		"size": Vector2(),
-		"finish_coord": Vector3(0,0,0)
+		"finish_coord": Vector3(0,0,0),
+		"player_1_start_coord": Vector3(0, 0, 0),
+		"player_2_start_coord": Vector3(0, 0, 0),
+		"player_3_start_coord": Vector3(0, 0, 0)
 		
 	},
 	
@@ -51,7 +60,10 @@ var LEVELS = [
 		"is_order": true,
 		"players": 3,
 		"size": Vector2(),
-		"finish_coord": Vector3(0,0,0)
+		"finish_coord": Vector3(0,0,0),
+		"player_1_start_coord": Vector3(0, 0, 0),
+		"player_2_start_coord": Vector3(0, 0, 0),
+		"player_3_start_coord": Vector3(0, 0, 0)
 		
 	},
 	
@@ -61,7 +73,10 @@ var LEVELS = [
 		"is_order": true,
 		"players": 3,
 		"size": Vector2(),
-		"finish_coord": Vector3(0,0,0)
+		"finish_coord": Vector3(0,0,0),
+		"player_1_start_coord": Vector3(0, 0, 0),
+		"player_2_start_coord": Vector3(0, 0, 0),
+		"player_3_start_coord": Vector3(0, 0, 0)
 		
 	},
 	
@@ -71,7 +86,10 @@ var LEVELS = [
 		"is_order": true,
 		"players": 3,
 		"size": Vector2(),
-		"finish_coord": Vector3(0,0,0)
+		"finish_coord": Vector3(0,0,0),
+		"player_1_start_coord": Vector3(0, 0, 0),
+		"player_2_start_coord": Vector3(0, 0, 0),
+		"player_3_start_coord": Vector3(0, 0, 0)
 		
 	},
 	
