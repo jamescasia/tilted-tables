@@ -1,7 +1,6 @@
 extends Spatial
 
 
-var moveStack = []
 var gameState = GLOBALS.GameState.NOTSTARTED
 var currentLevelState 
 
@@ -22,6 +21,7 @@ var homeScene
 
 var level_game
  
+var moveStack = []
 var Level_base
 var isReverting = false
 var canRevert = false
@@ -74,14 +74,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
-func addMoveToMoveStack( move):
+func addMoveToMoveStack( move): 
+	print("len", len(moveStack), "added move", move) 
+	moveStack.append(move)  
 	
-	print("len", len(moveStack), "added move", move)
-	if not move in moveStack or true:
-		moveStack.append(move)
+	for i in range(len(moveStack)):
+		print(moveStack[i])
+		
 func _process(delta):  
-#	print(numberOfMoves, " ", len(moveStack ), " ", moveStack[-1])
-	canRevert = not isReverting and level_game.table.canRotate and len(moveStack)>1 and UserData.isMonetized
+#	print(numberOfMoves, " ", len(moveStack ), " ", moveStack, isReverting)
+	canRevert = (not isReverting )and level_game.table.canRotate and len(moveStack)>=1 and UserData.isMonetized
 func _input(event):
 	if event is InputEventKey: 
 		if event.pressed and event.scancode == KEY_ESCAPE and gameState == GLOBALS.GameState.RUNNING:
@@ -95,15 +97,22 @@ func _input(event):
 func revertMove(): 
 	 
 	isReverting = true
-	var begin_state = moveStack.pop_back()
-	var end_state = moveStack[-1] 
-	numberOfMoves-=1
-	level_game.isReverting = true
+	print(  "before")
+	for move in moveStack:
+		print(move)
+	
+	print(  "after")
+	var begin_state = moveStack.pop_back() 
+	for move in moveStack:
+		print(move)
+	print("back", begin_state)
+#	var end_state = moveStack[-1] 
+	numberOfMoves-=1 
 		
-	for i in range(len(revertBlockTweens)):
+	for i in range(len(level_game.blocks)):
 		var rbt = revertBlockTweens[i]
 		var blk = level_game.blocks[i]  
-		blk.translation = end_state[blk.get_name()]
+		blk.translation = begin_state[blk.get_name()]
 #		rbt.interpolate_property(blk, "translation", begin_state[blk.get_name()] ,end_state[blk.get_name()], 1, Tween.TRANS_CUBIC)
 #		rbt.start()
 	timer = Timer.new()
@@ -114,18 +123,16 @@ func revertMove():
 
 func _on_Timer_timeout(last_turn):
 	print(last_turn)
-	if last_turn == "-":
-		
+	if last_turn == "-": 
 		level_game.table.revertCounterClockwise()
 	elif last_turn == "+":
 		level_game.table.revertClockwise()
-	
-	level_game.isReverting = false 
-#	isReverting = false
+	 
 	
 	timer.queue_free()
 
 func pushToMoveStack(state):
+	
 	
 	addMoveToMoveStack(state) 
 	
@@ -211,13 +218,13 @@ func _monetization_on_no_pressed():
 	 
 	
 func showPopup(popup):
-	flyTween.interpolate_property(popup, "rect_position",  Vector2(0, -1200),Vector2(0, 0), 1, Tween.TRANS_ELASTIC) 
+	flyTween.interpolate_property(popup, "rect_position",  Vector2(0, -900),Vector2(0, 0), 1, Tween.TRANS_ELASTIC) 
 	fadeTween.interpolate_property(popup, "modulate", Color(1,1,1,0), Color(1,1,1,1), 1, Tween.TRANS_CUBIC)
 	fadeTween.start() 
 	flyTween.start() 
 	pass
 func hidePopup(popup):
-	flyTween.interpolate_property(popup, "rect_position", Vector2(0, 0), Vector2(0, -1200),1, Tween.TRANS_ELASTIC)
+	flyTween.interpolate_property(popup, "rect_position", Vector2(0, 0), Vector2(0, -900),1, Tween.TRANS_ELASTIC)
 	flyTween.start() 
 	fadeTween.interpolate_property(popup, "modulate", Color(1,1,1,1), Color(1,1,1,0), 1, Tween.TRANS_CUBIC)
 	fadeTween.start()

@@ -54,14 +54,14 @@ func panLeft():
 func tweenPanLeft(obj): 
 	var tween = Tween.new()
 	add_child(tween)  
-	tween.interpolate_property(obj, "rect_position", obj.rect_position , obj.rect_position+ Vector2(  1280, 0), 1 , Tween.TRANS_CIRC)
+	tween.interpolate_property(obj, "rect_position", obj.rect_position , obj.rect_position+ Vector2(  GLOBALS.width, 0), 1 , Tween.TRANS_CIRC)
 	tween.start() 
 	
 func tweenPanRight(obj): 
 	
 	var tween = Tween.new()
 	add_child(tween) 
-	tween.interpolate_property(obj, "rect_position", obj.rect_position, obj.rect_position+ Vector2(-1280, 0), 1 , Tween.TRANS_CIRC)
+	tween.interpolate_property(obj, "rect_position", obj.rect_position, obj.rect_position+ Vector2(-GLOBALS.width, 0), 1 , Tween.TRANS_CIRC)
 	tween.start()  
 
 func _on_PanLeft_pressed(): 

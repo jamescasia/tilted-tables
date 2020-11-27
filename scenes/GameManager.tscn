@@ -17,13 +17,14 @@ font_data = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Viewport" type="ViewportContainer" parent="."]
-margin_right = 1600.0
-margin_bottom = 900.0
+margin_right = 1280.0
+margin_bottom = 720.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HUD" type="Control" parent="Viewport"]
+visible = false
 anchor_left = 0.831
 anchor_top = 0.039
 anchor_right = 0.924
@@ -45,10 +46,11 @@ anchor_left = 0.831
 anchor_top = 0.039
 anchor_right = 0.924
 anchor_bottom = 0.056
-margin_left = -1329.6
+margin_left = -1063.68
 margin_top = -1235.1
-margin_right = 121.6
-margin_bottom = -350.4
+margin_right = 97.28
+margin_bottom = -527.34
+rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Viewport/Win"]
 position = Vector2( 668.263, -98.1629 )
@@ -135,10 +137,11 @@ anchor_left = 0.831
 anchor_top = 0.039
 anchor_right = 0.924
 anchor_bottom = 0.056
-margin_left = -1329.6
+margin_left = -1063.68
 margin_top = -1235.1
-margin_right = 121.6
-margin_bottom = -350.4
+margin_right = 97.28
+margin_bottom = -527.34
+rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Viewport/Lose"]
 position = Vector2( 668.263, -98.1629 )
@@ -207,10 +210,11 @@ anchor_left = 0.831
 anchor_top = 0.039
 anchor_right = 0.924
 anchor_bottom = 0.056
-margin_left = -1329.6
+margin_left = -1063.68
 margin_top = -1235.1
-margin_right = 121.6
-margin_bottom = -350.4
+margin_right = 97.28
+margin_bottom = -527.34
+rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Viewport/ActivateWM"]
 position = Vector2( 668.263, -98.1629 )
@@ -280,10 +284,11 @@ anchor_left = 0.831
 anchor_top = 0.039
 anchor_right = 0.924
 anchor_bottom = 0.056
-margin_left = -1329.6
+margin_left = -1063.68
 margin_top = -1235.1
-margin_right = 121.6
-margin_bottom = -350.4
+margin_right = 97.28
+margin_bottom = -527.34
+rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Viewport/Pause"]
 position = Vector2( 668.263, -98.1629 )

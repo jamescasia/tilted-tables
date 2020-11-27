@@ -19,8 +19,7 @@ var gameState
 var map
 var goal
 var env_file
-var environment
-var isReverting = false
+var environment 
 enum WinState { WON, LOST, NONE}
 
 var goodOnce = false
@@ -54,7 +53,7 @@ func _ready():
 	goal.translation = levelInfo["finish_coord"]
 	table = get_node("table_base")
 	
-	setCurrentLevelState()
+#	setCurrentLevelState()
 	
 		
 	
@@ -62,12 +61,12 @@ func _ready():
 	
 func setCurrentLevelState():
 	
+#	get_parent().isReverting = false
 	for b in blocks:
 		currentLevelState[b.get_name()] = b.translation
 	
 	currentLevelState["rotState"] = table.curRState
 	currentLevelState["rotation_degrees"] = table.rotation_degrees
-	
 	get_parent().pushToMoveStack(currentLevelState)
 func setCurrentLevelStateDirection(dir):
 	currentLevelState["last_turn"] = dir
@@ -93,11 +92,7 @@ func _physics_process(delta):
 	 
 	if gameState == GLOBALS.GameState.RUNNING:
 		for b in blocks:
-			b.canMove = not table.isRotating and not isReverting
-#		player.canMove = not table.isRotating 
-#		player2.canMove = not table.isRotating 
-#		player3.canMove = not table.isRotating 
-#		table.canRotate = not player.isMoving and not table.isRotating and not player2.isMoving and not player3.isMoving
+			b.canMove = not table.isRotating and not get_parent().isReverting 
 		 
 		
 		
@@ -114,10 +109,9 @@ func _physics_process(delta):
 				
 		table.canRotate = good and not table.isRotating and gameState == GLOBALS.GameState.RUNNING
 		
-		if good and not goodOnce and not get_parent().isReverting:
-			goodOnce = true 
-			get_parent().isReverting = false
-			setCurrentLevelState()
+#		if good and (not goodOnce) and (not get_parent().isReverting) and table.canRotate :
+#			goodOnce = true 
+#			setCurrentLevelState()
 		 
 		var allNotInPlay = true
 		for b in blocks:

@@ -131,7 +131,8 @@ var LEVELS = [
 	
 #	
 ]
-
+var width = 1280
+var height = 720
 var BLOCK_COLORS = [Color(1, 0, 0, 1) , Color(0,1,0,1), Color(0,0,1,1)]
 enum GameState{ NOTSTARTED, RUNNING, PAUSED, WIN, OVER}
 # Called when the node enters the scene tree for the first time.
