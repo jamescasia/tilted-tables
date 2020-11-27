@@ -1,9 +1,9 @@
 extends Spatial
 
 
-var moveStack = [] 
+var moveStack = []
 var gameState = GLOBALS.GameState.NOTSTARTED
-
+var currentLevelState 
 
 var pregamePopup
 var hud 
@@ -23,11 +23,14 @@ var homeScene
 var level_game
  
 var Level_base
-
+var isReverting = false
+var canRevert = false
+var revertRotTween
+var revertBlockTweens =[]
+var timer
 # Called when the node enters the scene tree for the first time.
 func _ready(): 
-	Level_base = load( GLOBALS.LEVELS[UserData.currentLevel]["location"])
-	
+	Level_base = load( GLOBALS.LEVELS[UserData.currentLevel]["location"]) 
 	
 	
 	homeScene =  ("res://scenes/Game.tscn")
@@ -51,31 +54,86 @@ func _ready():
 	else:
 		showPopup(monetizationPopup) 
 		
-	print(get_name(), Level_base)
+#	print(get_name(), Level_base)
 	level_game = Level_base.instance()
 	level_game.setLevelInfo(GLOBALS.LEVELS[UserData.currentLevel])
 	level_game.set_name(str(UserData.currentLevel) + "_level_base")
 	add_child(level_game)
+	
+	for blk in range(level_game.levelInfo["blocks"]):
+		var rbt = Tween.new()
+		add_child(rbt)
+		revertBlockTweens.append(rbt)
+		
+#	revertRotTween = Tween.new()
+#	revertBlockTween = Tween.new()
+#	add_child(revertRotTween)
+#	add_child(revertBlockTween)
+	 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):  
-#		pass
+
+func addMoveToMoveStack( move):
+	
+	print("len", len(moveStack), "added move", move)
+	if not move in moveStack or true:
+		moveStack.append(move)
+func _process(delta):  
+#	print(numberOfMoves, " ", len(moveStack ), " ", moveStack[-1])
+	canRevert = not isReverting and level_game.table.canRotate and len(moveStack)>1 and UserData.isMonetized
 func _input(event):
 	if event is InputEventKey: 
 		if event.pressed and event.scancode == KEY_ESCAPE and gameState == GLOBALS.GameState.RUNNING:
 			gameState = GLOBALS.GameState.PAUSED
 			showPopup(pausePopup)
+			
+		if event.pressed and event.scancode == KEY_BACKSPACE and gameState == GLOBALS.GameState.RUNNING and canRevert:
+			revertMove()
 				 
 				  
-func revertMove():
-	if UserData.isMonetized:
-		numberOfMoves-=1
+func revertMove(): 
+	 
+	isReverting = true
+	var begin_state = moveStack.pop_back()
+	var end_state = moveStack[-1] 
+	numberOfMoves-=1
+	level_game.isReverting = true
+		
+	for i in range(len(revertBlockTweens)):
+		var rbt = revertBlockTweens[i]
+		var blk = level_game.blocks[i]  
+		blk.translation = end_state[blk.get_name()]
+#		rbt.interpolate_property(blk, "translation", begin_state[blk.get_name()] ,end_state[blk.get_name()], 1, Tween.TRANS_CUBIC)
+#		rbt.start()
+	timer = Timer.new()
+	add_child(timer)
+	timer.one_shot = true
+	timer.start(0.2)
+	timer.connect("timeout", self,"_on_Timer_timeout", [begin_state["last_turn"]]) 
+
+func _on_Timer_timeout(last_turn):
+	print(last_turn)
+	if last_turn == "-":
+		
+		level_game.table.revertCounterClockwise()
+	elif last_turn == "+":
+		level_game.table.revertClockwise()
 	
+	level_game.isReverting = false 
+#	isReverting = false
+	
+	timer.queue_free()
+
+func pushToMoveStack(state):
+	
+	addMoveToMoveStack(state) 
+	
+	pass
 
 func incrementMoves():
 	numberOfMoves+=1
-	print("moves", numberOfMoves)
+	print("moves", numberOfMoves)  
 func setLevelWon():
 	print("wonlevel") 
 	showPopup(winPopup)
@@ -182,3 +240,5 @@ func _on_home_pressed():
 	hidePopup(pausePopup)
 	get_tree().change_scene(homeScene)
 	pass # Replace with function body.
+
+

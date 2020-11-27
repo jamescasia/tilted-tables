@@ -7,6 +7,7 @@ var table
 #var player2
 #var player3
 
+var currentLevelState = {}
 
 var blocks = []
 var Block
@@ -19,9 +20,10 @@ var map
 var goal
 var env_file
 var environment
-
+var isReverting = false
 enum WinState { WON, LOST, NONE}
 
+var goodOnce = false
 
 var levelInfo  
 var levelNumber
@@ -44,19 +46,33 @@ func _ready():
 	Block = load("res://scenes/objects/block/block.tscn")
 	
 	for p in range(levelInfo["blocks"]):
-		initializeBlock(p)
+		initializeBlock(p) 
 	blocksInside = blocks
 	
-		  
-#	player = get_node("Table_test/Map/player_1")
-#	player2 = get_node("Table_test/Map/player_2")
-#	player3 = get_node("Table_test/Map/player_3")
-	 
+		   
 	goal = get_node("table_base/Map/Goal")
 	goal.translation = levelInfo["finish_coord"]
 	table = get_node("table_base")
 	
+	setCurrentLevelState()
 	
+		
+	
+	 
+	
+func setCurrentLevelState():
+	
+	for b in blocks:
+		currentLevelState[b.get_name()] = b.translation
+	
+	currentLevelState["rotState"] = table.curRState
+	currentLevelState["rotation_degrees"] = table.rotation_degrees
+	
+	get_parent().pushToMoveStack(currentLevelState)
+func setCurrentLevelStateDirection(dir):
+	currentLevelState["last_turn"] = dir
+	
+
 	 
 func initializeBlock(number): 
 	var block = Block.instance()
@@ -77,7 +93,7 @@ func _physics_process(delta):
 	 
 	if gameState == GLOBALS.GameState.RUNNING:
 		for b in blocks:
-			b.canMove = not table.isRotating
+			b.canMove = not table.isRotating and not isReverting
 #		player.canMove = not table.isRotating 
 #		player2.canMove = not table.isRotating 
 #		player3.canMove = not table.isRotating 
@@ -93,9 +109,15 @@ func _physics_process(delta):
 		var good = true
 		for c in cares:
 			if not c:
-				good = false
+				good = false 
+			 
 				
 		table.canRotate = good and not table.isRotating and gameState == GLOBALS.GameState.RUNNING
+		
+		if good and not goodOnce and not get_parent().isReverting:
+			goodOnce = true 
+			get_parent().isReverting = false
+			setCurrentLevelState()
 		 
 		var allNotInPlay = true
 		for b in blocks:

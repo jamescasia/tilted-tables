@@ -52,7 +52,7 @@ margin_bottom = -350.4
 
 [node name="Polygon2D" type="Polygon2D" parent="Viewport/Win"]
 position = Vector2( 668.263, -98.1629 )
-scale = Vector2( 1, 6 )
+scale = Vector2( 10, 10 )
 color = Color( 0.00784314, 0.00784314, 0.00784314, 0.203922 )
 polygon = PoolVector2Array( -1603.5, -1082.35, -1495.71, 1404.72, 1675.87, 1378.02, 1569.08, -498.763 )
 
@@ -142,7 +142,7 @@ margin_bottom = -350.4
 
 [node name="Polygon2D" type="Polygon2D" parent="Viewport/Lose"]
 position = Vector2( 668.263, -98.1629 )
-scale = Vector2( 1, 6 )
+scale = Vector2( 10, 10 )
 color = Color( 0.00784314, 0.00784314, 0.00784314, 0.454902 )
 polygon = PoolVector2Array( -1597.38, -1034.75, -1495.71, 1404.72, 1675.87, 1378.02, 1569.08, -498.763 )
 
@@ -214,7 +214,7 @@ margin_bottom = -350.4
 
 [node name="Polygon2D" type="Polygon2D" parent="Viewport/ActivateWM"]
 position = Vector2( 668.263, -98.1629 )
-scale = Vector2( 1, 6 )
+scale = Vector2( 10, 10 )
 color = Color( 0.00784314, 0.00784314, 0.00784314, 0.454902 )
 polygon = PoolVector2Array( -1521.27, -1044.27, -1495.71, 1404.72, 1675.87, 1378.02, 1569.08, -498.763 )
 
@@ -287,7 +287,7 @@ margin_bottom = -350.4
 
 [node name="Polygon2D" type="Polygon2D" parent="Viewport/Pause"]
 position = Vector2( 668.263, -98.1629 )
-scale = Vector2( 1, 6 )
+scale = Vector2( 10, 10 )
 color = Color( 0.00784314, 0.00784314, 0.00784314, 0.454902 )
 polygon = PoolVector2Array( -1521.27, -1044.27, -1495.71, 1404.72, 1675.87, 1378.02, 1569.08, -498.763 )
 

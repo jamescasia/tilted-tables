@@ -14,6 +14,8 @@ var tween
 var timer : Timer
 var curRState
 var map
+
+var fromRevert = false
 # Called when the node enters the scene tree for the first time.
 func _ready(): 
 	tween = get_node("Tween") 
@@ -30,50 +32,93 @@ func _process(delta):
 func _input(event):
 	if event is InputEventKey: 
 		if canRotate:
-			if event.pressed and event.scancode == KEY_D:    
-				var prev = rotateIndex
-				rotateIndex = 3 if rotateIndex-1 == -1 else rotateIndex-1
-				rotateAnimation(prev) 
+			get_parent().goodOnce = false
+			if event.pressed and event.scancode == KEY_D:   
+				rotateClockwise() 
+#				var prev = rotateIndex
+#				rotateIndex = 3 if rotateIndex-1 == -1 else rotateIndex-1
+#				rotateAnimation(prev) 
+
 				 
 			if event.pressed and event.scancode == KEY_A:  
-				var prev = rotateIndex
-				rotateIndex = (rotateIndex+1)%4
-				rotateAnimation(prev)
+				rotateCounterClockwise()
+#				var prev = rotateIndex
+#				rotateIndex = (rotateIndex+1)%4
+#				rotateAnimation(prev)
 				
 			 
+			
+func rotateClockwise():
+	var prev = rotateIndex
+	rotateIndex = 3 if rotateIndex-1 == -1 else rotateIndex-1 
+	
+	if not get_parent().isReverting:
+		get_parent().setCurrentLevelStateDirection('-')
+	rotateAnimation(prev) 
+	
+func rotateCounterClockwise():
+	var prev = rotateIndex
+	rotateIndex = (rotateIndex+1)%4
+	
+	if not get_parent().isReverting:
+		get_parent().setCurrentLevelStateDirection('+')
+	rotateAnimation(prev)
+	
+func revertClockwise():
+	fromRevert = true
+	var prev = rotateIndex
+	rotateIndex = 3 if rotateIndex-1 == -1 else rotateIndex-1  
+	rotateAnimation(prev) 
+	pass
+	
+func revertCounterClockwise():
+	fromRevert = true
+	var prev = rotateIndex
+	rotateIndex = (rotateIndex+1)%4 
+	rotateAnimation(prev)
+	pass
 
 func rotateAnimation(prev): 
-	get_parent().get_parent().incrementMoves()
+	
 	curRState = ROTATE_STATES[rotateIndex]
 	var prevRState = ROTATE_STATES[prev]
 	isRotating = true
 	if prevRState == RotateState.Zero and curRState == RotateState.P90: 
+		
 		tween.interpolate_property(self, "rotation_degrees", Vector3(0, 0, 0), Vector3(0, 90, 0), 1, Tween.TRANS_EXPO) 
 		tween.start() 
 	elif prevRState == RotateState.P90 and curRState == RotateState.P180: 
+		 
 		tween.interpolate_property(self, "rotation_degrees", Vector3(0, 90, 0), Vector3(0, 180, 0), 1, Tween.TRANS_EXPO)
 		tween.start() 
 	elif prevRState == RotateState.P180 and curRState == RotateState.P270: 
+		 
 		tween.interpolate_property(self, "rotation_degrees", Vector3(0, 180, 0), Vector3(0, 270, 0), 1, Tween.TRANS_EXPO)
 		tween.start() 
 	elif prevRState == RotateState.P270 and curRState == RotateState.Zero: 
+		 
 		tween.interpolate_property(self, "rotation_degrees", Vector3(0, 270, 0), Vector3(0, 360, 0), 1, Tween.TRANS_EXPO)
 		tween.start() 
 		
 		
-	if prevRState == RotateState.Zero and curRState == RotateState.P270: 
+	elif prevRState == RotateState.Zero and curRState == RotateState.P270: 
+		 
 		tween.interpolate_property(self, "rotation_degrees", Vector3(0, 0, 0), Vector3(0, -90, 0), 1, Tween.TRANS_EXPO)
 		tween.start() 
 	 
 	elif prevRState == RotateState.P270 and curRState == RotateState.P180: 
+		 
 		tween.interpolate_property(self,"rotation_degrees", Vector3(0, -90, 0), Vector3(0, -180, 0), 1, Tween.TRANS_EXPO)
 		tween.start() 
 	elif prevRState == RotateState.P180 and curRState == RotateState.P90: 
+		 
 		tween.interpolate_property(self, "rotation_degrees", Vector3(0, -180, 0), Vector3(0, -270, 0), 1, Tween.TRANS_EXPO)
 		tween.start() 
 	elif prevRState == RotateState.P90 and curRState == RotateState.Zero: 
+		 
 		tween.interpolate_property(self, "rotation_degrees", Vector3(0, -270, 0), Vector3(0,-360, 0), 1, Tween.TRANS_EXPO)
 		tween.start() 
+		
 		
 		
 		
@@ -84,16 +129,18 @@ func rotateAnimation(prev):
 
 
 func _on_Tween_tween_all_completed():
+	
+	get_parent().get_parent().incrementMoves()
+	fromRevert = false
 	timer = Timer.new()
 	add_child(timer)
 	timer.connect("timeout", self, "_on_Timer_timeout")
-	timer.one_shot = true
+	timer.one_shot = true 
 	timer.start(0.01)
 	pass # Replace with function body.
 
 
-func _on_Timer_timeout():
-	print("done")
+func _on_Timer_timeout(): 
 	
 	isRotating = false
 	

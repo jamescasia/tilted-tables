@@ -93,7 +93,7 @@ var LEVELS = [
 		"block_2_start_coord": Vector3(4, 0,2), 
 		"location": "res://scenes/levels/level_5/level_5.tscn",
 		
-		"least_moves_solution" : 40
+		"least_moves_solution" : 36
 		
 	},
 	
@@ -109,7 +109,7 @@ var LEVELS = [
 		"block_2_start_coord": Vector3(5, 0, -5), 
 		"location": "res://scenes/levels/level_6/level_6.tscn",
 		
-		"least_moves_solution" : 32
+		"least_moves_solution" : 28
 		
 	},
 	
@@ -125,7 +125,7 @@ var LEVELS = [
 		"block_2_start_coord": Vector3(5, 0, 3), 
 		"location": "res://scenes/levels/level_7/level_7.tscn",
 		
-		"least_moves_solution" : 38
+		"least_moves_solution" : 30
 		
 	},
 	

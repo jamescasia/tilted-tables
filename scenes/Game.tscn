@@ -37,10 +37,10 @@ __meta__ = {
 }
 
 [node name="Play" type="Button" parent="."]
-margin_left = 644.024
-margin_top = 397.98
-margin_right = 990.024
-margin_bottom = 526.98
+margin_left = 452.788
+margin_top = 211.211
+margin_right = 798.788
+margin_bottom = 340.211
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -55,10 +55,10 @@ custom_fonts/font = SubResource( 1 )
 text = "PLAY"
 
 [node name="sfxToggle" type="Button" parent="."]
-margin_left = 357.847
-margin_top = 687.153
-margin_right = 703.847
-margin_bottom = 816.153
+margin_left = 112.291
+margin_top = 433.261
+margin_right = 458.291
+margin_bottom = 562.261
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -73,10 +73,10 @@ custom_fonts/font = SubResource( 1 )
 text = "sfx"
 
 [node name="musicToggle" type="Button" parent="."]
-margin_left = 1092.02
-margin_top = 699.14
-margin_right = 1438.02
-margin_bottom = 828.14
+margin_left = 821.402
+margin_top = 451.295
+margin_right = 1167.4
+margin_bottom = 580.295
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -95,10 +95,11 @@ __meta__ = {
 
 [node name="PickLevels" type="Control" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = -1200.0
-margin_right = 1600.0
-margin_bottom = -300.0
+margin_top = -900.0
+margin_right = 1280.0
+margin_bottom = -180.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -106,13 +107,14 @@ __meta__ = {
 modulate = Color( 0.756863, 0.756863, 0.756863, 1 )
 position = Vector2( 1363.17, 433.062 )
 color = Color( 0.145098, 0.145098, 0.145098, 1 )
+texture_scale = Vector2( 10, 10 )
 polygon = PoolVector2Array( 1256.15, -919.584, -1482.68, -770.301, -1557.69, 3811.09, 957.147, 3832.45, 2137.15, 212.361 )
 
 [node name="Label" type="Label" parent="PickLevels"]
-margin_left = 592.12
-margin_top = 5.00278
-margin_right = 972.12
-margin_bottom = 82.0028
+margin_left = 469.89
+margin_top = -2.74527
+margin_right = 849.89
+margin_bottom = 74.2548
 custom_fonts/font = SubResource( 1 )
 text = "Choose Level"
 __meta__ = {
@@ -120,8 +122,10 @@ __meta__ = {
 }
 
 [node name="span" type="Control" parent="PickLevels"]
-margin_right = 4800.0
-margin_bottom = 900.0
+margin_left = -4.0
+margin_top = 30.0
+margin_right = 3836.0
+margin_bottom = 750.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -130,8 +134,9 @@ __meta__ = {
 [node name="glade" type="Control" parent="PickLevels/span"]
 margin_left = 32.0367
 margin_top = -48.0896
-margin_right = 1632.04
-margin_bottom = 851.91
+margin_right = 1312.04
+margin_bottom = 671.91
+rect_scale = Vector2( 0.8, 0.8 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -446,10 +451,11 @@ __meta__ = {
 }
 
 [node name="sand" type="Control" parent="PickLevels/span"]
-margin_left = 1635.6
-margin_top = -51.2167
-margin_right = 3235.6
-margin_bottom = 848.783
+margin_left = 1270.22
+margin_top = -61.2961
+margin_right = 2550.22
+margin_bottom = 658.704
+rect_scale = Vector2( 0.8, 0.8 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -764,10 +770,11 @@ __meta__ = {
 }
 
 [node name="pyres" type="Control" parent="PickLevels/span"]
-margin_left = 3180.33
-margin_top = -57.7714
-margin_right = 4780.33
-margin_bottom = 842.229
+margin_left = 2517.61
+margin_top = -67.8506
+margin_right = 3797.61
+margin_bottom = 652.149
+rect_scale = Vector2( 0.8, 0.8 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -1110,11 +1117,12 @@ __meta__ = {
 }
 
 [node name="PanRight2" type="Control" parent="PickLevels"]
-margin_left = 1449.81
-margin_top = 48.7643
-margin_right = 1489.81
-margin_bottom = 88.7643
+margin_left = 1168.84
+margin_top = 24.9533
+margin_right = 1208.84
+margin_bottom = 64.9533
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -1141,8 +1149,8 @@ __meta__ = {
 [connection signal="pressed" from="PickLevels/span/glade/Level2/Button" to="." method="_glade_three_pressed"]
 [connection signal="pressed" from="PickLevels/span/glade/Level3/Button" to="." method="_glade_four_pressed"]
 [connection signal="pressed" from="PickLevels/span/glade/Level3/Button" to="." method="_glade_three_pressed"]
-[connection signal="pressed" from="PickLevels/span/glade/Level4/Button" to="." method="_glade_five_pressed"]
 [connection signal="pressed" from="PickLevels/span/glade/Level4/Button" to="." method="_glade_four_pressed"]
+[connection signal="pressed" from="PickLevels/span/glade/Level4/Button" to="." method="_glade_five_pressed"]
 [connection signal="pressed" from="PickLevels/span/glade/Level5/Button" to="." method="_glade_six_pressed"]
 [connection signal="pressed" from="PickLevels/span/glade/Level6/Button" to="." method="_glade_seven_pressed"]
 [connection signal="pressed" from="PickLevels/span/glade/Level7/Button" to="." method="_glade_eight_pressed"]
