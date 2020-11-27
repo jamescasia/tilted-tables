@@ -174,3 +174,26 @@ func _pyre_five_pressed():
 	UserData.currentLevel = 14
 	get_tree().change_scene_to(gameManagerScene)
 	
+
+
+func _glade_six_pressed():
+	
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 5
+	get_tree().change_scene_to(gameManagerScene)
+	pass # Replace with function body.
+
+
+func _glade_seven_pressed():
+	
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 6
+	pass # Replace with function body.
+	get_tree().change_scene_to(gameManagerScene)
+
+
+func _glade_eight_pressed():
+	
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 7
+	get_tree().change_scene_to(gameManagerScene)

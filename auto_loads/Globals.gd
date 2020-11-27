@@ -11,93 +11,106 @@ var LEVELS = [
 		"terrain": "grass", 
 		"is_order": false,
 		"blocks": 1,
-		"size": Vector2(),
+		"size": Vector2(9,9),
 		"finish_coord": Vector3(-3,0,-4),
 		"block_0_start_coord": Vector3(3, 0, 3),
 		"location": "res://scenes/levels/level_0/level_0.tscn"
 		
 	},
-	
+
 	{
 		"level": 1,
 		"terrain": "grass", 
 		"is_order": false,
-		"blocks": 2,
-		"size": Vector2(),
+		"blocks": 1,
+		"size": Vector2(9,9),
 		"finish_coord": Vector3(-3,0,-4),
 		"block_0_start_coord": Vector3(3, 0, 3),
-		"block_1_start_coord": Vector3(2, 0, 3),
 		"location": "res://scenes/levels/level_1/level_1.tscn"
 		
 	},
+
+ 
 	
 	{
 		"level": 2,
 		"terrain": "grass", 
 		"is_order": false,
-		"blocks": 3,
-		"size": Vector2(),
+		"blocks": 2,
+		"size": Vector2(9,9),
 		"finish_coord": Vector3(-3,0,-4),
 		"block_0_start_coord": Vector3(3, 0, 3),
-		"block_1_start_coord": Vector3(3, 0, 2),
-		"block_2_start_coord": Vector3(3, 0, 1), 
-		"location": "res://scenes/levels/level_2/level_2.tscn"
-		
-	},
-	{
-		"level": 3,
-		"terrain": "grass", 
-		"is_order": true,
-		"blocks": 3,
-		"size": Vector2(),
-		"finish_coord": Vector3(-3, 0, -7),
-		
-		"block_0_start_coord": Vector3(1, 0, 3),
 		"block_1_start_coord": Vector3(2, 0, 3),
-		"block_2_start_coord": Vector3(3, 0,3), 
-		"location": "res://scenes/levels/level_3/level_3.tscn"
+		"location": "res://scenes/levels/level_2/level_2.tscn"
 		
 	},
 	
 	{
+		"level": 3,
+		"terrain": "grass", 
+		"is_order": false,
+		"blocks": 2,
+		"size": Vector2(9,9),
+		"finish_coord": Vector3(-3,0,-4),
+		"block_0_start_coord": Vector3(3, 0, 3),
+		"block_1_start_coord": Vector3(3, 0, 2), 
+		"location": "res://scenes/levels/level_3/level_3.tscn"
+		
+	},
+	{
 		"level": 4,
-		"terrain": "sand", 
-		"is_order": true,
+		"terrain": "grass", 
+		"is_order": false,
 		"blocks": 3,
-		"size": Vector2(),
-		"finish_coord": Vector3(0,0,0),
-		"block_0_start_coord": Vector3(1, 0, 3),
-		"block_1_start_coord": Vector3(2, 0, 3),
-		"block_2_start_coord": Vector3(3, 0,3), 
+		"size": Vector2(11,11),
+		"finish_coord": Vector3(0, 0, -5),
+		
+		"block_0_start_coord": Vector3(4, 0, 4),
+		"block_1_start_coord": Vector3(3, 0, 4),
+		"block_2_start_coord": Vector3(4, 0,3), 
 		"location": "res://scenes/levels/level_4/level_4.tscn"
 		
 	},
 	
 	{
-		"level": 5,
-		"terrain": "sand", 
+		"level":5,
+		"terrain": "grass", 
 		"is_order": true,
 		"blocks": 3,
-		"size": Vector2(),
-		"finish_coord": Vector3(0,0,0),
-		"block_0_start_coord": Vector3(0, 0, 0),
-		"block_1_start_coord": Vector3(0, 0, 0),
-		"block_2_start_coord": Vector3(0, 0, 0), 
+		"size": Vector2(11,11),
+		"finish_coord": Vector3(0, 0, -5),
+		"block_0_start_coord": Vector3(4, 0, 3),
+		"block_1_start_coord": Vector3(4, 0, 4),
+		"block_2_start_coord": Vector3(4, 0,2), 
 		"location": "res://scenes/levels/level_5/level_5.tscn"
 		
 	},
 	
 	{
-		"level":6,
-		"terrain": "sand", 
+		"level": 6,
+		"terrain": "grass", 
 		"is_order": true,
 		"blocks": 3,
-		"size": Vector2(),
-		"finish_coord": Vector3(0,0,0),
-		"block_0_start_coord": Vector3(0, 0, 0),
-		"block_1_start_coord": Vector3(0, 0, 0),
-		"block_2_start_coord": Vector3(0, 0, 0), 
+		"size": Vector2(13,13),
+		"finish_coord": Vector3(-5,0,-6),
+		"block_0_start_coord": Vector3(5, 0, 5),
+		"block_1_start_coord": Vector3(-5, 0, 5),
+		"block_2_start_coord": Vector3(5, 0, -5), 
 		"location": "res://scenes/levels/level_6/level_6.tscn"
+		
+	},
+	
+	{
+		"level":7,
+		"terrain": "grass", 
+		"is_order": false,
+		"blocks": 3,
+		"size": Vector2(13,13),
+		"finish_coord": Vector3(3,0,6),
+		"block_0_start_coord": Vector3(5, 0, 5),
+		"block_1_start_coord": Vector3(5, 0, 4),
+		"block_2_start_coord": Vector3(5, 0, 3), 
+		"location": "res://scenes/levels/level_7/level_7.tscn"
 		
 	},
 	
