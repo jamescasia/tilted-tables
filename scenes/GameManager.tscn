@@ -274,6 +274,100 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Pause" type="Control" parent="Viewport"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.831
+anchor_top = 0.039
+anchor_right = 0.924
+anchor_bottom = 0.056
+margin_left = -1329.6
+margin_top = -1235.1
+margin_right = 121.6
+margin_bottom = -350.4
+
+[node name="Polygon2D" type="Polygon2D" parent="Viewport/Pause"]
+position = Vector2( 668.263, -98.1629 )
+scale = Vector2( 1, 6 )
+color = Color( 0.00784314, 0.00784314, 0.00784314, 0.454902 )
+polygon = PoolVector2Array( -1521.27, -1044.27, -1495.71, 1404.72, 1675.87, 1378.02, 1569.08, -498.763 )
+
+[node name="Label" type="Label" parent="Viewport/Pause"]
+margin_left = 488.518
+margin_top = 132.771
+margin_right = 1143.52
+margin_bottom = 408.771
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Paused"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resume" type="Button" parent="Viewport/Pause"]
+margin_left = 689.042
+margin_top = 473.877
+margin_right = 941.042
+margin_bottom = 568.877
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Viewport/Pause/resume"]
+margin_left = 79.3673
+margin_top = 19.5101
+margin_right = 177.367
+margin_bottom = 120.51
+custom_fonts/font = SubResource( 2 )
+text = "RESUME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="restart" type="Button" parent="Viewport/Pause"]
+margin_left = 686.934
+margin_top = 594.578
+margin_right = 938.937
+margin_bottom = 689.578
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Viewport/Pause/restart"]
+margin_left = 79.3673
+margin_top = 19.5101
+margin_right = 177.367
+margin_bottom = 120.51
+custom_fonts/font = SubResource( 2 )
+text = "RESTART"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="home" type="Button" parent="Viewport/Pause"]
+margin_left = 689.042
+margin_top = 721.101
+margin_right = 941.042
+margin_bottom = 816.101
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Viewport/Pause/home"]
+margin_left = 79.3673
+margin_top = 19.5101
+margin_right = 177.367
+margin_bottom = 120.51
+custom_fonts/font = SubResource( 2 )
+text = "HOME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="fly" type="Tween" parent="Viewport"]
 
 [node name="fade" type="Tween" parent="Viewport"]
@@ -284,3 +378,6 @@ __meta__ = {
 [connection signal="pressed" from="Viewport/Lose/home" to="." method="_lose_on_home_pressed"]
 [connection signal="pressed" from="Viewport/ActivateWM/yes" to="." method="_monetization_on_yes_pressed"]
 [connection signal="pressed" from="Viewport/ActivateWM/no" to="." method="_monetization_on_no_pressed"]
+[connection signal="pressed" from="Viewport/Pause/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Viewport/Pause/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Viewport/Pause/home" to="." method="_on_home_pressed"]

@@ -17,6 +17,8 @@ var blocksInside = []
 var gameState  
 var map
 var goal
+var env_file
+var environment
 
 enum WinState { WON, LOST, NONE}
 
@@ -29,6 +31,10 @@ func setLevelInfo(linf):
 	levelInfo = linf
 func _ready():  
 #	levelNumber =int (self.get_name().rsplit("_")[0]) 
+	env_file = load('res://assets/environments/env.tres')
+	environment = WorldEnvironment.new()
+	environment.environment = env_file
+	self.add_child(environment)
 	print(self.get_name(), levelNumber)
 #	levelInfo = GLOBALS.LEVELS[levelNumber]
 	map = get_node("table_base/Map")
@@ -89,9 +95,8 @@ func _physics_process(delta):
 			if not c:
 				good = false
 				
-		table.canRotate = good and not table.isRotating
-		
-		
+		table.canRotate = good and not table.isRotating and gameState == GLOBALS.GameState.RUNNING
+		 
 		var allNotInPlay = true
 		for b in blocks:
 			if b.inPlay:
@@ -119,6 +124,8 @@ func _physics_process(delta):
 			get_parent().gameState = GLOBALS.GameState.WIN
 			get_parent().setLevelWon()
 			pass
+	else:
+		table.canRotate = false
 			
 #	print(player.inPlay, player2.inPlay, player3.inPlay)
 	

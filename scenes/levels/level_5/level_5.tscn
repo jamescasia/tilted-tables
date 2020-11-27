@@ -106,6 +106,7 @@ size = 14.0
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.00779666, -0.375545, 0.926771, -0.00315924, 0.926804, 0.375532, -0.999965, 2.79407e-09, -0.00841241, 12.3867, 13.0327, -2.44881 )
+light_specular = 1.0
 light_bake_mode = 2
 [connection signal="tween_all_completed" from="table_base/Tween" to="table_base" method="_on_Tween_tween_all_completed"]
 [connection signal="area_entered" from="table_base/Map/Goal/MeshInstance/Area" to="." method="_on_Area_area_entered"]

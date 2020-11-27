@@ -43,6 +43,7 @@ func _input(event):
 			 
 
 func rotateAnimation(prev): 
+	get_parent().get_parent().incrementMoves()
 	curRState = ROTATE_STATES[rotateIndex]
 	var prevRState = ROTATE_STATES[prev]
 	isRotating = true

@@ -14,7 +14,8 @@ var LEVELS = [
 		"size": Vector2(9,9),
 		"finish_coord": Vector3(-3,0,-4),
 		"block_0_start_coord": Vector3(3, 0, 3),
-		"location": "res://scenes/levels/level_0/level_0.tscn"
+		"location": "res://scenes/levels/level_0/level_0.tscn",
+		"least_moves_solution" : 2
 		
 	},
 
@@ -26,7 +27,9 @@ var LEVELS = [
 		"size": Vector2(9,9),
 		"finish_coord": Vector3(-3,0,-4),
 		"block_0_start_coord": Vector3(3, 0, 3),
-		"location": "res://scenes/levels/level_1/level_1.tscn"
+		"location": "res://scenes/levels/level_1/level_1.tscn",
+		
+		"least_moves_solution" : 6
 		
 	},
 
@@ -41,7 +44,9 @@ var LEVELS = [
 		"finish_coord": Vector3(-3,0,-4),
 		"block_0_start_coord": Vector3(3, 0, 3),
 		"block_1_start_coord": Vector3(2, 0, 3),
-		"location": "res://scenes/levels/level_2/level_2.tscn"
+		"location": "res://scenes/levels/level_2/level_2.tscn",
+		
+		"least_moves_solution" :4
 		
 	},
 	
@@ -54,7 +59,9 @@ var LEVELS = [
 		"finish_coord": Vector3(-3,0,-4),
 		"block_0_start_coord": Vector3(3, 0, 3),
 		"block_1_start_coord": Vector3(3, 0, 2), 
-		"location": "res://scenes/levels/level_3/level_3.tscn"
+		"location": "res://scenes/levels/level_3/level_3.tscn",
+		
+		"least_moves_solution" : 12
 		
 	},
 	{
@@ -68,7 +75,9 @@ var LEVELS = [
 		"block_0_start_coord": Vector3(4, 0, 4),
 		"block_1_start_coord": Vector3(3, 0, 4),
 		"block_2_start_coord": Vector3(4, 0,3), 
-		"location": "res://scenes/levels/level_4/level_4.tscn"
+		"location": "res://scenes/levels/level_4/level_4.tscn",
+		
+		"least_moves_solution" : 30
 		
 	},
 	
@@ -82,7 +91,9 @@ var LEVELS = [
 		"block_0_start_coord": Vector3(4, 0, 3),
 		"block_1_start_coord": Vector3(4, 0, 4),
 		"block_2_start_coord": Vector3(4, 0,2), 
-		"location": "res://scenes/levels/level_5/level_5.tscn"
+		"location": "res://scenes/levels/level_5/level_5.tscn",
+		
+		"least_moves_solution" : 40
 		
 	},
 	
@@ -96,7 +107,9 @@ var LEVELS = [
 		"block_0_start_coord": Vector3(5, 0, 5),
 		"block_1_start_coord": Vector3(-5, 0, 5),
 		"block_2_start_coord": Vector3(5, 0, -5), 
-		"location": "res://scenes/levels/level_6/level_6.tscn"
+		"location": "res://scenes/levels/level_6/level_6.tscn",
+		
+		"least_moves_solution" : 32
 		
 	},
 	
@@ -110,7 +123,9 @@ var LEVELS = [
 		"block_0_start_coord": Vector3(5, 0, 5),
 		"block_1_start_coord": Vector3(5, 0, 4),
 		"block_2_start_coord": Vector3(5, 0, 3), 
-		"location": "res://scenes/levels/level_7/level_7.tscn"
+		"location": "res://scenes/levels/level_7/level_7.tscn",
+		
+		"least_moves_solution" : 38
 		
 	},
 	
