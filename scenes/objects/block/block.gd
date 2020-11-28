@@ -32,26 +32,6 @@ func _ready():
 	
 	
 	
-	
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta): 
-#
-#	if canMove:
-#		self.move_and_collide(gravity*.2) 
-##
-#	isMoving = get_floor_velocity() != Vector3.ZERO
-#
-#	if isMoving: 
-#		gravity.z += 9*delta*0.2
-#	else: 
-#		gravity.z = 3
-##	 
-#
-#
-#	print(get_floor_velocity(),isMoving, is_on_floor(), is_on_wall())
 
 
 func setBlockInfo(binfo):

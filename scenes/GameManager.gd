@@ -98,39 +98,34 @@ func _input(event):
 				 
 				  
 				
-func pushToMoveStack(move):
-	print( "added move ", move) 
+func pushToMoveStack(move): 
 	moveStack.append(move)  
-	
-	for m in moveStack:
-		print(m)
+	 
 	
 func revertMove(): 
 	 
-	isReverting = true
-	print(  "before")
+	isReverting = true 
 	 
-	
-	for m in moveStack:
-		print(m)
-	print(  "after")
-	var begin_state = moveStack.pop_back() 
-#	var begin_state = moveStack[len(moveStack.keys())-1]
-#	moveStack.erase(len(moveStack.keys())-1)
 	 
-	for m in moveStack:
-		print(m)
-	 
-	print("back", begin_state)
-#	var end_state = moveStack[-1] 
+	var begin_state = moveStack.pop_back()   
 	numberOfMoves-=1 
-		
+	print(level_game.blocks)
 	for i in range(len(level_game.blocks)):
 		var rbt = revertBlockTweens[i]
 		var blk = level_game.blocks[i]  
+		
+#		if not blk.inPlay:
+#			blk.inPlay = true
+#			level_game.blocksInside.push_front(blk)
 #		blk.translation = begin_state[blk.get_name()]
-		rbt.interpolate_property(blk, "translation", blk.translation ,begin_state[blk.get_name()],.3, Tween.EASE_OUT_IN)
-		rbt.start()
+		rbt.interpolate_property(blk, "translation", blk.translation ,begin_state[blk.get_name()][1],.3, Tween.EASE_OUT_IN)
+		rbt.start() 
+		if not blk.inPlay and begin_state[blk.get_name()][0]:
+			blk.inPlay = true
+			level_game.blocksInside.push_front(blk)
+		
+		
+		
 	timer = Timer.new()
 	add_child(timer)
 	timer.one_shot = true

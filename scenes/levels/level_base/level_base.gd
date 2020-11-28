@@ -55,7 +55,7 @@ func _ready():
 	
 	for p in range(levelInfo["blocks"]):
 		initializeBlock(p) 
-	blocksInside = blocks
+	blocksInside = blocks.duplicate()
 	
 		   
 	goal = get_node("table_base/Map/Goal")
@@ -65,7 +65,7 @@ func _ready():
 	
 	terrainMesh.set_mesh(glade_mesh)
 	
-	if levelInfo["spikes"] != null:
+	if levelInfo.get("spikes")!= null:
 		for loc in levelInfo["spikes"]:
 			var spike = spikeScene.instance()
 			
@@ -84,7 +84,7 @@ func setCurrentLevelState():
 	
 #	get_parent().isReverting = false
 	for b in blocks:
-		currentLevelState[b.get_name()] = b.translation
+		currentLevelState[b.get_name()] = [b.inPlay, b.translation]
 	
 	currentLevelState["rotState"] = table.curRState
 	currentLevelState["rotation_degrees"] = table.rotation_degrees
