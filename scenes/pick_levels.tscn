@@ -1,0 +1,386 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/gui/menu_label.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/gui/level_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/pick_levels.gd" type="Script" id=3]
+
+[node name="pick_levels" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="glade" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="glade"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="menu_label" parent="glade" instance=ExtResource( 1 )]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 547.0
+margin_bottom = 137.0
+text = "THE GLADE"
+
+[node name="buttons" type="Control" parent="glade"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="group" type="Control" parent="glade/buttons"]
+margin_left = -8.0
+margin_right = 32.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="level_button" parent="glade/buttons/group" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 208.0
+margin_right = 232.0
+margin_bottom = 376.0
+
+[node name="level_button2" parent="glade/buttons/group" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 232.0
+margin_bottom = 640.0
+level = 4
+
+[node name="group2" type="Control" parent="glade/buttons"]
+margin_left = 312.0
+margin_right = 352.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="level_button" parent="glade/buttons/group2" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 208.0
+margin_right = 232.0
+margin_bottom = 376.0
+level = 1
+
+[node name="level_button2" parent="glade/buttons/group2" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 232.0
+margin_bottom = 640.0
+level = 5
+
+[node name="group3" type="Control" parent="glade/buttons"]
+margin_left = 632.0
+margin_right = 672.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="level_button" parent="glade/buttons/group3" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 208.0
+margin_right = 232.0
+margin_bottom = 376.0
+level = 2
+
+[node name="level_button2" parent="glade/buttons/group3" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 232.0
+margin_bottom = 640.0
+level = 6
+
+[node name="group4" type="Control" parent="glade/buttons"]
+margin_left = 952.0
+margin_right = 992.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="level_button" parent="glade/buttons/group4" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 208.0
+margin_right = 232.0
+margin_bottom = 376.0
+level = 3
+
+[node name="level_button2" parent="glade/buttons/group4" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 232.0
+margin_bottom = 640.0
+level = 7
+
+[node name="sands" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 2000.0
+margin_right = 2040.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="sands"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="menu_label" parent="sands" instance=ExtResource( 1 )]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 547.0
+margin_bottom = 137.0
+text = "THE SANDS"
+
+[node name="buttons" type="Control" parent="sands"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="group" type="Control" parent="sands/buttons"]
+margin_left = -8.0
+margin_right = 32.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="level_button" parent="sands/buttons/group" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 208.0
+margin_right = 232.0
+margin_bottom = 376.0
+level = 8
+
+[node name="level_button2" parent="sands/buttons/group" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 232.0
+margin_bottom = 640.0
+level = 12
+
+[node name="group2" type="Control" parent="sands/buttons"]
+margin_left = 312.0
+margin_right = 352.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="level_button" parent="sands/buttons/group2" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 208.0
+margin_right = 232.0
+margin_bottom = 376.0
+level = 9
+
+[node name="level_button2" parent="sands/buttons/group2" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 232.0
+margin_bottom = 640.0
+level = 13
+
+[node name="group3" type="Control" parent="sands/buttons"]
+margin_left = 632.0
+margin_right = 672.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="level_button" parent="sands/buttons/group3" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 208.0
+margin_right = 232.0
+margin_bottom = 376.0
+level = 10
+
+[node name="level_button2" parent="sands/buttons/group3" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 232.0
+margin_bottom = 640.0
+level = 14
+
+[node name="group4" type="Control" parent="sands/buttons"]
+margin_left = 952.0
+margin_right = 992.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="level_button" parent="sands/buttons/group4" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 208.0
+margin_right = 232.0
+margin_bottom = 376.0
+level = 11
+
+[node name="level_button2" parent="sands/buttons/group4" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 232.0
+margin_bottom = 640.0
+level = 15
+
+[node name="pyres" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 2000.0
+margin_right = 2040.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="pyres"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="menu_label" parent="pyres" instance=ExtResource( 1 )]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 547.0
+margin_bottom = 137.0
+text = "THE PYRES"
+
+[node name="buttons" type="Control" parent="pyres"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="group" type="Control" parent="pyres/buttons"]
+margin_left = -8.0
+margin_right = 32.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="level_button" parent="pyres/buttons/group" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 208.0
+margin_right = 232.0
+margin_bottom = 376.0
+level = 16
+
+[node name="level_button2" parent="pyres/buttons/group" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 232.0
+margin_bottom = 640.0
+level = 20
+
+[node name="group2" type="Control" parent="pyres/buttons"]
+margin_left = 312.0
+margin_right = 352.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="level_button" parent="pyres/buttons/group2" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 208.0
+margin_right = 232.0
+margin_bottom = 376.0
+level = 17
+
+[node name="level_button2" parent="pyres/buttons/group2" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 232.0
+margin_bottom = 640.0
+level = 21
+
+[node name="group3" type="Control" parent="pyres/buttons"]
+margin_left = 632.0
+margin_right = 672.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="level_button" parent="pyres/buttons/group3" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 208.0
+margin_right = 232.0
+margin_bottom = 376.0
+level = 18
+
+[node name="level_button2" parent="pyres/buttons/group3" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 232.0
+margin_bottom = 640.0
+level = 22
+
+[node name="group4" type="Control" parent="pyres/buttons"]
+margin_left = 952.0
+margin_right = 992.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="level_button" parent="pyres/buttons/group4" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 208.0
+margin_right = 232.0
+margin_bottom = 376.0
+level = 19
+
+[node name="level_button2" parent="pyres/buttons/group4" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 472.0
+margin_right = 232.0
+margin_bottom = 640.0
+level = 23

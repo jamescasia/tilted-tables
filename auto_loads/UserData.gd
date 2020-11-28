@@ -13,7 +13,7 @@ var progress = [
 	
 	{
 		"level": 0,
-		"stars": 0,
+		"stars": 3,
 		"unlocked": true,
 		"least_moves": 9999,
 	},
@@ -110,7 +110,57 @@ var progress = [
 		"unlocked": false,
 		"least_moves": 9999,
 	},
-	
+	{
+		"level":15,
+		"stars": 0,
+		"unlocked": false,
+		"least_moves": 9999,
+	},{
+		"level":15,
+		"stars": 0,
+		"unlocked": false,
+		"least_moves": 9999,
+	},{
+		"level":15,
+		"stars": 0,
+		"unlocked": false,
+		"least_moves": 9999,
+	},{
+		"level":15,
+		"stars": 0,
+		"unlocked": false,
+		"least_moves": 9999,
+	},{
+		"level":15,
+		"stars": 0,
+		"unlocked": false,
+		"least_moves": 9999,
+	},{
+		"level":15,
+		"stars": 0,
+		"unlocked": false,
+		"least_moves": 9999,
+	},{
+		"level":15,
+		"stars": 0,
+		"unlocked": false,
+		"least_moves": 9999,
+	},{
+		"level":15,
+		"stars": 0,
+		"unlocked": false,
+		"least_moves": 9999,
+	},{
+		"level":15,
+		"stars": 0,
+		"unlocked": false,
+		"least_moves": 9999,
+	},{
+		"level":15,
+		"stars": 0,
+		"unlocked": false,
+		"least_moves": 9999,
+	},
 
 ]
 

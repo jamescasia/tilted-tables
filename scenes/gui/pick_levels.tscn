@@ -1,0 +1,1079 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/fonts/Exo_2/Exo2-VariableFont_wght.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_size = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+outline_size = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 64
+outline_size = 3
+font_data = ExtResource( 1 )
+
+[node name="PickLevels" type="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -900.0
+margin_right = 1280.0
+margin_bottom = -180.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+modulate = Color( 0.756863, 0.756863, 0.756863, 1 )
+position = Vector2( 1363.17, 433.062 )
+color = Color( 0.145098, 0.145098, 0.145098, 1 )
+texture_scale = Vector2( 10, 10 )
+polygon = PoolVector2Array( 1256.15, -919.584, -1482.68, -770.301, -1557.69, 3811.09, 957.147, 3832.45, 2137.15, 212.361 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 469.89
+margin_top = -2.74527
+margin_right = 849.89
+margin_bottom = 74.2548
+custom_fonts/font = SubResource( 1 )
+text = "Choose Level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="span" type="Control" parent="."]
+margin_left = -4.0
+margin_top = 30.0
+margin_right = 3836.0
+margin_bottom = 750.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="glade" type="Control" parent="span"]
+margin_left = 32.0367
+margin_top = -48.0896
+margin_right = 1312.04
+margin_bottom = 671.91
+rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="span/glade"]
+margin_left = 72.1249
+margin_top = 128.693
+margin_right = 392.125
+margin_bottom = 285.693
+custom_fonts/font = SubResource( 2 )
+text = "The Glades
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level0" type="Control" parent="span/glade"]
+margin_left = 80.0
+margin_top = 226.0
+margin_right = 359.0
+margin_bottom = 533.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/glade/Level0"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/glade/Level0"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/glade/Level0"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level1" type="Control" parent="span/glade"]
+margin_left = 457.976
+margin_top = 226.0
+margin_right = 736.976
+margin_bottom = 533.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/glade/Level1"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/glade/Level1"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/glade/Level1"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="Control" parent="span/glade"]
+margin_left = 835.953
+margin_top = 220.96
+margin_right = 1114.95
+margin_bottom = 527.96
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/glade/Level2"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/glade/Level2"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/glade/Level2"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="Control" parent="span/glade"]
+margin_left = 1206.37
+margin_top = 218.44
+margin_right = 1485.37
+margin_bottom = 525.44
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/glade/Level3"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/glade/Level3"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/glade/Level3"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4" type="Control" parent="span/glade"]
+margin_left = 76.8688
+margin_top = 596.618
+margin_right = 355.869
+margin_bottom = 903.618
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/glade/Level4"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/glade/Level4"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/glade/Level4"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level5" type="Control" parent="span/glade"]
+margin_left = 457.365
+margin_top = 581.499
+margin_right = 736.365
+margin_bottom = 888.499
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/glade/Level5"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/glade/Level5"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/glade/Level5"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level6" type="Control" parent="span/glade"]
+margin_left = 835.341
+margin_top = 576.459
+margin_right = 1114.34
+margin_bottom = 883.459
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/glade/Level6"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/glade/Level6"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/glade/Level6"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level7" type="Control" parent="span/glade"]
+margin_left = 1218.36
+margin_top = 573.939
+margin_right = 1497.36
+margin_bottom = 880.939
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/glade/Level7"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/glade/Level7"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/glade/Level7"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sand" type="Control" parent="span"]
+margin_left = 1270.22
+margin_top = -61.2961
+margin_right = 2550.22
+margin_bottom = 658.704
+rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="span/sand"]
+margin_left = 83.5688
+margin_top = 114.099
+margin_right = 403.569
+margin_bottom = 271.099
+custom_fonts/font = SubResource( 2 )
+text = "The Sands
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level0" type="Control" parent="span/sand"]
+margin_left = 80.0
+margin_top = 226.0
+margin_right = 359.0
+margin_bottom = 533.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/sand/Level0"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/sand/Level0"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/sand/Level0"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level1" type="Control" parent="span/sand"]
+margin_left = 457.976
+margin_top = 226.0
+margin_right = 736.976
+margin_bottom = 533.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/sand/Level1"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/sand/Level1"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/sand/Level1"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="Control" parent="span/sand"]
+margin_left = 835.953
+margin_top = 220.96
+margin_right = 1114.95
+margin_bottom = 527.96
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/sand/Level2"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/sand/Level2"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/sand/Level2"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="Control" parent="span/sand"]
+margin_left = 1206.37
+margin_top = 218.44
+margin_right = 1485.37
+margin_bottom = 525.44
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/sand/Level3"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/sand/Level3"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/sand/Level3"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4" type="Control" parent="span/sand"]
+margin_left = 76.9652
+margin_top = 598.88
+margin_right = 355.965
+margin_bottom = 905.88
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/sand/Level4"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/sand/Level4"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/sand/Level4"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level5" type="Control" parent="span/sand"]
+margin_left = 457.461
+margin_top = 585.88
+margin_right = 736.461
+margin_bottom = 892.88
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/sand/Level5"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/sand/Level5"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/sand/Level5"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level6" type="Control" parent="span/sand"]
+margin_left = 835.438
+margin_top = 580.84
+margin_right = 1114.44
+margin_bottom = 887.84
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/sand/Level6"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/sand/Level6"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/sand/Level6"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level7" type="Control" parent="span/sand"]
+margin_left = 1218.45
+margin_top = 578.321
+margin_right = 1497.45
+margin_bottom = 885.321
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/sand/Level7"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/sand/Level7"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/sand/Level7"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pyres" type="Control" parent="span"]
+margin_left = 2517.61
+margin_top = -67.8506
+margin_right = 3797.61
+margin_bottom = 652.149
+rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="span/pyres"]
+margin_left = 83.5688
+margin_top = 114.099
+margin_right = 403.569
+margin_bottom = 271.099
+custom_fonts/font = SubResource( 2 )
+text = "The Pyres
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level0" type="Control" parent="span/pyres"]
+margin_left = 80.0
+margin_top = 226.0
+margin_right = 359.0
+margin_bottom = 533.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/pyres/Level0"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/pyres/Level0"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/pyres/Level0"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level1" type="Control" parent="span/pyres"]
+margin_left = 457.976
+margin_top = 226.0
+margin_right = 736.976
+margin_bottom = 533.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/pyres/Level1"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/pyres/Level1"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/pyres/Level1"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="Control" parent="span/pyres"]
+margin_left = 835.953
+margin_top = 220.96
+margin_right = 1114.95
+margin_bottom = 527.96
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/pyres/Level2"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/pyres/Level2"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/pyres/Level2"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="Control" parent="span/pyres"]
+margin_left = 1206.37
+margin_top = 218.44
+margin_right = 1485.37
+margin_bottom = 525.44
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/pyres/Level3"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/pyres/Level3"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/pyres/Level3"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4" type="Control" parent="span/pyres"]
+margin_left = 85.441
+margin_top = 598.88
+margin_right = 364.441
+margin_bottom = 905.88
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/pyres/Level4"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/pyres/Level4"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/pyres/Level4"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level5" type="Control" parent="span/pyres"]
+margin_left = 465.937
+margin_top = 583.761
+margin_right = 744.937
+margin_bottom = 890.761
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/pyres/Level5"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/pyres/Level5"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/pyres/Level5"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level6" type="Control" parent="span/pyres"]
+margin_left = 843.914
+margin_top = 578.721
+margin_right = 1122.91
+margin_bottom = 885.721
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/pyres/Level6"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/pyres/Level6"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/pyres/Level6"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level7" type="Control" parent="span/pyres"]
+margin_left = 1226.93
+margin_top = 576.202
+margin_right = 1505.93
+margin_bottom = 883.202
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="span/pyres/Level7"]
+modulate = Color( 1, 1, 1, 0.411765 )
+margin_right = 284.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="span/pyres/Level7"]
+margin_left = 96.384
+margin_top = 61.7362
+margin_right = 136.384
+margin_bottom = 75.7362
+custom_fonts/font = SubResource( 3 )
+text = "Level 0"
+
+[node name="stars" type="Label" parent="span/pyres/Level7"]
+margin_left = 98.2738
+margin_top = 158.75
+margin_right = 144.274
+margin_bottom = 172.75
+custom_fonts/font = SubResource( 4 )
+text = "stars: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanLeft2" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanLeft2"]
+margin_left = 26.9858
+margin_top = 17.4613
+margin_right = 66.9858
+margin_bottom = 94.4613
+custom_fonts/font = SubResource( 5 )
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanLeft" type="Button" parent="PanLeft2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 26.9858
+margin_top = 17.4613
+margin_right = 75.9858
+margin_bottom = 97.4613
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanRight2" type="Control" parent="."]
+margin_left = 1168.84
+margin_top = 24.9533
+margin_right = 1208.84
+margin_bottom = 64.9533
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanRight2"]
+margin_right = 40.0
+margin_bottom = 77.0
+custom_fonts/font = SubResource( 5 )
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanRight" type="Button" parent="PanRight2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 49.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

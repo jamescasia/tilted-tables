@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/fonts/Dosis/static/Dosis-ExtraBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/buttons/normal_menu_button.tres" type="StyleBox" id=2]
+[ext_resource path="res://assets/buttons/selected_menu_button.tres" type="StyleBox" id=3]
+[ext_resource path="res://scenes/gui/menu_button.gd" type="Script" id=4]
+[ext_resource path="res://assets/fonts/dynamic fonts/button_font.tres" type="DynamicFont" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="menu_button" type="Button"]
+margin_right = 261.0
+margin_bottom = 79.0
+theme = SubResource( 2 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+text = "RESTART"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+font_size = 56
