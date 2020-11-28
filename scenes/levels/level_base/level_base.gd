@@ -27,12 +27,17 @@ var goodOnce = false
 var levelInfo  
 var levelNumber
 
+var terrainMesh
+var glade_mesh
+
 var winState = WinState.NONE
 func setLevelInfo(linf):
 	levelInfo = linf
 func _ready():  
 #	levelNumber =int (self.get_name().rsplit("_")[0]) 
 	env_file = load('res://assets/environments/env.tres')
+	glade_mesh = load("res://assets/maps/terrain/glades.obj")
+	terrainMesh = get_node("table_base/MeshInstance")
 	environment = WorldEnvironment.new()
 	environment.environment = env_file
 	self.add_child(environment)
@@ -53,6 +58,8 @@ func _ready():
 	goal.translation = levelInfo["finish_coord"]
 	table = get_node("table_base")
 	
+	
+	terrainMesh.set_mesh(glade_mesh)
 #	setCurrentLevelState()
 	
 		
@@ -60,6 +67,7 @@ func _ready():
 	 
 	
 func setCurrentLevelState():
+	currentLevelState = {}
 	
 #	get_parent().isReverting = false
 	for b in blocks:

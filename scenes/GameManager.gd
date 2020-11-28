@@ -28,6 +28,8 @@ var canRevert = false
 var revertRotTween
 var revertBlockTweens =[]
 var timer
+
+var yawa = []
 # Called when the node enters the scene tree for the first time.
 func _ready(): 
 	Level_base = load( GLOBALS.LEVELS[UserData.currentLevel]["location"]) 
@@ -73,13 +75,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-
-func addMoveToMoveStack( move): 
-	print("len", len(moveStack), "added move", move) 
-	moveStack.append(move)  
-	
-	for i in range(len(moveStack)):
-		print(moveStack[i])
+ 
 		
 func _process(delta):  
 #	print(numberOfMoves, " ", len(moveStack ), " ", moveStack, isReverting)
@@ -94,17 +90,30 @@ func _input(event):
 			revertMove()
 				 
 				  
+				
+func pushToMoveStack(move):
+	print( "added move ", move) 
+	moveStack.append(move)  
+	
+	for m in moveStack:
+		print(m)
+	
 func revertMove(): 
 	 
 	isReverting = true
 	print(  "before")
-	for move in moveStack:
-		print(move)
+	 
 	
+	for m in moveStack:
+		print(m)
 	print(  "after")
 	var begin_state = moveStack.pop_back() 
-	for move in moveStack:
-		print(move)
+#	var begin_state = moveStack[len(moveStack.keys())-1]
+#	moveStack.erase(len(moveStack.keys())-1)
+	 
+	for m in moveStack:
+		print(m)
+	 
 	print("back", begin_state)
 #	var end_state = moveStack[-1] 
 	numberOfMoves-=1 
@@ -131,12 +140,7 @@ func _on_Timer_timeout(last_turn):
 	
 	timer.queue_free()
 
-func pushToMoveStack(state):
-	
-	
-	addMoveToMoveStack(state) 
-	
-	pass
+
 
 func incrementMoves():
 	numberOfMoves+=1
