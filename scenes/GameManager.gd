@@ -38,7 +38,7 @@ var yawa = []
 func _ready(): 
 	Level_base = load( GLOBALS.LEVELS[UserData.currentLevel]["location"]) 
 	
-	movesLabel = get_node("Viewport/HUD/moves")
+	movesLabel = get_node("Viewport/HUD/Control/number")
 	wm_reminder = get_node("Viewport/wm-reminder")
 	homeScene =  ("res://scenes/Game.tscn")
 	winPopup = get_node("Viewport/Win")
@@ -84,7 +84,7 @@ func _ready():
 func _process(delta):  
 #	print(numberOfMoves, " ", len(moveStack ), " ", moveStack, isReverting)
 	canRevert = (not isReverting )and level_game.table.canRotate and len(moveStack)>=1 and UserData.isMonetized
-	movesLabel.get_node("label").set_text("moves: " + str (numberOfMoves))
+	movesLabel.set_text(  str (numberOfMoves))
 func _input(event):
 	if event is InputEventKey: 
 		if event.pressed and event.scancode == KEY_ESCAPE and gameState == GLOBALS.GameState.RUNNING:
