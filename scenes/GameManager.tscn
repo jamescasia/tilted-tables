@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/Exo_2/Exo2-VariableFont_wght.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=3]
+size = 56
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -24,18 +28,65 @@ __meta__ = {
 }
 
 [node name="HUD" type="Control" parent="Viewport"]
-visible = false
 anchor_left = 0.831
 anchor_top = 0.039
 anchor_right = 0.924
 anchor_bottom = 0.056
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -1063.68
+margin_top = -28.08
+margin_right = 97.28
+margin_bottom = 679.68
 
-[node name="Label" type="Label" parent="Viewport/HUD"]
-margin_right = 79.0
-margin_bottom = 14.0
-text = "LOLOLOLOL"
+[node name="moves" type="Control" parent="Viewport/HUD"]
+margin_left = 581.132
+margin_top = 586.625
+margin_right = 621.132
+margin_bottom = 626.625
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="Viewport/HUD/moves"]
+margin_right = 293.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 3 )
+text = "moves: 27"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pause" type="Control" parent="Viewport/HUD"]
+margin_left = 1084.16
+margin_top = 37.7976
+margin_right = 1124.16
+margin_bottom = 77.7976
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="pause" type="Button" parent="Viewport/HUD/pause"]
+margin_right = 161.0
+margin_bottom = 103.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="revert" type="Control" parent="Viewport/HUD"]
+margin_left = 782.178
+margin_top = 46.0268
+margin_right = 862.178
+margin_bottom = 106.027
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="revert" type="Button" parent="Viewport/HUD/revert"]
+margin_left = -11.0
+margin_top = -4.0
+margin_right = 151.0
+margin_bottom = 103.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -51,6 +102,10 @@ margin_top = -1235.1
 margin_right = 97.28
 margin_bottom = -527.34
 rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Polygon2D" type="Polygon2D" parent="Viewport/Win"]
 position = Vector2( 668.263, -98.1629 )
@@ -142,6 +197,10 @@ margin_top = -1235.1
 margin_right = 97.28
 margin_bottom = -527.34
 rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Polygon2D" type="Polygon2D" parent="Viewport/Lose"]
 position = Vector2( 668.263, -98.1629 )
@@ -215,6 +274,10 @@ margin_top = -1235.1
 margin_right = 97.28
 margin_bottom = -527.34
 rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Polygon2D" type="Polygon2D" parent="Viewport/ActivateWM"]
 position = Vector2( 668.263, -98.1629 )
@@ -289,6 +352,10 @@ margin_top = -1235.1
 margin_right = 97.28
 margin_bottom = -527.34
 rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Polygon2D" type="Polygon2D" parent="Viewport/Pause"]
 position = Vector2( 668.263, -98.1629 )
@@ -376,6 +443,8 @@ __meta__ = {
 [node name="fly" type="Tween" parent="Viewport"]
 
 [node name="fade" type="Tween" parent="Viewport"]
+[connection signal="pressed" from="Viewport/HUD/pause/pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Viewport/HUD/revert/revert" to="." method="_on_revert_pressed"]
 [connection signal="pressed" from="Viewport/Win/retry" to="." method="_won_on_retry_pressed"]
 [connection signal="pressed" from="Viewport/Win/home" to="." method="_won_on_home_pressed"]
 [connection signal="pressed" from="Viewport/Win/next" to="." method="_won_on_next_pressed"]

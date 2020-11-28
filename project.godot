@@ -33,7 +33,8 @@ settings/fps/force_fps=80
 
 window/size/width=1280
 window/size/height=720
-window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
 
 [input]
 

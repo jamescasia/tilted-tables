@@ -22,6 +22,7 @@ var homeScene
 var level_game
  
 var moveStack = []
+var movesLabel
 var Level_base
 var isReverting = false
 var canRevert = false
@@ -34,12 +35,13 @@ var yawa = []
 func _ready(): 
 	Level_base = load( GLOBALS.LEVELS[UserData.currentLevel]["location"]) 
 	
-	
+	movesLabel = get_node("Viewport/HUD/moves")
 	homeScene =  ("res://scenes/Game.tscn")
 	winPopup = get_node("Viewport/Win")
 	losePopup = get_node("Viewport/Lose")
 	monetizationPopup = get_node("Viewport/ActivateWM") 
 	pausePopup = get_node("Viewport/Pause")
+	
 	
 	flyTween = get_node("Viewport/fly") 
 	fadeTween = get_node("Viewport/fade")
@@ -80,6 +82,7 @@ func _ready():
 func _process(delta):  
 #	print(numberOfMoves, " ", len(moveStack ), " ", moveStack, isReverting)
 	canRevert = (not isReverting )and level_game.table.canRotate and len(moveStack)>=1 and UserData.isMonetized
+	movesLabel.get_node("label").set_text("moves: " + str (numberOfMoves))
 func _input(event):
 	if event is InputEventKey: 
 		if event.pressed and event.scancode == KEY_ESCAPE and gameState == GLOBALS.GameState.RUNNING:
@@ -253,3 +256,16 @@ func _on_home_pressed():
 	pass # Replace with function body.
 
 
+
+
+func _on_pause_pressed():
+	
+	gameState = GLOBALS.GameState.PAUSED
+	showPopup(pausePopup)
+	
+	pass # Replace with function body.
+
+
+func _on_revert_pressed():
+	revertMove()
+	pass # Replace with function body.
