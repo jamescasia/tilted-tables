@@ -18,13 +18,13 @@ var gameState
 var map
 var goal
 
-enum WinState { WON, LOST, NONE}
+enum GLOBALS.WinState { WON, LOST, NONE}
 
 
 var levelInfo  
 var levelNumber
 
-var winState = WinState.NONE
+var winState = GLOBALS.WinState.NONE
 
 func _ready():  
 	levelNumber =int (self.get_name().rsplit("_")[0]) 
@@ -97,24 +97,24 @@ func _physics_process(delta):
 				allNotInPlay = false
 		
 		if allNotInPlay: 
-			winState = WinState.WON
+			winState = GLOBALS.WinState.WON
 		
 		
 			
 		
 		
 #	if not player.inPlay and not player2.inPlay and not player3.inPlay:
-#		winState = WinState.WON
+#		winState = GLOBALS.WinState.WON
 			
 			
 			
 			
 #	print("moving ", player.isMoving, "rotating ", table.isRotating) 
 
-		if winState == WinState.LOST:
+		if winState == GLOBALS.WinState.LOST:
 			get_parent().gameState = GLOBALS.GameState.OVER
 			get_parent().setLevelLost()
-		if winState == WinState.WON:
+		if winState == GLOBALS.WinState.WON:
 			get_parent().gameState = GLOBALS.GameState.WIN
 			get_parent().setLevelWon()
 			pass
@@ -134,7 +134,7 @@ func _on_Area_area_entered(area):
 	
 	if levelInfo["is_order"] :
 		if blocksInside.pop_front() != exblock:
-			winState = WinState.LOST
+			winState = GLOBALS.WinState.LOST
 	 
 		
 		

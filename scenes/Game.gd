@@ -103,33 +103,56 @@ func _glade_five_pressed():
 	UserData.currentLevel = 4
 	get_tree().change_scene_to(gameManagerScene)
 	
+
+
+
+func _glade_six_pressed():
 	
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 5
+	get_tree().change_scene_to(gameManagerScene)
+	pass # Replace with function body.
+
+
+func _glade_seven_pressed():
+	
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 6
+	pass # Replace with function body.
+	get_tree().change_scene_to(gameManagerScene)
+
+
+func _glade_eight_pressed():
+	
+	UserData.userState = UserData.UserState.INGAME # Replace with function body.
+	UserData.currentLevel = 7
+	get_tree().change_scene_to(gameManagerScene)
+
  
 
 func _sand_one_pressed():
 	UserData.userState = UserData.UserState.INGAME # Replace with function body.
-	UserData.currentLevel = 5
-
+	UserData.currentLevel = 8 
 	get_tree().change_scene_to(gameManagerScene)
 	
 	
 
 func _sand_two_pressed():
 	UserData.userState = UserData.UserState.INGAME # Replace with function body.
-	UserData.currentLevel = 6
+	UserData.currentLevel = 9
 	get_tree().change_scene_to(gameManagerScene)
 	
 
 func _sand_three_pressed():
 	UserData.userState = UserData.UserState.INGAME # Replace with function body.
-	UserData.currentLevel = 7
+	UserData.currentLevel = 10
 
 	get_tree().change_scene_to(gameManagerScene)
 	
 
 func _sand_four_pressed():
 	UserData.userState = UserData.UserState.INGAME # Replace with function body.
-	UserData.currentLevel = 8
+	UserData.currentLevel = 11
 
 	get_tree().change_scene_to(gameManagerScene)
 	
@@ -137,7 +160,7 @@ func _sand_four_pressed():
 func _sand_five_pressed():
 	UserData.userState = UserData.UserState.INGAME # Replace with function body.
 	
-	UserData.currentLevel = 9
+	UserData.currentLevel = 12
 
 	get_tree().change_scene_to(gameManagerScene)
 
@@ -174,26 +197,3 @@ func _pyre_five_pressed():
 	UserData.currentLevel = 14
 	get_tree().change_scene_to(gameManagerScene)
 	
-
-
-func _glade_six_pressed():
-	
-	UserData.userState = UserData.UserState.INGAME # Replace with function body.
-	UserData.currentLevel = 5
-	get_tree().change_scene_to(gameManagerScene)
-	pass # Replace with function body.
-
-
-func _glade_seven_pressed():
-	
-	UserData.userState = UserData.UserState.INGAME # Replace with function body.
-	UserData.currentLevel = 6
-	pass # Replace with function body.
-	get_tree().change_scene_to(gameManagerScene)
-
-
-func _glade_eight_pressed():
-	
-	UserData.userState = UserData.UserState.INGAME # Replace with function body.
-	UserData.currentLevel = 7
-	get_tree().change_scene_to(gameManagerScene)

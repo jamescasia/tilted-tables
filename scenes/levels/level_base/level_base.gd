@@ -20,7 +20,6 @@ var map
 var goal
 var env_file
 var environment 
-enum WinState { WON, LOST, NONE}
 
 var goodOnce = false
 
@@ -30,11 +29,16 @@ var levelNumber
 var terrainMesh
 var glade_mesh
 
-var winState = WinState.NONE
+
+var spikeScene
+var spikes = []
+
+var winState = GLOBALS.WinState.NONE
 func setLevelInfo(linf):
 	levelInfo = linf
 func _ready():  
 #	levelNumber =int (self.get_name().rsplit("_")[0]) 
+	spikeScene = load('res://scenes/objects/spike/Spike.tscn')
 	env_file = load('res://assets/environments/env.tres')
 	glade_mesh = load("res://assets/maps/terrain/table-green.obj")
 	terrainMesh = get_node("table_base/MeshInstance")
@@ -60,6 +64,15 @@ func _ready():
 	
 	
 	terrainMesh.set_mesh(glade_mesh)
+	
+	if levelInfo["spikes"] != null:
+		for loc in levelInfo["spikes"]:
+			var spike = spikeScene.instance()
+			
+			spike.translation = loc
+			map.add_child(spike)
+			
+			
 #	setCurrentLevelState()
 	
 		
@@ -127,24 +140,24 @@ func _physics_process(delta):
 				allNotInPlay = false
 		
 		if allNotInPlay: 
-			winState = WinState.WON
+			winState = GLOBALS.WinState.WON
 		
 		
 			
 		
 		
 #	if not player.inPlay and not player2.inPlay and not player3.inPlay:
-#		winState = WinState.WON
+#		winState = GLOBALS.WinState.WON
 			
 			
 			
 			
 #	print("moving ", player.isMoving, "rotating ", table.isRotating) 
 
-		if winState == WinState.LOST:
+		if winState == GLOBALS.WinState.LOST:
 			get_parent().gameState = GLOBALS.GameState.OVER
 			get_parent().setLevelLost()
-		if winState == WinState.WON:
+		if winState == GLOBALS.WinState.WON:
 			get_parent().gameState = GLOBALS.GameState.WIN
 			get_parent().setLevelWon()
 			pass
@@ -166,7 +179,7 @@ func _on_Area_area_entered(area):
 	
 	if levelInfo["is_order"] :
 		if blocksInside.pop_front() != exblock:
-			winState = WinState.LOST
+			winState = GLOBALS.WinState.LOST
 	 
 		
 		

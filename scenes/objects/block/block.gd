@@ -15,6 +15,7 @@ var vel
 var vel2 = Vector3()
 var blockInfo
 var particles
+var destroy_particles 
 
 var mesh
 
@@ -26,6 +27,7 @@ func _ready():
 	self.move_lock_z = true
 	mesh = get_node("mesh")
 	particles = get_node("particles")
+	destroy_particles = get_node("destroy_particles")
 	
 	
 	
@@ -64,6 +66,8 @@ func setBlockInfo(binfo):
 	cubemesh.set_material(material)
 	particles.mesh = cubemesh
 	
+	
+	destroy_particles.mesh = cubemesh
 #	mesh.material
 	
 	
@@ -97,7 +101,13 @@ func _process(delta):
 
 
 func _on_Area_area_entered(area):
-#	print("collided")
+#	print("collided", area.get_parent().get_parent().get_name())
+	
+	if "Spike" in area.get_parent().get_parent().get_name():
+		destroy_particles.emitting = true
+		area.get_parent().get_parent() .get_parent().get_parent().get_parent().winState = GLOBALS.WinState.LOST
+		
+		
 	
 #	print(area.get_parent().get_parent().get_rotation_degrees().y)
 #	inSticky = true

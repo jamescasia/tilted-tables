@@ -4,6 +4,7 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+enum WinState { WON, LOST, NONE}
 var LEVELS = [
 	
 	{
@@ -124,6 +125,39 @@ var LEVELS = [
 		"block_1_start_coord": Vector3(5, 0, 4),
 		"block_2_start_coord": Vector3(5, 0, 3), 
 		"location": "res://scenes/levels/level_7/level_7.tscn",
+		
+		"least_moves_solution" : 30
+		
+	},
+
+	{
+		"level":8,
+		"terrain": "grass", 
+		"is_order": true,
+		"blocks": 3,
+		"size": Vector2(19,11), 
+		"spikes": [Vector3(1,0,1) ],
+		"finish_coord": Vector3(-5,0,0),
+		"block_0_start_coord": Vector3(3,0,7),
+		"block_1_start_coord": Vector3(4,0,5),
+		"block_2_start_coord": Vector3(  4,0,8), 
+		"location": "res://scenes/levels/level_8/level_8.tscn",
+		
+		"least_moves_solution" : 43
+		
+	},
+
+	{
+		"level":9,
+		"terrain": "grass", 
+		"is_order": false,
+		"blocks": 3,
+		"size": Vector2(19,11),
+		"finish_coord": Vector3(3,0,6),
+		"block_0_start_coord": Vector3(5, 0, 5),
+		"block_1_start_coord": Vector3(5, 0, 4),
+		"block_2_start_coord": Vector3(5, 0, 3), 
+		"location": "res://scenes/levels/level_9/level_9.tscn",
 		
 		"least_moves_solution" : 30
 		
