@@ -36,7 +36,7 @@ func setLevelInfo(linf):
 func _ready():  
 #	levelNumber =int (self.get_name().rsplit("_")[0]) 
 	env_file = load('res://assets/environments/env.tres')
-	glade_mesh = load("res://assets/maps/terrain/glades.obj")
+	glade_mesh = load("res://assets/maps/terrain/table-green.obj")
 	terrainMesh = get_node("table_base/MeshInstance")
 	environment = WorldEnvironment.new()
 	environment.environment = env_file
