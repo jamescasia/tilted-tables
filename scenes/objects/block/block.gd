@@ -29,6 +29,8 @@ func _ready():
 	particles = get_node("particles")
 	destroy_particles = get_node("destroy_particles")
 	
+#	apply_texture(mesh,"res://assets/textures/Grassy_Squares.jpg" )
+	
 	
 	
 	
@@ -36,10 +38,12 @@ func _ready():
 
 func setBlockInfo(binfo):
 	blockInfo = binfo
-	
-	var material = SpatialMaterial.new()
-	material.albedo_color = GLOBALS.BLOCK_COLORS[blockInfo["number"]] 
-	mesh.set_material_override(material)
+	var material = load (GLOBALS.BLOCK_MATERIALS[blockInfo["number"]])
+#	var material = SpatialMaterial.new()	
+#	var material = load("res://assets/materials/player_material.tres")
+#	material.albedo_color = GLOBALS.BLOCK_COLORS[blockInfo["number"]] 
+#	material.set_albedo_color(GLOBALS.BLOCK_COLORS[blockInfo["number"]] )
+	mesh.set_material_override( (material))
 	
 	var cubemesh = CubeMesh.new()
 	cubemesh.size = Vector3(0.4, 0.4, 0.4)
@@ -50,7 +54,13 @@ func setBlockInfo(binfo):
 	destroy_particles.mesh = cubemesh
 #	mesh.material
 	
-	
+func apply_texture(mesh_instance_node, texture_path):
+	var texture = ImageTexture.new()
+	var image = Image.new()
+	image.load(texture_path)
+	texture.create_from_image(image)
+	if mesh_instance_node.material_override:
+		mesh_instance_node.material_override.albedo_texture = texture 
 	
 func _process(delta):
 	vel = self.get_floor_velocity()

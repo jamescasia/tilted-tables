@@ -143,7 +143,7 @@ var LEVELS = [
 		"block_2_start_coord": Vector3(  4,0,8), 
 		"location": "res://scenes/levels/level_8/level_8.tscn",
 		
-		"least_moves_solution" : 43
+		"least_moves_solution" : 37
 		
 	},
 
@@ -168,6 +168,7 @@ var LEVELS = [
 var width = 1280
 var height = 720
 var BLOCK_COLORS = [Color(1, 0, 0, 1) , Color(0,1,0,1), Color(0,0,1,1)]
+var BLOCK_MATERIALS = ["res://assets/materials/player_material_red.tres",  "res://assets/materials/player_material_green.tres", "res://assets/materials/player_material_blue.tres"]
 enum GameState{ NOTSTARTED, RUNNING, PAUSED, WIN, OVER}
 # Called when the node enters the scene tree for the first time.
 func _ready():

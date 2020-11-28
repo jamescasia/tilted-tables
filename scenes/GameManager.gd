@@ -29,6 +29,9 @@ var canRevert = false
 var revertRotTween
 var revertBlockTweens =[]
 var timer
+var showAndHideTimer
+
+var wm_reminder 
 
 var yawa = []
 # Called when the node enters the scene tree for the first time.
@@ -36,6 +39,7 @@ func _ready():
 	Level_base = load( GLOBALS.LEVELS[UserData.currentLevel]["location"]) 
 	
 	movesLabel = get_node("Viewport/HUD/moves")
+	wm_reminder = get_node("Viewport/wm-reminder")
 	homeScene =  ("res://scenes/Game.tscn")
 	winPopup = get_node("Viewport/Win")
 	losePopup = get_node("Viewport/Lose")
@@ -45,20 +49,25 @@ func _ready():
 	
 	flyTween = get_node("Viewport/fly") 
 	fadeTween = get_node("Viewport/fade")
-	if UserData.isMonetized: 
-		if UserData.remindMe:
-			monetizationPopup.get_node("Label").text = "You've got\nsuperpowers"
-			monetizationPopup.get_node("yes/Label").text = "Keep 'em. Don't remind me"
-			monetizationPopup.get_node("no/Label").text = "Lose 'em"
-	
-			showPopup(monetizationPopup) 
-		else:
-			
-			gameState = GLOBALS.GameState.RUNNING
-	else:
+#	if UserData.isMonetized: 
+#		if UserData.remindMe:
+#			monetizationPopup.get_node("Label").text = "You've got\nsuperpowers"
+#			monetizationPopup.get_node("yes/Label").text = "Keep 'em. Don't remind me"
+#			monetizationPopup.get_node("no/Label").text = "Lose 'em"
+#
+#			showPopup(monetizationPopup) 
+#		else:
+#
+#			gameState = GLOBALS.GameState.RUNNING
+	if not UserData.isMonetized:
 		showPopup(monetizationPopup) 
+	else: 
+		if not UserData.seenWmReminderOnce:
+			UserData.seenWmReminderOnce = true
+			gameState = GLOBALS.GameState.RUNNING
+			showAndHide(wm_reminder)
+#		pass
 		
-#	print(get_name(), Level_base)
 	level_game = Level_base.instance()
 	level_game.setLevelInfo(GLOBALS.LEVELS[UserData.currentLevel])
 	level_game.set_name(str(UserData.currentLevel) + "_level_base")
@@ -68,15 +77,8 @@ func _ready():
 		var rbt = Tween.new()
 		add_child(rbt)
 		revertBlockTweens.append(rbt)
-		
-#	revertRotTween = Tween.new()
-#	revertBlockTween = Tween.new()
-#	add_child(revertRotTween)
-#	add_child(revertBlockTween)
-	 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+		 
+	   
  
 		
 func _process(delta):  
@@ -157,7 +159,12 @@ func winMatter():
 	var levelProgress = UserData.progress[UserData.currentLevel]
 	var isHighScoreBeat = levelProgress["least_moves"] > numberOfMoves
 #	star animations
+
+
 	numberOfStars = Utils.getNumberOfStars(UserData.currentLevel, numberOfMoves)
+	
+	winPopup.get_node("stars").set_text("STARS:\n"+ str(numberOfStars))
+	winPopup.get_node("moves").set_text("moves:"+ str(numberOfMoves))
 	print("You got ", numberOfStars , " stars")
 	if isHighScoreBeat:
 #		beat high score animmations
@@ -202,6 +209,7 @@ func _won_on_home_pressed():
 
 
 func _won_on_next_pressed():
+	print("yawa pressed")
 	if UserData.progress[UserData.currentLevel+1]["unlocked"]:
 		UserData.currentLevel+=1
 		get_tree().reload_current_scene() 
@@ -211,10 +219,12 @@ func _won_on_next_pressed():
 
 
 func _monetization_on_yes_pressed():
-	if UserData.isMonetized:
-		UserData.remindMe = false
+#	if UserData.isMonetized:
+#		UserData.remindMe = false
+	OS.shell_open("https://coil.com")
+	
 		
-	UserData.isMonetized = true
+#	UserData.isMonetized = true
 	gameState = GLOBALS.GameState.RUNNING
 	hidePopup(monetizationPopup)
 	
@@ -222,13 +232,27 @@ func _monetization_on_yes_pressed():
 
 
 func _monetization_on_no_pressed():
-	if UserData.isMonetized:
-		UserData.remindMe = true
-	UserData.isMonetized = false
 	gameState = GLOBALS.GameState.RUNNING
 	hidePopup(monetizationPopup)
 	
+func showAndHide(popup):
+	showPopup(popup) 
+	showAndHideTimer = Timer.new()
+	add_child(showAndHideTimer)
+	showAndHideTimer.connect("timeout", self, "_done_showAndHideTimer", [popup])
+	showAndHideTimer.start(3.2)
+	
+func _done_showAndHideTimer(popup):
+	
+	gameState = GLOBALS.GameState.RUNNING
+	showAndHideTimer.queue_free()
+	hidePopup(popup)
+	
+	
 	 
+	
+	
+	
 	
 func showPopup(popup):
 	flyTween.interpolate_property(popup, "rect_position",  Vector2(0, -900),Vector2(0, 0), 1, Tween.TRANS_ELASTIC) 
@@ -261,9 +285,7 @@ func _on_home_pressed():
 	get_tree().change_scene(homeScene)
 	pass # Replace with function body.
 
-
-
-
+ 
 func _on_pause_pressed():
 	
 	gameState = GLOBALS.GameState.PAUSED
@@ -273,5 +295,6 @@ func _on_pause_pressed():
 
 
 func _on_revert_pressed():
-	revertMove()
+	if gameState == GLOBALS.GameState.RUNNING and canRevert:
+		revertMove()
 	pass # Replace with function body.

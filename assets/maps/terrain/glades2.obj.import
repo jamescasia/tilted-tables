@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/glades2.obj-3f669a43c8ae96bdca0c7aebc4c99aad.mesh"
+
+[deps]
+
+files=[ "res://.import/glades2.obj-3f669a43c8ae96bdca0c7aebc4c99aad.mesh" ]
+
+source_file="res://assets/maps/terrain/glades2.obj"
+dest_files=[ "res://.import/glades2.obj-3f669a43c8ae96bdca0c7aebc4c99aad.mesh", "res://.import/glades2.obj-3f669a43c8ae96bdca0c7aebc4c99aad.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

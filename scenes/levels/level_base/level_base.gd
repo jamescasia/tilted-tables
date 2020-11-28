@@ -33,14 +33,31 @@ var glade_mesh
 var spikeScene
 var spikes = []
 
+var light
+var groundMesh
+var mapMesh
+var goalMesh
+
 var winState = GLOBALS.WinState.NONE
 func setLevelInfo(linf):
 	levelInfo = linf
 func _ready():  
 #	levelNumber =int (self.get_name().rsplit("_")[0]) 
+
+
+	groundMesh = get_node("table_base/MeshInstance")
+	mapMesh = get_node("table_base/Map/MeshInstance")
+	goalMesh = get_node("table_base/Map/Goal/MeshInstance")
+	
+	groundMesh.use_in_baked_light = true
+	mapMesh.use_in_baked_light = true
+	goalMesh.use_in_baked_light = true
+	light = get_node("DirectionalLight")
+	light.rotation_degrees = Vector3(-48, 90, -0.55)
+	light.shadow_enabled = true
 	spikeScene = load('res://scenes/objects/spike/Spike.tscn')
 	env_file = load('res://assets/environments/env.tres')
-	glade_mesh = load("res://assets/maps/terrain/table-green.obj")
+	glade_mesh = load("res://assets/maps/terrain/glades2.obj")
 	terrainMesh = get_node("table_base/MeshInstance")
 	environment = WorldEnvironment.new()
 	environment.environment = env_file

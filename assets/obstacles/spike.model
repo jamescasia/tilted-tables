@@ -3,10 +3,12 @@
 :materials
 
 [name:stone;color:RGBA(0.834, 0.834, 0.834, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0;]
+[name:bricksDark;color:RGBA(0.878, 0.271, 0.271, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.35;valueB:0;]
+[name:bricks;color:RGBA(1.000, 0.392, 0.306, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.35;valueB:0;]
 
 :models
 
-[name:;collection:Buildings;type:roof_point;position:(0.2000, 0.0000, 0.2000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4500, 0.4500, 0.4500);group:;locked:False;hidden:False;materials:stone;]
-[name:;collection:Buildings;type:roof_point;position:(0.2000, 0.0000, -0.2000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4500, 0.4500, 0.4500);group:;locked:False;hidden:False;materials:stone;]
-[name:;collection:Buildings;type:roof_point;position:(-0.2000, 0.0000, 0.2000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4500, 0.4500, 0.4500);group:;locked:False;hidden:False;materials:stone;]
-[name:;collection:Buildings;type:roof_point;position:(-0.2000, 0.0000, -0.2000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4500, 0.4500, 0.4500);group:;locked:False;hidden:False;materials:stone;]
+[name:;collection:Buildings;type:roof_point;position:(0.2000, 0.0000, 0.2000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4500, 1.2285, 0.4500);group:;locked:False;hidden:False;materials:stone;]
+[name:;collection:Buildings;type:roof_point;position:(0.2000, 0.0000, -0.2000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4500, 1.2285, 0.4500);group:;locked:False;hidden:False;materials:stone;]
+[name:;collection:Buildings;type:roof_point;position:(-0.2000, 0.0000, 0.2000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4500, 1.2285, 0.4500);group:;locked:False;hidden:False;materials:stone;]
+[name:;collection:Buildings;type:roof_point;position:(-0.2000, 0.0000, -0.2000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4500, 1.2285, 0.4500);group:;locked:False;hidden:False;materials:stone;]

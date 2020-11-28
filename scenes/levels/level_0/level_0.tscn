@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/maps/table-green.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/maps/rebuilt/map0.obj" type="ArrayMesh" id=2]
@@ -18,6 +18,12 @@ data = PoolVector3Array( -3.5, 0, -4.5, -4.5, 0, -3.5, -3.5, 0, -3.5, -4.5, 0, -
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.5, 0.5, 0.001 )
 
+[sub_resource type="BakedLightmapData" id=5]
+bounds = AABB( -14.3344, -14.7911, -19.2508, 28.6689, 29.5822, 38.5015 )
+cell_space_transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 57.3377, 59.1644, 77.0031 )
+cell_subdiv = 9
+octree = PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 )
+
 [node name="level_base" type="Spatial"]
 script = ExtResource( 3 )
 
@@ -28,6 +34,7 @@ script = ExtResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="table_base"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 1 )
 material/0 = null
 material/1 = null
@@ -45,6 +52,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="table_base/Map"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 2 )
 material/0 = null
 material/1 = null
@@ -59,6 +67,7 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -3, 0, 
 
 [node name="MeshInstance" type="MeshInstance" parent="table_base/Map/Goal"]
 transform = Transform( -0.0329983, 0, -0.999455, 0, 1, 0, 0.999455, 0, -0.0329983, 4.76837e-07, 0, -2.38419e-07 )
+use_in_baked_light = true
 mesh = ExtResource( 6 )
 material/0 = null
 material/1 = null
@@ -76,10 +85,10 @@ shape = SubResource( 4 )
 [node name="Spatial" type="Spatial" parent="table_base"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.766044, -0.321394, 0.55667, 0, 0.866025, 0.5, -0.642788, -0.383022, 0.663414, 11.7874, 10.6915, 14.0224 )
+transform = Transform( 0.766044, -0.321394, 0.556671, 0, 0.866025, 0.5, -0.642788, -0.383022, 0.663414, 10.5189, 10.6915, 12.0419 )
 projection = 1
 current = true
-size = 16.0
+size = 14.0
 
 [node name="Camera2" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 16.6964, 0 )
@@ -87,8 +96,18 @@ projection = 1
 size = 14.0
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.00779666, -0.375545, 0.926771, -0.00315924, 0.926804, 0.375532, -0.999965, 2.79407e-09, -0.00841241, 12.3867, 13.0327, -2.44881 )
+transform = Transform( -0.00553675, -0.752875, 0.658141, -0.00633349, 0.658164, 0.752848, -0.999965, 3.28391e-22, -0.00841241, 12.3867, 13.0327, -2.44881 )
+light_energy = 0.85
 light_bake_mode = 2
+shadow_enabled = true
+
+[node name="BakedLightmap" type="BakedLightmap" parent="."]
+visible = false
+bake_quality = 2
+bake_mode = 1
+bake_hdr = true
+bake_extents = Vector3( 10.192, 8.49345, 19.2508 )
+light_data = SubResource( 5 )
 [connection signal="tween_all_completed" from="table_base/Tween" to="table_base" method="_on_Tween_tween_all_completed"]
 [connection signal="area_entered" from="table_base/Map/Goal/MeshInstance/Area" to="." method="_on_Area_area_entered"]
 [connection signal="area_exited" from="table_base/Map/Goal/MeshInstance/Area" to="." method="_on_Area_area_exited"]

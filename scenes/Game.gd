@@ -11,14 +11,15 @@ var progress
 var pickLevels
 var span
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
 	gameManagerScene = preload("res://scenes/GameManager.tscn")
 	pickLevels = get_node("PickLevels")
 	span = get_node("PickLevels/span") 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	UserData.userState = UserData.UserState.INGAME
+func _process(delta):
+	UserData.isMonetized = JavaScript.eval("(document.monetization !== null);") and JavaScript.eval("(document.monetization.state === 'started');")
 
 
 func _on_Play_pressed():
@@ -48,7 +49,7 @@ func panLeft():
 		else:
 			pickLocation = PickViewing.SANDS
 		 
-			
+		
 	print(pickLocation)
 	
 func tweenPanLeft(obj): 

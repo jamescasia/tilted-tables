@@ -7,6 +7,8 @@ var currentLevel = 0
 var userState = UserState.MENU
 var remindMe = true
 var showHUD = true
+var seenWmReminderOnce = false
+
 var progress = [
 	
 	{
