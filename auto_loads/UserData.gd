@@ -109,13 +109,20 @@ var progress = [
 		"least_moves": 9999,
 	},
 	
-	
-	
-	
+
 ]
 
 
-
+func updateProgress():
+	for i  in  range(len(progress)):
+		if progress[i-1]["stars"] >=2 and i >= 1:
+			progress[i]["unlocked"] = true
+			
+			
+func printProgress():
+	print("progress")
+	for p in progress:
+		print(p)
 
 
 

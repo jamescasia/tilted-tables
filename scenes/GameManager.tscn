@@ -101,7 +101,6 @@ margin_left = -1063.68
 margin_top = -1235.1
 margin_right = 97.28
 margin_bottom = -527.34
-rect_scale = Vector2( 0.8, 0.8 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -112,24 +111,31 @@ position = Vector2( 668.263, -98.1629 )
 scale = Vector2( 10, 10 )
 color = Color( 0.00784314, 0.00784314, 0.00784314, 0.203922 )
 polygon = PoolVector2Array( -1603.5, -1082.35, -1495.71, 1404.72, 1675.87, 1378.02, 1569.08, -498.763 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label" type="Label" parent="Viewport/Win"]
-margin_left = 593.97
-margin_top = 248.902
-margin_right = 1102.97
-margin_bottom = 524.902
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -418.5
+margin_right = 418.5
+margin_bottom = 121.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "You Won!"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="retry" type="Button" parent="Viewport/Win"]
-margin_left = 355.246
-margin_top = 452.111
-margin_right = 607.246
-margin_bottom = 547.111
+[node name="retry" type="TextureButton" parent="Viewport/Win"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -47.5001
+margin_right = 252.0
+margin_bottom = 47.5001
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -147,11 +153,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="home" type="Button" parent="Viewport/Win"]
-margin_left = 1117.4
-margin_top = 455.478
-margin_right = 1369.4
-margin_bottom = 550.478
+[node name="home" type="TextureButton" parent="Viewport/Win"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -252.0
+margin_top = -47.5
+margin_bottom = 47.5
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -165,11 +174,15 @@ margin_bottom = 120.51
 custom_fonts/font = SubResource( 2 )
 text = "Home"
 
-[node name="next" type="Button" parent="Viewport/Win"]
-margin_left = 706.577
-margin_top = 447.621
-margin_right = 958.577
-margin_bottom = 542.621
+[node name="next" type="TextureButton" parent="Viewport/Win"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -126.0
+margin_top = -47.5
+margin_right = 126.0
+margin_bottom = 47.5
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -196,7 +209,6 @@ margin_left = -1063.68
 margin_top = -1235.1
 margin_right = 97.28
 margin_bottom = -527.34
-rect_scale = Vector2( 0.8, 0.8 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -207,6 +219,9 @@ position = Vector2( 668.263, -98.1629 )
 scale = Vector2( 10, 10 )
 color = Color( 0.00784314, 0.00784314, 0.00784314, 0.454902 )
 polygon = PoolVector2Array( -1597.38, -1034.75, -1495.71, 1404.72, 1675.87, 1378.02, 1569.08, -498.763 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label" type="Label" parent="Viewport/Lose"]
 margin_left = 593.97
@@ -221,13 +236,14 @@ __meta__ = {
 }
 
 [node name="retry" type="Button" parent="Viewport/Lose"]
-margin_left = 666.818
-margin_top = 434.273
-margin_right = 918.818
-margin_bottom = 529.273
+anchor_left = 0.520952
+anchor_top = 0.603157
+anchor_right = 0.717826
+anchor_bottom = 0.735101
+margin_top = -3.05176e-05
 __meta__ = {
 "_edit_group_": true,
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Label" type="Label" parent="Viewport/Lose/retry"]
@@ -273,7 +289,6 @@ margin_left = -1063.68
 margin_top = -1235.1
 margin_right = 97.28
 margin_bottom = -527.34
-rect_scale = Vector2( 0.8, 0.8 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -284,6 +299,9 @@ position = Vector2( 668.263, -98.1629 )
 scale = Vector2( 10, 10 )
 color = Color( 0.00784314, 0.00784314, 0.00784314, 0.454902 )
 polygon = PoolVector2Array( -1521.27, -1044.27, -1495.71, 1404.72, 1675.87, 1378.02, 1569.08, -498.763 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label" type="Label" parent="Viewport/ActivateWM"]
 margin_left = 488.518
@@ -351,7 +369,6 @@ margin_left = -1063.68
 margin_top = -1235.1
 margin_right = 97.28
 margin_bottom = -527.34
-rect_scale = Vector2( 0.8, 0.8 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -362,12 +379,31 @@ position = Vector2( 668.263, -98.1629 )
 scale = Vector2( 10, 10 )
 color = Color( 0.00784314, 0.00784314, 0.00784314, 0.454902 )
 polygon = PoolVector2Array( -1521.27, -1044.27, -1495.71, 1404.72, 1675.87, 1378.02, 1569.08, -498.763 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Label" type="Label" parent="Viewport/Pause"]
-margin_left = 488.518
-margin_top = 132.771
-margin_right = 1143.52
-margin_bottom = 408.771
+[node name="Label" type="Control" parent="Viewport/Pause"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -226.5
+margin_right = 226.5
+margin_bottom = 250.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Viewport/Pause/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -166.5
+margin_top = -121.0
+margin_right = 166.5
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Paused"
@@ -376,66 +412,127 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="resume" type="Button" parent="Viewport/Pause"]
-margin_left = 689.042
-margin_top = 473.877
-margin_right = 941.042
-margin_bottom = 568.877
+[node name="resume" type="Control" parent="Viewport/Pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.0
+margin_top = -48.0
+margin_right = 125.0
+margin_bottom = 48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resume" type="TextureButton" parent="Viewport/Pause/resume"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -126.0
+margin_top = -132.0
+margin_right = 126.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Viewport/Pause/resume"]
-margin_left = 79.3673
-margin_top = 19.5101
-margin_right = 177.367
-margin_bottom = 120.51
+[node name="Label" type="Label" parent="Viewport/Pause/resume/resume"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -76.5
+margin_top = -67.0
+margin_right = 76.5
+margin_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 2 )
 text = "RESUME"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="restart" type="Button" parent="Viewport/Pause"]
-margin_left = 686.934
-margin_top = 594.578
-margin_right = 938.937
-margin_bottom = 689.578
+[node name="restart" type="Control" parent="Viewport/Pause"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -77.5
+margin_right = 368.0
+margin_bottom = 77.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="restart" type="TextureButton" parent="Viewport/Pause/restart"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -252.003
+margin_top = -95.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Viewport/Pause/restart"]
-margin_left = 79.3673
-margin_top = 19.5101
-margin_right = 177.367
-margin_bottom = 120.51
+[node name="Label" type="Label" parent="Viewport/Pause/restart/restart"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -82.5
+margin_top = -24.5
+margin_right = 82.5
+margin_bottom = 24.5
 custom_fonts/font = SubResource( 2 )
 text = "RESTART"
 align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="home" type="Button" parent="Viewport/Pause"]
-margin_left = 689.042
-margin_top = 721.101
-margin_right = 941.042
-margin_bottom = 816.101
+[node name="home" type="Control" parent="Viewport/Pause"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -402.0
+margin_top = -76.5
+margin_bottom = 76.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="home" type="TextureButton" parent="Viewport/Pause/home"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -95.0
+margin_right = 252.0
+rect_pivot_offset = Vector2( 0.5, 0.5 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Viewport/Pause/home"]
-margin_left = 79.3673
-margin_top = 19.5101
-margin_right = 177.367
-margin_bottom = 120.51
+[node name="Label" type="Label" parent="Viewport/Pause/home/home"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.5
+margin_top = -50.5
+margin_right = 55.5
+margin_bottom = -1.49995
 custom_fonts/font = SubResource( 2 )
 text = "HOME"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -452,6 +549,6 @@ __meta__ = {
 [connection signal="pressed" from="Viewport/Lose/home" to="." method="_lose_on_home_pressed"]
 [connection signal="pressed" from="Viewport/ActivateWM/yes" to="." method="_monetization_on_yes_pressed"]
 [connection signal="pressed" from="Viewport/ActivateWM/no" to="." method="_monetization_on_no_pressed"]
-[connection signal="pressed" from="Viewport/Pause/resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Viewport/Pause/restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Viewport/Pause/home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Viewport/Pause/resume/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Viewport/Pause/restart/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Viewport/Pause/home/home" to="." method="_on_home_pressed"]

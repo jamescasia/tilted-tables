@@ -88,6 +88,10 @@ func _input(event):
 		if event.pressed and event.scancode == KEY_ESCAPE and gameState == GLOBALS.GameState.RUNNING:
 			gameState = GLOBALS.GameState.PAUSED
 			showPopup(pausePopup)
+		
+		elif event.pressed and event.scancode == KEY_ESCAPE and gameState == GLOBALS.GameState.PAUSED:
+			gameState = GLOBALS.GameState.RUNNING
+			hidePopup(pausePopup)
 			
 		if event.pressed and event.scancode == KEY_BACKSPACE and gameState == GLOBALS.GameState.RUNNING and canRevert:
 			revertMove()
@@ -124,9 +128,9 @@ func revertMove():
 	for i in range(len(level_game.blocks)):
 		var rbt = revertBlockTweens[i]
 		var blk = level_game.blocks[i]  
-		blk.translation = begin_state[blk.get_name()]
-#		rbt.interpolate_property(blk, "translation", begin_state[blk.get_name()] ,end_state[blk.get_name()], 1, Tween.TRANS_CUBIC)
-#		rbt.start()
+#		blk.translation = begin_state[blk.get_name()]
+		rbt.interpolate_property(blk, "translation", blk.translation ,begin_state[blk.get_name()],.3, Tween.EASE_OUT_IN)
+		rbt.start()
 	timer = Timer.new()
 	add_child(timer)
 	timer.one_shot = true
@@ -165,8 +169,14 @@ func winMatter():
 		print("You beat high score!!")
 		UserData.progress[UserData.currentLevel]["least_moves"] = numberOfMoves
 		UserData.progress[UserData.currentLevel]["stars"] = numberOfStars
+	UserData.updateProgress()
+	UserData.printProgress()
 		 
-
+func loseMatter():
+#	lose animation
+	UserData.updateProgress()
+	UserData.printProgress()
+	
 func setLevelLost():
 	print("lostlevel")
 	showPopup(losePopup)
@@ -197,9 +207,10 @@ func _won_on_home_pressed():
 
 
 func _won_on_next_pressed():
-	UserData.currentLevel+=1
-	get_tree().reload_current_scene() 
-	
+	if UserData.progress[UserData.currentLevel+1]["unlocked"]:
+		UserData.currentLevel+=1
+		get_tree().reload_current_scene() 
+		
 	
 	pass # Replace with function body.
 
