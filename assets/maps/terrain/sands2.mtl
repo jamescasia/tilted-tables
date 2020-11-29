@@ -1,0 +1,17 @@
+# Created by Kenney (www.kenney.nl)
+
+newmtl bricks(Clone)
+Kd 0.862 0.572 0.286
+
+newmtl custom6(Clone)
+Kd 0.793 0.503 0.216
+
+newmtl foliage(Clone)
+Kd 0 0.655 0.486
+
+newmtl metalPurple(Clone)
+Kd 0.125 0.572 0.304
+
+newmtl custom20(Clone)
+Kd 0.931 0.522 0.233
+

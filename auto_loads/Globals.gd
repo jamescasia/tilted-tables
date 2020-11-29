@@ -131,7 +131,7 @@ var LEVELS = [
 	},
 {
 		"level":8,
-		"terrain": "grass", 
+		"terrain": "sands", 
 		"is_order": false,
 		"blocks": 1,
 		"size": Vector2(13,13),
@@ -144,14 +144,14 @@ var LEVELS = [
 		
 	},{
 		"level":9,
-		"terrain": "grass", 
+		"terrain": "sands", 
 		"is_order": false,
-		"blocks": 3,
-		"size": Vector2(13,13),
-		"finish_coord": Vector3(3,0,6),
-		"block_0_start_coord": Vector3(5, 0, 5),
-		"block_1_start_coord": Vector3(5, 0, 4),
-		"block_2_start_coord": Vector3(5, 0, 3), 
+		"blocks":1,
+		"size": Vector2(15,15),
+		"finish_coord": Vector3(5,0,7),
+		"spikes": [Vector3(2,0,5) ,Vector3(0,0,2) ,Vector3( -4,0,1) ,Vector3(4,0,-3) ],
+		
+		"block_0_start_coord": Vector3(6, 0, 6), 
 		"location": "res://scenes/levels/level_9/level_9.tscn",
 		
 		"least_moves_solution" : 30
@@ -176,7 +176,7 @@ var LEVELS = [
 
 	{
 		"level":11,
-		"terrain": "grass", 
+		"terrain": "sand", 
 		"is_order": true,
 		"blocks": 3,
 		"size": Vector2(19,11), 

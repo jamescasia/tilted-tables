@@ -28,6 +28,7 @@ var levelNumber
 
 var terrainMesh
 var glade_mesh
+var sand_mesh
 
 
 var spikeScene
@@ -37,6 +38,8 @@ var light
 var groundMesh
 var mapMesh
 var goalMesh
+
+var camera 
 
 var winState = GLOBALS.WinState.NONE
 func setLevelInfo(linf):
@@ -48,6 +51,7 @@ func _ready():
 	groundMesh = get_node("table_base/MeshInstance")
 	mapMesh = get_node("table_base/Map/MeshInstance")
 	goalMesh = get_node("table_base/Map/Goal/MeshInstance")
+	camera = get_node("Camera")
 	
 	groundMesh.use_in_baked_light = true
 	mapMesh.use_in_baked_light = true
@@ -58,6 +62,7 @@ func _ready():
 	spikeScene = load('res://scenes/objects/spike/Spike.tscn')
 	env_file = load('res://assets/environments/env.tres')
 	glade_mesh = load("res://assets/maps/terrain/glades2.obj")
+	sand_mesh = load('res://assets/maps/terrain/sands.obj')
 	terrainMesh = get_node("table_base/MeshInstance")
 	environment = WorldEnvironment.new()
 	environment.environment = env_file
@@ -79,8 +84,11 @@ func _ready():
 	goal.translation = levelInfo["finish_coord"]
 	table = get_node("table_base")
 	
-	
-	terrainMesh.set_mesh(glade_mesh)
+	if levelInfo["terrain"] == "grass":
+		terrainMesh.mesh = (glade_mesh)
+		
+	elif levelInfo["terrain"] == "sands":
+		terrainMesh.mesh = (sand_mesh)
 	
 	if levelInfo.get("spikes")!= null:
 		for loc in levelInfo["spikes"]:
@@ -88,6 +96,9 @@ func _ready():
 			
 			spike.translation = loc
 			map.add_child(spike)
+	var mapsize = levelInfo["size"]
+	var grtr  = (mapsize.x if mapsize.x > mapsize.y else mapsize.y) 
+	camera.size =grtr + 3*(15/grtr)
 			
 			
 #	setCurrentLevelState()

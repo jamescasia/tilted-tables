@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sands2.obj-3ab55f84cd1209a347b684edfdef3142.mesh"
+
+[deps]
+
+files=[ "res://.import/sands2.obj-3ab55f84cd1209a347b684edfdef3142.mesh" ]
+
+source_file="res://assets/maps/terrain/sands2.obj"
+dest_files=[ "res://.import/sands2.obj-3ab55f84cd1209a347b684edfdef3142.mesh", "res://.import/sands2.obj-3ab55f84cd1209a347b684edfdef3142.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
