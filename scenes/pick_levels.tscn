@@ -14,8 +14,8 @@ __meta__ = {
 }
 
 [node name="glade" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 1600.0
+margin_bottom = 900.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -28,15 +28,23 @@ __meta__ = {
 }
 
 [node name="menu_label" parent="glade" instance=ExtResource( 1 )]
-margin_left = 24.0
-margin_top = 24.0
-margin_right = 547.0
-margin_bottom = 137.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 200.0
+margin_top = 48.0
+margin_right = 668.0
+margin_bottom = 175.0
 text = "THE GLADE"
 
 [node name="buttons" type="Control" parent="glade"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -652.0
+margin_top = -370.0
+margin_right = 652.0
+margin_bottom = 370.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -138,8 +146,8 @@ level = 7
 [node name="sands" type="Control" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 2000.0
-margin_right = 2040.0
-margin_bottom = 40.0
+margin_right = 3600.0
+margin_bottom = 900.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -152,15 +160,21 @@ __meta__ = {
 }
 
 [node name="menu_label" parent="sands" instance=ExtResource( 1 )]
-margin_left = 24.0
-margin_top = 24.0
-margin_right = 547.0
-margin_bottom = 137.0
+margin_left = 200.0
+margin_top = 48.0
+margin_right = -924.0
+margin_bottom = -725.0
 text = "THE SANDS"
 
 [node name="buttons" type="Control" parent="sands"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -650.0
+margin_top = -370.0
+margin_right = 650.0
+margin_bottom = 370.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -263,8 +277,8 @@ level = 15
 [node name="pyres" type="Control" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 2000.0
-margin_right = 2040.0
-margin_bottom = 40.0
+margin_right = 3600.0
+margin_bottom = 900.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -277,15 +291,21 @@ __meta__ = {
 }
 
 [node name="menu_label" parent="pyres" instance=ExtResource( 1 )]
-margin_left = 24.0
-margin_top = 24.0
-margin_right = 547.0
-margin_bottom = 137.0
+margin_left = 200.0
+margin_top = 48.0
+margin_right = -929.0
+margin_bottom = -725.0
 text = "THE PYRES"
 
 [node name="buttons" type="Control" parent="pyres"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -650.0
+margin_top = -370.0
+margin_right = 750.0
+margin_bottom = 370.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

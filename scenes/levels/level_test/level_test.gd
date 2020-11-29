@@ -18,18 +18,18 @@ var gameState
 var map
 var goal
 
-enum GLOBALS.WinState { WON, LOST, NONE}
+enum Globals.WinState { WON, LOST, NONE}
 
 
 var levelInfo  
 var levelNumber
 
-var winState = GLOBALS.WinState.NONE
+var winState = Globals.WinState.NONE
 
 func _ready():  
 	levelNumber =int (self.get_name().rsplit("_")[0]) 
 	print(self.get_name())
-	levelInfo = GLOBALS.LEVELS[levelNumber]
+	levelInfo = Globals.LEVELS[levelNumber]
 	map = get_node("Table_test/Map")
 	print(levelInfo)
 	gameState = get_parent().gameState
@@ -68,7 +68,7 @@ func initializeBlock(number):
 func _physics_process(delta): 
 	gameState = get_parent().gameState
 	 
-	if gameState == GLOBALS.GameState.RUNNING:
+	if gameState == Globals.GameState.RUNNING:
 		for b in blocks:
 			b.canMove = not table.isRotating
 #		player.canMove = not table.isRotating 
@@ -97,25 +97,25 @@ func _physics_process(delta):
 				allNotInPlay = false
 		
 		if allNotInPlay: 
-			winState = GLOBALS.WinState.WON
+			winState = Globals.WinState.WON
 		
 		
 			
 		
 		
 #	if not player.inPlay and not player2.inPlay and not player3.inPlay:
-#		winState = GLOBALS.WinState.WON
+#		winState = Globals.WinState.WON
 			
 			
 			
 			
 #	print("moving ", player.isMoving, "rotating ", table.isRotating) 
 
-		if winState == GLOBALS.WinState.LOST:
-			get_parent().gameState = GLOBALS.GameState.OVER
+		if winState == Globals.WinState.LOST:
+			get_parent().gameState = Globals.GameState.OVER
 			get_parent().setLevelLost()
-		if winState == GLOBALS.WinState.WON:
-			get_parent().gameState = GLOBALS.GameState.WIN
+		if winState == Globals.WinState.WON:
+			get_parent().gameState = Globals.GameState.WIN
 			get_parent().setLevelWon()
 			pass
 			
@@ -134,7 +134,7 @@ func _on_Area_area_entered(area):
 	
 	if levelInfo["is_order"] :
 		if blocksInside.pop_front() != exblock:
-			winState = GLOBALS.WinState.LOST
+			winState = Globals.WinState.LOST
 	 
 		
 		

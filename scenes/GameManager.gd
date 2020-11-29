@@ -1,7 +1,7 @@
 extends Spatial
 
 
-var gameState = GLOBALS.GameState.NOTSTARTED
+var gameState = Globals.GameState.NOTSTARTED
 var currentLevelState 
 
 var pregamePopup
@@ -40,7 +40,7 @@ var yawa = []
 func _ready(): 
 	
 	
-	Level_base = load( GLOBALS.LEVELS[UserData.currentLevel]["location"]) 
+	Level_base = load( Globals.LEVELS[UserData.currentLevel]["location"]) 
 	
 	movesLabel = get_node("Viewport/HUD/Control/number")
 	wm_reminder = get_node("Viewport/wm-reminder")
@@ -54,7 +54,7 @@ func _ready():
 	flyTween = get_node("Viewport/fly") 
 	fadeTween = get_node("Viewport/fade") 
 	
-	gameState = GLOBALS.GameState.RUNNING
+	gameState = Globals.GameState.RUNNING
 
 
 #	if not UserData.isMonetized:
@@ -66,7 +66,7 @@ func _ready():
 #		pass
 		
 	level_game = Level_base.instance()
-	level_game.setLevelInfo(GLOBALS.LEVELS[UserData.currentLevel])
+	level_game.setLevelInfo(Globals.LEVELS[UserData.currentLevel])
 	level_game.set_name(str(UserData.currentLevel) + "_level_base")
 	add_child(level_game)
 	UserData.updateProgress()
@@ -84,15 +84,15 @@ func _process(delta):
 	movesLabel.set_text(  str (numberOfMoves))
 func _input(event):
 	if event is InputEventKey: 
-		if event.pressed and event.scancode == KEY_ESCAPE and gameState == GLOBALS.GameState.RUNNING:
-			gameState = GLOBALS.GameState.PAUSED
+		if event.pressed and event.scancode == KEY_ESCAPE and gameState == Globals.GameState.RUNNING:
+			gameState = Globals.GameState.PAUSED
 			showPopup(pausePopup)
 		
-		elif event.pressed and event.scancode == KEY_ESCAPE and gameState == GLOBALS.GameState.PAUSED:
-			gameState = GLOBALS.GameState.RUNNING
+		elif event.pressed and event.scancode == KEY_ESCAPE and gameState == Globals.GameState.PAUSED:
+			gameState = Globals.GameState.RUNNING
 			hidePopup(pausePopup)
 			
-		if event.pressed and event.scancode == KEY_BACKSPACE and gameState == GLOBALS.GameState.RUNNING and canRevert:
+		if event.pressed and event.scancode == KEY_BACKSPACE and gameState == Globals.GameState.RUNNING and canRevert:
 			revertMove()
 				 
 				  
@@ -213,14 +213,14 @@ func _monetization_on_yes_pressed():
 	
 		
 #	UserData.isMonetized = true
-	gameState = GLOBALS.GameState.RUNNING
+	gameState = Globals.GameState.RUNNING
 	hidePopup(monetizationPopup)
 	
 	 
 
 
 func _monetization_on_no_pressed():
-	gameState = GLOBALS.GameState.RUNNING
+	gameState = Globals.GameState.RUNNING
 	hidePopup(monetizationPopup)
 	
 func showAndHide(popup):
@@ -232,7 +232,7 @@ func showAndHide(popup):
 	
 func _done_showAndHideTimer(popup):
 	
-	gameState = GLOBALS.GameState.RUNNING
+	gameState = Globals.GameState.RUNNING
 	showAndHideTimer.queue_free()
 	hidePopup(popup)
 	
@@ -257,7 +257,7 @@ func hidePopup(popup):
 
 
 func _on_resume_pressed():
-	gameState = GLOBALS.GameState.RUNNING
+	gameState = Globals.GameState.RUNNING
 	hidePopup(pausePopup)
 	pass # Replace with function body.
 
@@ -276,13 +276,13 @@ func _on_home_pressed():
  
 func _on_pause_pressed():
 	
-	gameState = GLOBALS.GameState.PAUSED
+	gameState = Globals.GameState.PAUSED
 	showPopup(pausePopup)
 	
 	pass # Replace with function body.
 
 
 func _on_revert_pressed():
-	if gameState == GLOBALS.GameState.RUNNING and canRevert:
+	if gameState == Globals.GameState.RUNNING and canRevert:
 		revertMove()
 	pass # Replace with function body.

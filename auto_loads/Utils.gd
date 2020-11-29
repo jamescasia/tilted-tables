@@ -47,7 +47,7 @@ func hidePopup(popup):
 	fadeTween.queue_free()
 	
 func getNumberOfStars(levelNumber, user_moves):
-	var least_moves = GLOBALS.LEVELS[UserData.currentLevel]["least_moves_solution"]
+	var least_moves = Globals.LEVELS[UserData.currentLevel]["least_moves_solution"]
 	if user_moves <= least_moves:
 		return 3 
 	if user_moves <= int(1.18*least_moves ):

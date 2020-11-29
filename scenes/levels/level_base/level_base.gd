@@ -41,7 +41,7 @@ var goalMesh
 
 var camera 
 
-var winState = GLOBALS.WinState.NONE
+var winState = Globals.WinState.NONE
 func setLevelInfo(linf):
 	levelInfo = linf
 func _ready():  
@@ -68,7 +68,7 @@ func _ready():
 	environment.environment = env_file
 	self.add_child(environment)
 	print(self.get_name(), levelNumber)
-#	levelInfo = GLOBALS.LEVELS[levelNumber]
+#	levelInfo = Globals.LEVELS[levelNumber]
 	map = get_node("table_base/Map")
 	print(levelInfo)
 	gameState = get_parent().gameState
@@ -139,7 +139,7 @@ func initializeBlock(number):
 func _physics_process(delta): 
 	gameState = get_parent().gameState
 	 
-	if gameState == GLOBALS.GameState.RUNNING:
+	if gameState == Globals.GameState.RUNNING:
 		for b in blocks:
 			b.canMove = not table.isRotating and not get_parent().isReverting 
 		 
@@ -156,7 +156,7 @@ func _physics_process(delta):
 				good = false 
 			 
 				
-		table.canRotate = good and not table.isRotating and gameState == GLOBALS.GameState.RUNNING
+		table.canRotate = good and not table.isRotating and gameState == Globals.GameState.RUNNING
 		
 #		if good and (not goodOnce) and (not get_parent().isReverting) and table.canRotate :
 #			goodOnce = true 
@@ -168,25 +168,25 @@ func _physics_process(delta):
 				allNotInPlay = false
 		
 		if allNotInPlay: 
-			winState = GLOBALS.WinState.WON
+			winState = Globals.WinState.WON
 		
 		
 			
 		
 		
 #	if not player.inPlay and not player2.inPlay and not player3.inPlay:
-#		winState = GLOBALS.WinState.WON
+#		winState = Globals.WinState.WON
 			
 			
 			
 			
 #	print("moving ", player.isMoving, "rotating ", table.isRotating) 
 
-		if winState == GLOBALS.WinState.LOST:
-			get_parent().gameState = GLOBALS.GameState.OVER
+		if winState == Globals.WinState.LOST:
+			get_parent().gameState = Globals.GameState.OVER
 			get_parent().setLevelLost()
-		if winState == GLOBALS.WinState.WON:
-			get_parent().gameState = GLOBALS.GameState.WIN
+		if winState == Globals.WinState.WON:
+			get_parent().gameState = Globals.GameState.WIN
 			get_parent().setLevelWon()
 			pass
 	else:
@@ -207,7 +207,7 @@ func _on_Area_area_entered(area):
 	
 	if levelInfo["is_order"] :
 		if blocksInside.pop_front() != exblock:
-			winState = GLOBALS.WinState.LOST
+			winState = Globals.WinState.LOST
 	 
 		
 		

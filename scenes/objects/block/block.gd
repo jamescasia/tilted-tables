@@ -38,11 +38,11 @@ func _ready():
 
 func setBlockInfo(binfo):
 	blockInfo = binfo
-	var material = load (GLOBALS.BLOCK_MATERIALS[blockInfo["number"]])
+	var material = load (Globals.BLOCK_MATERIALS[blockInfo["number"]])
 #	var material = SpatialMaterial.new()	
 #	var material = load("res://assets/materials/player_material.tres")
-#	material.albedo_color = GLOBALS.BLOCK_COLORS[blockInfo["number"]] 
-#	material.set_albedo_color(GLOBALS.BLOCK_COLORS[blockInfo["number"]] )
+#	material.albedo_color = Globals.BLOCK_COLORS[blockInfo["number"]] 
+#	material.set_albedo_color(Globals.BLOCK_COLORS[blockInfo["number"]] )
 	mesh.set_material_override( (material))
 	
 	var cubemesh = CubeMesh.new()
@@ -95,7 +95,7 @@ func _on_Area_area_entered(area):
 	
 	if "Spike" in area.get_parent().get_parent().get_name():
 		destroy_particles.emitting = true
-		area.get_parent().get_parent() .get_parent().get_parent().get_parent().winState = GLOBALS.WinState.LOST
+		area.get_parent().get_parent() .get_parent().get_parent().get_parent().winState = Globals.WinState.LOST
 		
 		
 	
