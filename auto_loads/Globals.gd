@@ -129,9 +129,53 @@ var LEVELS = [
 		"least_moves_solution" : 30
 		
 	},
+{
+		"level":8,
+		"terrain": "grass", 
+		"is_order": false,
+		"blocks": 1,
+		"size": Vector2(13,13),
+		"spikes": [Vector3(0,0,5) ,Vector3(5,0,2) ,Vector3(-2,0,-4) ,Vector3(3,0,-5) ],
+		"finish_coord": Vector3(0,0,-6),
+		"block_0_start_coord": Vector3(-2,0,0), 
+		"location": "res://scenes/levels/level_8/level_8.tscn",
+		
+		"least_moves_solution" : 30
+		
+	},{
+		"level":9,
+		"terrain": "grass", 
+		"is_order": false,
+		"blocks": 3,
+		"size": Vector2(13,13),
+		"finish_coord": Vector3(3,0,6),
+		"block_0_start_coord": Vector3(5, 0, 5),
+		"block_1_start_coord": Vector3(5, 0, 4),
+		"block_2_start_coord": Vector3(5, 0, 3), 
+		"location": "res://scenes/levels/level_9/level_9.tscn",
+		
+		"least_moves_solution" : 30
+		
+	},	{
+		"level":10,
+		"terrain": "grass", 
+		"is_order": false,
+		"blocks": 3,
+		"size": Vector2(13,13),
+		"finish_coord": Vector3(3,0,6),
+		"block_0_start_coord": Vector3(5, 0, 5),
+		"block_1_start_coord": Vector3(5, 0, 4),
+		"block_2_start_coord": Vector3(5, 0, 3), 
+		"location": "res://scenes/levels/level_10/level_10.tscn",
+		
+		"least_moves_solution" : 30
+		
+	},
+
+
 
 	{
-		"level":8,
+		"level":11,
 		"terrain": "grass", 
 		"is_order": true,
 		"blocks": 3,
@@ -141,27 +185,17 @@ var LEVELS = [
 		"block_0_start_coord": Vector3(3,0,7),
 		"block_1_start_coord": Vector3(4,0,5),
 		"block_2_start_coord": Vector3(  4,0,8), 
-		"location": "res://scenes/levels/level_8/level_8.tscn",
+		"location": "res://scenes/levels/level_11/level_11.tscn",
 		
 		"least_moves_solution" : 37
 		
 	},
 
-	{
-		"level":9,
-		"terrain": "grass", 
-		"is_order": false,
-		"blocks": 3,
-		"size": Vector2(19,11),
-		"finish_coord": Vector3(3,0,6),
-		"block_0_start_coord": Vector3(5, 0, 5),
-		"block_1_start_coord": Vector3(5, 0, 4),
-		"block_2_start_coord": Vector3(5, 0, 3), 
-		"location": "res://scenes/levels/level_9/level_9.tscn",
-		
-		"least_moves_solution" : 30
-		
-	},
+
+
+
+
+	 
 	
 #	
 ]

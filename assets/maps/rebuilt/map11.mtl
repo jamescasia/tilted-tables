@@ -1,7 +1,7 @@
 # Created by Kenney (www.kenney.nl)
 
 newmtl bricksDark(Clone)
-Kd 0.878 0.271 0.271
+Kd 0.828 0.293 0.293
 
 newmtl bricks(Clone)
 Kd 1 0.392 0.306

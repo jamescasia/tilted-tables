@@ -17,12 +17,14 @@ var star2
 var star3
 var starband
 
+var nextLock
 
 var star1pos = Vector2(175, 59) 
 var star2pos = Vector2(96, 59)
 var star3pos = Vector2(256, 59)
 var band_rect_size = Vector2(304, 97)
 func _ready():
+	nextLock = get_node("next/lock")
 	movesLabel = get_node("moves/number")
 	pass # Replace with function body.
 	
@@ -53,6 +55,7 @@ func success_animation(numStars, numMoves, isHighScoreBeat):
 	
 	
 	movesLabel.set_text(str(numMoves))
+	 
 	
 	animateStars(numStars)
 	
@@ -63,10 +66,15 @@ func success_animation(numStars, numMoves, isHighScoreBeat):
 		print("You beat high score!!")
 		UserData.progress[UserData.currentLevel]["least_moves"] = numMoves
 		UserData.progress[UserData.currentLevel]["stars"] = numStars
+		
+		
 	UserData.updateProgress()
 	UserData.printProgress()
-	pass
-
+	
+	if not UserData.progress[UserData.currentLevel+1]["unlocked"]:
+		nextLock.visible = true 
+	else:
+		nextLock.visible = false
  
 func animateStars(numStars):
 	

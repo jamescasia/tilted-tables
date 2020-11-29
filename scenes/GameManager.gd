@@ -69,7 +69,7 @@ func _ready():
 	level_game.setLevelInfo(GLOBALS.LEVELS[UserData.currentLevel])
 	level_game.set_name(str(UserData.currentLevel) + "_level_base")
 	add_child(level_game)
-	
+	UserData.updateProgress()
 	for blk in range(level_game.levelInfo["blocks"]):
 		var rbt = Tween.new()
 		add_child(rbt)
@@ -200,7 +200,7 @@ func _won_on_home_pressed():
 
 
 func _won_on_next_pressed(): 
-	if UserData.progress[UserData.currentLevel+1]["unlocked"] or true:
+	if UserData.progress[UserData.currentLevel+1]["unlocked"]:
 		UserData.currentLevel+=1
 		get_tree().reload_current_scene() 
 		
