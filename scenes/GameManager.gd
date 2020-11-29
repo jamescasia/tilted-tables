@@ -33,9 +33,25 @@ var showAndHideTimer
 
 var wm_reminder 
 
+
+
+var tip_controls
+var tip_order_boxes
+var tip_web_monetization
+var tip_moving_blocks
+var tip_spikes
+
 var yawa = []
 # Called when the node enters the scene tree for the first time.
 func _ready(): 
+	
+	tip_controls = get_node("Viewport/tip_controls")
+	tip_order_boxes = get_node("Viewport/tip_order_boxes")
+	tip_web_monetization = get_node("Viewport/tip_web_monetization")
+	tip_moving_blocks = get_node("Viewport/tip_moving_blocks")
+	tip_spikes = get_node("Viewport/tip_spikes")
+	
+	
 	Level_base = load( GLOBALS.LEVELS[UserData.currentLevel]["location"]) 
 	
 	movesLabel = get_node("Viewport/HUD/Control/number")
@@ -207,9 +223,7 @@ func _won_on_next_pressed():
 		UserData.currentLevel+=1
 		get_tree().reload_current_scene() 
 		
-	
-	pass # Replace with function body.
-
+	 
 
 func _monetization_on_yes_pressed():
 #	if UserData.isMonetized:
