@@ -35,21 +35,9 @@ var wm_reminder
 
 
 
-var tip_controls
-var tip_order_boxes
-var tip_web_monetization
-var tip_moving_blocks
-var tip_spikes
-
 var yawa = []
 # Called when the node enters the scene tree for the first time.
 func _ready(): 
-	
-	tip_controls = get_node("Viewport/tip_controls")
-	tip_order_boxes = get_node("Viewport/tip_order_boxes")
-	tip_web_monetization = get_node("Viewport/tip_web_monetization")
-	tip_moving_blocks = get_node("Viewport/tip_moving_blocks")
-	tip_spikes = get_node("Viewport/tip_spikes")
 	
 	
 	Level_base = load( GLOBALS.LEVELS[UserData.currentLevel]["location"]) 
@@ -64,25 +52,18 @@ func _ready():
 	
 	
 	flyTween = get_node("Viewport/fly") 
-	fadeTween = get_node("Viewport/fade")
-#	if UserData.isMonetized: 
-#		if UserData.remindMe:
-#			monetizationPopup.get_node("Label").text = "You've got\nsuperpowers"
-#			monetizationPopup.get_node("yes/Label").text = "Keep 'em. Don't remind me"
-#			monetizationPopup.get_node("no/Label").text = "Lose 'em"
-#
-#			showPopup(monetizationPopup) 
-#		else:
-#
-#			gameState = GLOBALS.GameState.RUNNING
-	if not UserData.isMonetized:
-		showPopup(monetizationPopup) 
-	else: 
-		if not UserData.seenWmReminderOnce:
-			UserData.seenWmReminderOnce = true
-			gameState = GLOBALS.GameState.RUNNING
-			showAndHide(wm_reminder)
-		pass
+	fadeTween = get_node("Viewport/fade") 
+	
+	gameState = GLOBALS.GameState.RUNNING
+
+
+#	if not UserData.isMonetized:
+#		showPopup(monetizationPopup) 
+#	else: 
+#		if not UserData.seenWmReminderOnce:
+#			UserData.seenWmReminderOnce = true
+#			showAndHide(wm_reminder)
+#		pass
 		
 	level_game = Level_base.instance()
 	level_game.setLevelInfo(GLOBALS.LEVELS[UserData.currentLevel])
