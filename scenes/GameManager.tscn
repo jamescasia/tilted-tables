@@ -1,28 +1,31 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/gui/menu_label.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/Exo_2/Exo2-VariableFont_wght.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/fonts/Dosis/static/Dosis-ExtraBold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scenes/pause_menu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/fail_menu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/success_menu.tscn" type="PackedScene" id=7]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 size = 116
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=2]
 size = 44
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 100
 outline_size = 3
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 56
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 40
 outline_size = 1
 font_data = ExtResource( 3 )
@@ -61,7 +64,7 @@ anchor_bottom = 0.0
 margin_left = -114.0
 margin_right = 114.0
 margin_bottom = 299.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 text = "0
 "
 valign = 0
@@ -75,8 +78,13 @@ margin_left = -76.0
 margin_top = -85.0216
 margin_right = 76.0
 margin_bottom = -28.0216
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 text = "MOVES"
+
+[node name="success_menu" parent="Viewport" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -1200.0
+margin_bottom = -1200.0
 
 [node name="Win" type="Control" parent="Viewport"]
 modulate = Color( 1, 1, 1, 0 )
@@ -107,7 +115,7 @@ anchor_right = 0.5
 margin_left = -418.5
 margin_right = 418.5
 margin_bottom = 121.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "You Won!"
 align = 1
@@ -121,7 +129,7 @@ margin_left = 541.666
 margin_top = 137.198
 margin_right = 731.666
 margin_bottom = 205.198
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "STARS: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -132,7 +140,7 @@ margin_left = 546.121
 margin_top = 424.068
 margin_right = 741.121
 margin_bottom = 492.068
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "MOVES:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -153,7 +161,7 @@ margin_left = 79.3673
 margin_top = 19.5101
 margin_right = 177.367
 margin_bottom = 120.51
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Retry
 "
 __meta__ = {
@@ -178,7 +186,7 @@ margin_left = 79.3673
 margin_top = 19.5101
 margin_right = 177.367
 margin_bottom = 120.51
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Home"
 
 [node name="next" type="TextureButton" parent="Viewport/Win"]
@@ -200,7 +208,7 @@ margin_left = 79.3673
 margin_top = 19.5101
 margin_right = 177.367
 margin_bottom = 120.51
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Next"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -235,7 +243,7 @@ margin_left = 593.97
 margin_top = 248.902
 margin_right = 1102.97
 margin_bottom = 524.902
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "You Lost!"
 __meta__ = {
@@ -258,7 +266,7 @@ margin_left = 79.3673
 margin_top = 19.5101
 margin_right = 177.367
 margin_bottom = 120.51
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Retry
 "
 __meta__ = {
@@ -280,7 +288,7 @@ margin_left = 79.3673
 margin_top = 19.5101
 margin_right = 177.367
 margin_bottom = 120.51
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Home"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -315,7 +323,7 @@ margin_left = 488.518
 margin_top = 132.771
 margin_right = 1143.52
 margin_bottom = 408.771
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Activate 
 superpowers?"
@@ -339,7 +347,7 @@ margin_left = 79.3673
 margin_top = 19.5101
 margin_right = 177.367
 margin_bottom = 120.51
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "YES"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -360,7 +368,7 @@ margin_left = 79.3673
 margin_top = 19.5101
 margin_right = 177.367
 margin_bottom = 120.51
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "NO"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -395,7 +403,7 @@ margin_left = 524.719
 margin_top = 277.496
 margin_right = 1231.72
 margin_bottom = 378.496
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "(CLICK time button or press backspace)"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -406,13 +414,23 @@ margin_left = 488.518
 margin_top = 132.771
 margin_right = 1143.52
 margin_bottom = 408.771
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "You have powers"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="fail_menu" parent="Viewport" instance=ExtResource( 6 )]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -1200.0
+margin_bottom = -1200.0
+
+[node name="pause_menu" parent="Viewport" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -1200.0
+margin_bottom = -480.0
 
 [node name="Pause" type="Control" parent="Viewport"]
 modulate = Color( 1, 1, 1, 0 )
@@ -459,7 +477,7 @@ margin_right = 166.5
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 0.5, 0.5 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Paused"
 align = 1
@@ -505,7 +523,7 @@ margin_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 0.5, 0.5 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "RESUME"
 align = 1
 valign = 1
@@ -544,7 +562,7 @@ margin_left = -82.5
 margin_top = -24.5
 margin_right = 82.5
 margin_bottom = 24.5
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "RESTART"
 align = 1
 valign = 1
@@ -584,7 +602,7 @@ margin_left = -55.5
 margin_top = -50.5
 margin_right = 55.5
 margin_bottom = -1.49995
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "HOME"
 align = 1
 valign = 1
@@ -595,6 +613,12 @@ __meta__ = {
 [node name="fly" type="Tween" parent="Viewport"]
 
 [node name="fade" type="Tween" parent="Viewport"]
+[connection signal="pressed" from="Viewport/success_menu/home" to="." method="_won_on_home_pressed"]
+[connection signal="pressed" from="Viewport/success_menu/home" to="Viewport/success_menu" method="_won_on_home_pressed"]
+[connection signal="pressed" from="Viewport/success_menu/retry" to="." method="_won_on_retry_pressed"]
+[connection signal="pressed" from="Viewport/success_menu/retry" to="Viewport/success_menu" method="_won_on_retry_pressed"]
+[connection signal="pressed" from="Viewport/success_menu/next" to="." method="_won_on_next_pressed"]
+[connection signal="pressed" from="Viewport/success_menu/next" to="Viewport/success_menu" method="_won_on_next_pressed"]
 [connection signal="pressed" from="Viewport/Win/retry" to="." method="_won_on_retry_pressed"]
 [connection signal="pressed" from="Viewport/Win/home" to="." method="_won_on_home_pressed"]
 [connection signal="pressed" from="Viewport/Win/next" to="." method="_won_on_next_pressed"]
@@ -602,6 +626,17 @@ __meta__ = {
 [connection signal="pressed" from="Viewport/Lose/home" to="." method="_lose_on_home_pressed"]
 [connection signal="pressed" from="Viewport/ActivateWM/yes" to="." method="_monetization_on_yes_pressed"]
 [connection signal="pressed" from="Viewport/ActivateWM/no" to="." method="_monetization_on_no_pressed"]
+[connection signal="pressed" from="Viewport/fail_menu/retry" to="." method="_lose_on_retry_pressed"]
+[connection signal="pressed" from="Viewport/fail_menu/home" to="." method="_lose_on_home_pressed"]
+[connection signal="pressed" from="Viewport/pause_menu/resume_button" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Viewport/pause_menu/restart_button" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Viewport/pause_menu/home_button" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="Viewport/Pause/resume/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Viewport/Pause/restart/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Viewport/Pause/home/home" to="." method="_on_home_pressed"]
+
+[editable path="Viewport/success_menu"]
+
+[editable path="Viewport/fail_menu"]
+
+[editable path="Viewport/pause_menu"]

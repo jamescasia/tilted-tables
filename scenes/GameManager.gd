@@ -41,10 +41,10 @@ func _ready():
 	movesLabel = get_node("Viewport/HUD/Control/number")
 	wm_reminder = get_node("Viewport/wm-reminder")
 	homeScene =  ("res://scenes/Game.tscn")
-	winPopup = get_node("Viewport/Win")
-	losePopup = get_node("Viewport/Lose")
+	winPopup = get_node("Viewport/success_menu")
+	losePopup = get_node("Viewport/fail_menu")
 	monetizationPopup = get_node("Viewport/ActivateWM") 
-	pausePopup = get_node("Viewport/Pause")
+	pausePopup = get_node("Viewport/pause_menu")
 	
 	
 	flyTween = get_node("Viewport/fly") 
@@ -66,7 +66,7 @@ func _ready():
 			UserData.seenWmReminderOnce = true
 			gameState = GLOBALS.GameState.RUNNING
 			showAndHide(wm_reminder)
-#		pass
+		pass
 		
 	level_game = Level_base.instance()
 	level_game.setLevelInfo(GLOBALS.LEVELS[UserData.currentLevel])
@@ -157,22 +157,16 @@ func setLevelWon():
 
 func winMatter():
 	var levelProgress = UserData.progress[UserData.currentLevel]
-	var isHighScoreBeat = levelProgress["least_moves"] > numberOfMoves
-#	star animations
-
-
+	var isHighScoreBeat = levelProgress["least_moves"] > numberOfMoves  
 	numberOfStars = Utils.getNumberOfStars(UserData.currentLevel, numberOfMoves)
 	
-	winPopup.get_node("stars").set_text("STARS:\n"+ str(numberOfStars))
-	winPopup.get_node("moves").set_text("moves:"+ str(numberOfMoves))
-	print("You got ", numberOfStars , " stars")
-	if isHighScoreBeat:
-#		beat high score animmations
-		print("You beat high score!!")
-		UserData.progress[UserData.currentLevel]["least_moves"] = numberOfMoves
-		UserData.progress[UserData.currentLevel]["stars"] = numberOfStars
-	UserData.updateProgress()
-	UserData.printProgress()
+	winPopup.success_animation(numberOfStars, numberOfMoves, isHighScoreBeat)
+	
+#	winPopup.get_node("stars").set_text("STARS:\n"+ str(numberOfStars))
+#	winPopup.get_node("moves").set_text("moves:"+ str(numberOfMoves))
+	
+	 
+	
 		 
 func loseMatter():
 #	lose animation
@@ -208,9 +202,8 @@ func _won_on_home_pressed():
 	pass # Replace with function body.
 
 
-func _won_on_next_pressed():
-	print("yawa pressed")
-	if UserData.progress[UserData.currentLevel+1]["unlocked"]:
+func _won_on_next_pressed(): 
+	if UserData.progress[UserData.currentLevel+1]["unlocked"] or true:
 		UserData.currentLevel+=1
 		get_tree().reload_current_scene() 
 		

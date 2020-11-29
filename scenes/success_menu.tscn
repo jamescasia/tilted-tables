@@ -1,0 +1,201 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/fonts/Dosis/static/Dosis-ExtraBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/gui/menu_label.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/gui/menu_button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/success_menu.gd" type="Script" id=4]
+[ext_resource path="res://assets/textures/star (2).png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 136
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+
+[sub_resource type="DynamicFont" id=2]
+size = 112
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 46
+font_data = ExtResource( 1 )
+
+[node name="success_menu" type="Control"]
+modulate = Color( 1, 1, 1, 0.901961 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0, 0, 0, 0.360784 )
+polygon = PoolVector2Array( -1984, -1600, -2184, 3456, 5768, 3256, 5352, -2000 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="menu_label" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -280.0
+margin_right = 640.0
+margin_bottom = -107.0
+custom_fonts/font = SubResource( 1 )
+text = "SOLVED!"
+
+[node name="star_band" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -136.0
+margin_right = 200.0
+margin_bottom = 24.0
+theme = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="star1" type="TextureRect" parent="star_band"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -624.0
+margin_right = 21.0
+margin_bottom = -581.0
+rect_scale = Vector2( 1.1, 1.1 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="star2" type="TextureRect" parent="star_band"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 96.0
+margin_top = -624.0
+margin_right = 142.0
+margin_bottom = -581.0
+rect_scale = Vector2( 1.1, 1.1 )
+texture = ExtResource( 5 )
+
+[node name="star3" type="TextureRect" parent="star_band"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -624.0
+margin_right = -98.0
+margin_bottom = -581.0
+rect_scale = Vector2( 1.1, 1.1 )
+texture = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="star_band"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -152.0
+margin_top = -48.0
+margin_right = 152.0
+margin_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/disabled = SubResource( 5 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="moves" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_right = 80.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="number" parent="moves" instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -80.0
+margin_right = 62.0
+margin_bottom = 339.0
+custom_fonts/font = SubResource( 2 )
+text = "76
+"
+valign = 0
+
+[node name="moves" parent="moves" instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+margin_left = -98.0
+margin_top = -87.0
+margin_right = 92.0
+margin_bottom = -5.0
+custom_fonts/font = SubResource( 3 )
+text = "MOVES"
+
+[node name="home" parent="." instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -456.0
+margin_top = 216.0
+margin_right = -195.0
+margin_bottom = 295.0
+text = "HOME"
+
+[node name="retry" parent="." instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = 216.5
+margin_right = 131.0
+margin_bottom = 295.5
+text = "RETRY"
+
+[node name="next" parent="." instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 187.0
+margin_top = 216.5
+margin_right = 448.0
+margin_bottom = 295.5
+text = "NEXT"
+
+[editable path="moves/number"]

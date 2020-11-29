@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/Dosis/static/Dosis-ExtraBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/gui/menu_label.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/gui/menu_button.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 136
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 56
+font_data = ExtResource( 1 )
+
+[node name="fail_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0, 0, 0, 0.360784 )
+polygon = PoolVector2Array( -1016, -800, -944, 2048, 3088, 2040, 3040, -792 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="menu_label" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -208.0
+margin_right = 640.0
+margin_bottom = -35.0
+custom_fonts/font = SubResource( 1 )
+text = " FAILED :("
+
+[node name="retry" parent="." instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.5
+margin_top = -8.0
+margin_right = 130.5
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 2 )
+text = "RETRY"
+
+[node name="home" parent="." instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.5
+margin_top = 96.0
+margin_right = 130.5
+margin_bottom = 175.0
+text = "HOME"
