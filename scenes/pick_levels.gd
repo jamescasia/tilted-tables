@@ -31,21 +31,25 @@ func _input(event):
 				viewState = ViewingState.Sands
 				hideTerrain(glade)
 				showTerrain(sands)
-			else:
+			elif viewState == ViewingState.Sands:
 				hideTerrain(sands)
 				showTerrain(pyres)
 				viewState = ViewingState.Pyres
-			pass
+			else:
+				
+				pass
 		elif event.pressed and event.scancode == KEY_A : 
 			if viewState == ViewingState.Pyres:
 				viewState = ViewingState.Sands
 				hideTerrain(pyres)
 				showTerrain(sands)
-			else:
+			elif viewState == ViewingState.Sands:
 				hideTerrain(sands)
 				showTerrain(glade)
 				viewState= ViewingState.Glade
-			pass  
+			else:
+				
+				pass  
 		elif event.pressed and event.scancode == KEY_ESCAPE:
 			get_tree().change_scene_to(homeScene)
 

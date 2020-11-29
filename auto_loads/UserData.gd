@@ -20,13 +20,13 @@ var progress = [
 	 
 	{
 		"level": 1,
-		"stars": 0,
+		"stars": 2,
 		"unlocked": false,
 		"least_moves": 9999,
 	},	
 	{
 		"level": 2,
-		"stars": 0,
+		"stars": 1,
 		"unlocked": false,
 		"least_moves": 9999,
 	},	

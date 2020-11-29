@@ -9,17 +9,19 @@ var star1
 var star2
 var star3
 var gameManagerScene
+var levelLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	gameManagerScene = load("res://scenes/GameManager.tscn")
+	levelLabel = get_node("menu_label")
 	star1 = get_node("star1")
 	star2 = get_node("star2")
 	star3 = get_node("star3")
 	star1.rect_scale = Vector2(0.8, 0.8)
 	star2.rect_scale = Vector2(0.8, 0.8)
 	star3.rect_scale = Vector2(0.8, 0.8)
-	
+	levelLabel.set_text(str(level))
 	
 	if UserData.progress[level]["stars"] == 3:
 		star1.visible = true
