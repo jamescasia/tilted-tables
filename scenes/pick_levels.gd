@@ -65,7 +65,7 @@ func showTerrain(terrain):
 	add_child(tween2)
 	
 	tween1.interpolate_property(
-		terrain, "modulate", Color(0, 0, 0, 0), Color(1,1,1,1), 1, Tween.TRANS_ELASTIC
+		terrain, "modulate", Color(0, 0, 0, 0), Color(1,1,1,.92), 1, Tween.TRANS_ELASTIC
 	)
 	
 	tween2.interpolate_property(
@@ -84,7 +84,7 @@ func hideTerrain(terrain):
 	add_child(tween2)
 	
 	tween1.interpolate_property(
-		terrain, "modulate",  Color(1,1,1,1),Color(0, 0, 0, 0), 1, Tween.TRANS_ELASTIC
+		terrain, "modulate",  Color(1,1,1,.92),Color(0, 0, 0, 0), 1, Tween.TRANS_ELASTIC
 	)
 	tween2.interpolate_property(
 		terrain, "rect_position",  Vector2(0,0), Vector2(2000, 0) ,1, Tween.TRANS_ELASTIC

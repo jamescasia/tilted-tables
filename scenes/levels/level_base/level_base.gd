@@ -86,9 +86,12 @@ func _ready():
 	
 	if levelInfo["terrain"] == "grass":
 		terrainMesh.mesh = (glade_mesh)
+		camera.size = 13
 		
 	elif levelInfo["terrain"] == "sands":
 		terrainMesh.mesh = (sand_mesh)
+		
+		camera.size = 15.5
 	
 	if levelInfo.get("spikes")!= null:
 		for loc in levelInfo["spikes"]:
@@ -97,8 +100,7 @@ func _ready():
 			spike.translation = loc
 			map.add_child(spike)
 	var mapsize = levelInfo["size"]
-	var grtr  = (mapsize.x if mapsize.x > mapsize.y else mapsize.y) 
-	camera.size =grtr + 3*(15/grtr)
+#	var grtr  = (mapsize.x if mapsize.x > mapsize.y else mapsize.y)  
 			
 			
 #	setCurrentLevelState()

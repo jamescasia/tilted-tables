@@ -139,7 +139,6 @@ var LEVELS = [
 		"finish_coord": Vector3(0,0,-6),
 		"block_0_start_coord": Vector3(-2,0,0), 
 		"location": "res://scenes/levels/level_8/level_8.tscn",
-		
 		"least_moves_solution" : 30
 		
 	},{

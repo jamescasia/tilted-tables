@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/maps/terrain/sands.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/maps/rebuilt/map9.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://scenes/levels/level_base/level_base.gd" type="Script" id=3]
 [ext_resource path="res://scenes/levels/level_base/table_base.gd" type="Script" id=4]
+[ext_resource path="res://assets/maps/terrain/sand_tiles.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://assets/maps/map-goal.obj" type="ArrayMesh" id=6]
 
 [sub_resource type="PhysicsMaterial" id=1]
@@ -39,6 +40,11 @@ physics_material_override = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="table_base/MeshInstance/StaticBody"]
 shape = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="table_base"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.901, 0 )
+mesh = ExtResource( 5 )
+material/0 = null
 
 [node name="Map" type="Spatial" parent="table_base"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )

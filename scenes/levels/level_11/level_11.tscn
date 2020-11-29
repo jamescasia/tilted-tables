@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/maps/table-green.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/maps/terrain/sands.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/maps/rebuilt/map11.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://scenes/levels/level_base/level_base.gd" type="Script" id=3]
 [ext_resource path="res://scenes/levels/level_base/table_base.gd" type="Script" id=4]
@@ -76,7 +76,7 @@ shape = SubResource( 4 )
 [node name="Spatial" type="Spatial" parent="table_base"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.766044, -0.321394, 0.55667, 0, 0.866025, 0.5, -0.642788, -0.383022, 0.663414, 11.7874, 10.6915, 14.0224 )
+transform = Transform( 0.766044, -0.321394, 0.556671, 0, 0.866025, 0.5, -0.642788, -0.383022, 0.663414, 11.7874, 10.6915, 14.0224 )
 projection = 1
 current = true
 size = 16.0
