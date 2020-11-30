@@ -139,7 +139,7 @@ var LEVELS = [
 		"finish_coord": Vector3(0,0,-6),
 		"block_0_start_coord": Vector3(-2,0,0), 
 		"location": "res://scenes/levels/level_8/level_8.tscn",
-		"least_moves_solution" : 30
+		"least_moves_solution" : 10
 		
 	},{
 		"level":9,
@@ -153,7 +153,7 @@ var LEVELS = [
 		"block_0_start_coord": Vector3(6, 0, 6), 
 		"location": "res://scenes/levels/level_9/level_9.tscn",
 		
-		"least_moves_solution" : 30
+		"least_moves_solution" : 20
 		
 	},	{
 		"level":10,
@@ -231,4 +231,18 @@ show many times tips:
 tip_web_monetization: if you press backspace without mmonetization
 
 
+
+
+sound needed
+block slide
+block stop
+block spike
+block exit
+
+win
+lose
+
+
 """
+
+

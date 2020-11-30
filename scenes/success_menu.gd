@@ -16,23 +16,30 @@ var star1
 var star2
 var star3
 var starband
+var animPlayer 
 
 var nextLock
 
 var star1pos = Vector2(175, 59) 
 var star2pos = Vector2(96, 59)
 var star3pos = Vector2(256, 59)
+
+var best_tween
+var bestNode
 var band_rect_size = Vector2(304, 97)
 func _ready():
 	nextLock = get_node("next/lock")
+	animPlayer = get_node("AnimationPlayer")
 	movesLabel = get_node("moves/number")
+	bestNode = get_node("new_best")
 	pass # Replace with function body.
 	
 	star1 = get_node("star_band/star1")
 	star2 = get_node("star_band/star2")
 	star3 = get_node("star_band/star3")
 	starband = get_node("star_band")
-	
+	best_tween = Tween.new()
+	add_child(best_tween)
 	star1_tween = Tween.new()
 	add_child(star1_tween)
 	
@@ -62,10 +69,13 @@ func success_animation(numStars, numMoves, isHighScoreBeat):
 	
 	 
 	if isHighScoreBeat:
+		animPlayer.play("best_animation")
 #		beat high score animmations
 		print("You beat high score!!")
 		UserData.progress[UserData.currentLevel]["least_moves"] = numMoves
 		UserData.progress[UserData.currentLevel]["stars"] = numStars
+		best_tween.interpolate_property(bestNode, "rect_position", Vector2(2000, 2000), Vector2(880,408), 1.2, Tween.TRANS_EXPO, .8)
+		best_tween.start()
 		
 		
 	UserData.updateProgress()

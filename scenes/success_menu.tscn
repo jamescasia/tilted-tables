@@ -287,16 +287,16 @@ __meta__ = {
 }
 
 [node name="new_best" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0.356269 )
+modulate = Color( 1, 1, 1, 0.683313 )
 anchor_right = 0.353
-margin_left = 816.0
-margin_top = 368.0
-margin_right = 515.2
-margin_bottom = 564.0
+margin_left = 2000.0
+margin_top = 2000.0
+margin_right = 1584.2
+margin_bottom = 2110.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_scale = Vector2( 0.788192, 0.788192 )
-rect_pivot_offset = Vector2( 128.802, 94.9954 )
+rect_scale = Vector2( 0.644406, 0.644406 )
+rect_pivot_offset = Vector2( 72.5291, 55.9617 )
 texture = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
