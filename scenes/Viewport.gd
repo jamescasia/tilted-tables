@@ -35,12 +35,10 @@ func _ready():
 func showTips():
 	if UserData.currentLevel == 0 and not UserData.tip_controls_seen_once:
 		tip_controls.showPopup(6)
-		UserData.tip_controls_seen_once = true
-		
+		UserData.tip_controls_seen_once = true 
 	elif UserData.currentLevel == 2:
 		tip_multiple_blocks.showPopup(5) 
-		UserData.tip_multiple_blocks_seen_once = true
-		pass
+		UserData.tip_multiple_blocks_seen_once = true 
 	elif UserData.currentLevel == 5:
 		tip_order_boxes.showPopup(5) 
 		UserData.tip_order_boxes_seen_once = true
@@ -54,6 +52,9 @@ func showTips():
 	elif UserData.currentLevel == 4 or UserData.currentLevel == 7:
 		tip_web_monetization.showPopup(3.2)  
 		pass
+		
+	
+	UserData.updateConfig()
 	
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,6 +62,8 @@ func _process(delta):
 	if UserData.isMonetized and not UserData.tip_time_powers_seen_once:
 		UserData.tip_time_powers_seen_once = true
 		tip_time_powers.showPopup(5)
+		
+		UserData.updateConfig()
 	pass
 
 # 0 show tip_controls

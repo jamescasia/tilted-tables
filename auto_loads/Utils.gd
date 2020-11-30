@@ -17,14 +17,18 @@ func _ready():
 	
 	musicPlayer = musicPlayerScene.instance()
 	add_child(musicPlayer) 
-	musicPlayer.play()  
+	
+	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
+func playMusic():
+	if UserData.musicEnabled:
+		musicPlayer.play()  
+	
 
 	
 func showPopup(popup):

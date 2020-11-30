@@ -43,6 +43,8 @@ func _on_music_pressed():
 		Utils.musicPlayer.play()
 	
 	pass # Replace with function body.
+	
+	UserData.updateConfig()
 
 
 func _on_sfx_pressed():
@@ -50,6 +52,8 @@ func _on_sfx_pressed():
 	UserData.soundEnabled = not UserData.soundEnabled
 	sfxStreak.visible = not UserData.soundEnabled
 	pass # Replace with function body.
+	
+	UserData.updateConfig()
 
 
 func _on_credits_pressed():

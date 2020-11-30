@@ -19,11 +19,17 @@ func _ready():
 	gameManagerScene = preload("res://scenes/GameManager.tscn")
 	pickLevels = preload("res://scenes/pick_levels.tscn")
 	settings = preload("res://scenes/settings.tscn") 
+	
+	UserData.loadProgress()
+	UserData.loadConfig()
+	
+	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	UserData.isMonetized = JavaScript.eval("(document.monetization !== null);") and JavaScript.eval("(document.monetization.state === 'started');")
-
+ 
 
 func _on_Play_pressed():
 	
