@@ -17,7 +17,7 @@ func _ready():
 	
 	musicPlayer = musicPlayerScene.instance()
 	add_child(musicPlayer) 
-	
+	playMusic()
 	
 	pass # Replace with function body.
 
@@ -26,8 +26,8 @@ func _ready():
 #func _process(delta):
 #	pass
 func playMusic():
-	if UserData.musicEnabled:
-		musicPlayer.play()  
+#	if UserData.musicEnabled:
+	musicPlayer.play()  
 	
 
 	

@@ -88,13 +88,13 @@ var LEVELS = [
 		"is_order": true,
 		"blocks": 3,
 		"size": Vector2(11,11),
-		"finish_coord": Vector3(0, 0, -5),
-		"block_0_start_coord": Vector3(4, 0, 3),
-		"block_1_start_coord": Vector3(4, 0, 4),
-		"block_2_start_coord": Vector3(4, 0,2), 
+		"finish_coord": Vector3( 4, 0, -6),
+		"block_0_start_coord":Vector3(4, 0,2), 
+		"block_1_start_coord": Vector3(4, 0, 3),
+		"block_2_start_coord":  Vector3(4, 0, 4),
 		"location": "res://scenes/levels/level_5/level_5.tscn",
 		
-		"least_moves_solution" : 36
+		"least_moves_solution" : 30
 		
 	},
 	

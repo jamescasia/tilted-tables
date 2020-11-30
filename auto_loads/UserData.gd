@@ -438,11 +438,10 @@ func setVarsFromConfig():
 	tip_multiple_blocks_seen_once = config['tip_multiple_blocks_seen_once']
 	tip_time_powers_seen_once = config['tip_time_powers_seen_once' ]
 	tip_web_monetization_seen_once = config['tip_web_monetization_seen_once' ]
-	musicEnabled = config['musicEnabled' ]
-	soundEnabled = config['soundEnabled'  ]
+#	musicEnabled = config['musicEnabled' ]
+#	soundEnabled = config['soundEnabled'  ]
 	
-	
-	Utils.playMusic()
+	 
 	
 func loadConfig():
 	var file = File.new()

@@ -26,6 +26,7 @@ func _ready():
 	tip_time_powers = get_node("tip_time_powers")
 	tip_multiple_blocks = get_node("tip_multiple_blocks")
 	showTips()
+	
 		 
 	   
 	

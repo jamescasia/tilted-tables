@@ -2,7 +2,7 @@
 
 :materials
 
-[name:stone;color:RGBA(0.834, 0.834, 0.834, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0;]
+[name:stone;color:RGBA(0.421, 0.421, 0.421, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.5;valueB:0;]
 [name:bricksDark;color:RGBA(0.878, 0.271, 0.271, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.35;valueB:0;]
 [name:bricks;color:RGBA(1.000, 0.392, 0.306, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.35;valueB:0;]
 
