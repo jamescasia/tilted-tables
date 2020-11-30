@@ -18,6 +18,7 @@ theme = SubResource( 1 )
 custom_styles/hover = ExtResource( 6 )
 custom_styles/pressed = ExtResource( 6 )
 custom_styles/focus = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 4 )
 custom_styles/normal = ExtResource( 4 )
 script = ExtResource( 3 )
 __meta__ = {

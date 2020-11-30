@@ -21,6 +21,8 @@ var tip_time_powers_seen_once = false
 var tip_web_monetization_seen_once = false
 
 
+var musicEnabled = true
+var soundEnabled = true
 
 
 var progress = [

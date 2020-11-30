@@ -5,9 +5,19 @@ extends Node
 # var a = 2
 # var b = "text"
 
+var musicPlayer
+var musicPlayerScene
+var bg_music
+var stream
+
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready(): 
+	musicPlayerScene = load("res://scenes/musicPlayer.tscn")
+	
+	musicPlayer = musicPlayerScene.instance()
+	add_child(musicPlayer) 
+	musicPlayer.play()  
 	pass # Replace with function body.
 
 

@@ -73,6 +73,16 @@ transform = Transform( 1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, 0, 0, 0 )
 transform = Transform( -1, 0, -3.05474e-07, 0, 1, 0, 3.05474e-07, 0, -1, 0.0169995, 0.5, 0.5 )
 shape = SubResource( 4 )
 
+[node name="indicator" type="Spatial" parent="table_base/Map"]
+transform = Transform( 0.998122, 0, 0.0612575, 0, 1, 0, -0.0612575, 0, 0.998122, 1.56024, 0, -1.02308 )
+
+[node name="Area" type="Area" parent="table_base/Map/indicator"]
+transform = Transform( -0.0329983, 0, -0.999455, 0, 1, 0, 0.999455, 0, -0.0329983, 4.76837e-07, 0, -2.38419e-07 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="table_base/Map/indicator/Area"]
+transform = Transform( -1, 0, -3.05474e-07, 0, 1, 0, 3.05474e-07, 0, -1, 0.0169995, 0.5, 0.5 )
+shape = SubResource( 4 )
+
 [node name="Spatial" type="Spatial" parent="table_base"]
 
 [node name="Camera" type="Camera" parent="."]
@@ -92,3 +102,4 @@ light_bake_mode = 2
 [connection signal="tween_all_completed" from="table_base/Tween" to="table_base" method="_on_Tween_tween_all_completed"]
 [connection signal="area_entered" from="table_base/Map/Goal/MeshInstance/Area" to="." method="_on_Area_area_entered"]
 [connection signal="area_exited" from="table_base/Map/Goal/MeshInstance/Area" to="." method="_on_Area_area_exited"]
+[connection signal="area_entered" from="table_base/Map/indicator/Area" to="." method="_on_forsaken_area_entered"]

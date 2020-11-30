@@ -10,9 +10,12 @@ var gameManagerScene
 var progress
 var pickLevels 
 var settings 
+
+var musicPlayer
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
+	
 	gameManagerScene = preload("res://scenes/GameManager.tscn")
 	pickLevels = preload("res://scenes/pick_levels.tscn")
 	settings = preload("res://scenes/settings.tscn") 

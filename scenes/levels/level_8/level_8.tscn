@@ -62,7 +62,7 @@ material/1 = null
 shape = SubResource( 3 )
 
 [node name="Goal" type="Spatial" parent="table_base/Map"]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 3, 0, 6 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 3, 0, 6 )
 
 [node name="MeshInstance" type="MeshInstance" parent="table_base/Map/Goal"]
 transform = Transform( -0.0329983, 0, -0.999455, 0, 1, 0, 0.999455, 0, -0.0329983, 4.76837e-07, 0, -2.38419e-07 )

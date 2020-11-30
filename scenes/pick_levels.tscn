@@ -1,10 +1,80 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/gui/menu_label.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/gui/level_button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/pick_levels.gd" type="Script" id=3]
 [ext_resource path="res://assets/textures/glade_bg.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/sand_bg.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/Dosis/static/Dosis-ExtraBold.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+length = 3.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1.12, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1.12, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0.509804, -0.25, 0, 0.25, 0, 0.909804, -0.25, 0, 0.25, 0, 0.509804, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3 )
+}
 
 [node name="pick_levels" type="Control"]
 anchor_right = 1.0
@@ -152,8 +222,9 @@ margin_bottom = 640.0
 level = 7
 
 [node name="sands" type="Control" parent="."]
-margin_left = 2000.0
-margin_right = 3600.0
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 1700.0
+margin_right = 3300.0
 margin_bottom = 900.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -283,8 +354,8 @@ margin_bottom = 640.0
 level = 15
 
 [node name="pyres" type="Control" parent="."]
-margin_left = 2000.0
-margin_right = 3600.0
+margin_left = -1700.0
+margin_right = -100.0
 margin_bottom = 900.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -332,6 +403,7 @@ margin_left = 72.0
 margin_top = 208.0
 margin_right = 232.0
 margin_bottom = 376.0
+disabled = true
 level = 16
 
 [node name="level_button2" parent="pyres/buttons/group" instance=ExtResource( 2 )]
@@ -339,6 +411,7 @@ margin_left = 72.0
 margin_top = 472.0
 margin_right = 232.0
 margin_bottom = 640.0
+disabled = true
 level = 20
 
 [node name="group2" type="Control" parent="pyres/buttons"]
@@ -356,6 +429,7 @@ margin_left = 72.0
 margin_top = 208.0
 margin_right = 232.0
 margin_bottom = 376.0
+disabled = true
 level = 17
 
 [node name="level_button2" parent="pyres/buttons/group2" instance=ExtResource( 2 )]
@@ -363,6 +437,7 @@ margin_left = 72.0
 margin_top = 472.0
 margin_right = 232.0
 margin_bottom = 640.0
+disabled = true
 level = 21
 
 [node name="group3" type="Control" parent="pyres/buttons"]
@@ -380,6 +455,7 @@ margin_left = 72.0
 margin_top = 208.0
 margin_right = 232.0
 margin_bottom = 376.0
+disabled = true
 level = 18
 
 [node name="level_button2" parent="pyres/buttons/group3" instance=ExtResource( 2 )]
@@ -387,6 +463,7 @@ margin_left = 72.0
 margin_top = 472.0
 margin_right = 232.0
 margin_bottom = 640.0
+disabled = true
 level = 22
 
 [node name="group4" type="Control" parent="pyres/buttons"]
@@ -403,6 +480,7 @@ margin_left = 72.0
 margin_top = 208.0
 margin_right = 232.0
 margin_bottom = 376.0
+disabled = true
 level = 19
 
 [node name="level_button2" parent="pyres/buttons/group4" instance=ExtResource( 2 )]
@@ -410,4 +488,21 @@ margin_left = 72.0
 margin_top = 472.0
 margin_right = 232.0
 margin_bottom = 640.0
+disabled = true
 level = 23
+
+[node name="coming_soon" parent="pyres" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.909804 )
+margin_left = 256.0
+margin_top = 176.0
+margin_right = -1016.0
+margin_bottom = -660.0
+rect_scale = Vector2( 1.12, 1.12 )
+rect_pivot_offset = Vector2( 160, 32 )
+custom_fonts/font = SubResource( 1 )
+text = "(COMING SOON)"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="pyres/coming_soon"]
+autoplay = "New Anim"
+playback_speed = 1.8
+"anims/New Anim" = SubResource( 2 )

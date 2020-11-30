@@ -32,6 +32,11 @@ margin_right = 130.5
 margin_bottom = 39.5
 text = "MUSIC"
 
+[node name="streak" type="Polygon2D" parent="music"]
+visible = false
+modulate = Color( 1, 1, 1, 0.784314 )
+polygon = PoolVector2Array( 34.5, 37.5, 34.5, 45.5, 226.5, 45.5, 226.5, 37.5 )
+
 [node name="sfx" parent="." instance=ExtResource( 1 )]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -42,6 +47,12 @@ margin_top = 48.0
 margin_right = 130.5
 margin_bottom = 127.0
 text = "SFX"
+
+[node name="streak2" type="Polygon2D" parent="sfx"]
+visible = false
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 0, -2 )
+polygon = PoolVector2Array( 34.5, 37.5, 34.5, 45.5, 226.5, 45.5, 226.5, 37.5 )
 
 [node name="credits" parent="." instance=ExtResource( 1 )]
 anchor_left = 0.5
@@ -64,3 +75,6 @@ margin_top = -79.0
 margin_right = 0.0
 margin_bottom = 0.0
 text = "REVEAL"
+[connection signal="pressed" from="music" to="." method="_on_music_pressed"]
+[connection signal="pressed" from="sfx" to="." method="_on_sfx_pressed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]

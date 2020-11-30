@@ -39,6 +39,9 @@ var groundMesh
 var mapMesh
 var goalMesh
 
+var blocksLeft 
+var forsaken = false
+
 var camera 
 
 var winState = Globals.WinState.NONE
@@ -78,6 +81,8 @@ func _ready():
 	for p in range(levelInfo["blocks"]):
 		initializeBlock(p) 
 	blocksInside = blocks.duplicate()
+	
+	blocksLeft = levelInfo["blocks"]
 	
 		   
 	goal = get_node("table_base/Map/Goal")
@@ -205,13 +210,14 @@ func _on_Area_area_entered(area):
 	area.get_parent().get_node('particles').emitting = true
 	var exblock =  area.get_parent()
 	exblock.translation = goal.translation + Vector3(0, -2 , 0)  
+	exblock.exitSound()
 	
-	
+	blocksLeft -=1
 	if levelInfo["is_order"] :
 		if blocksInside.pop_front() != exblock:
 			winState = Globals.WinState.LOST
 	 
-		
+	
 		
 		
 	 
@@ -222,3 +228,14 @@ func _on_Area_area_exited(area):
 	
 	
 
+
+
+func _on_forsaken_area_entered(area):
+	print('forsaken')
+	forsaken = true
+	
+	print(len(blocksInside))
+	
+	if forsaken and blocksLeft == 1 :
+		get_parent().tip_web_monetization.showPopup(3.2)
+	pass # Replace with function body.

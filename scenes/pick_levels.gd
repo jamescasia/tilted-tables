@@ -38,21 +38,22 @@ func _input(event):
 			else:
 				hideTerrain(pyres)
 				showTerrain(glade)
-				viewState = ViewingState.Glades
+				viewState = ViewingState.Glade
 				
 				pass
 		elif event.pressed and event.scancode == KEY_A : 
 			if viewState == ViewingState.Pyres:
 				viewState = ViewingState.Sands
-				hideTerrain(pyres)
-				showTerrain(sands)
+				hideTerrainleft(pyres)
+				showTerrainleft(sands)
+				
 			elif viewState == ViewingState.Sands:
-				hideTerrain(sands)
-				showTerrain(glade)
+				hideTerrainleft(sands)
+				showTerrainleft(glade)
 				viewState= ViewingState.Glade
 			else:
-				hideTerrain(glade)
-				showTerrain(pyres)
+				hideTerrainleft(glade)
+				showTerrainleft(pyres)
 				viewState = ViewingState.Pyres
 				
 				pass  
@@ -75,7 +76,7 @@ func showTerrain(terrain):
 	)
 	
 	tween2.interpolate_property(
-		terrain, "rect_position", Vector2(2000, 0) , Vector2(0,0), 1, Tween.TRANS_CUBIC
+		terrain, "rect_position", Vector2(1700, 0) , Vector2(0,0), 1, Tween.TRANS_CUBIC
 	)
 	
 	tween1.start() 
@@ -93,7 +94,7 @@ func hideTerrain(terrain):
 		terrain, "modulate",  Color(1,1,1,.92),Color(0, 0, 0, 0), 1, Tween.TRANS_CUBIC
 	)
 	tween2.interpolate_property(
-		terrain, "rect_position",  Vector2(0,0), Vector2(2000, 0) ,1, Tween.TRANS_CUBIC
+		terrain, "rect_position",  Vector2(0,0), Vector2(-1700, 0) ,1, Tween.TRANS_CUBIC
 	)
 	
 	tween1.start() 
@@ -101,4 +102,41 @@ func hideTerrain(terrain):
 	pass
 	
 
+func showTerrainleft(terrain):
+	tween1 = Tween.new()
+	add_child(tween1)
 	
+	tween2 = Tween.new()
+	add_child(tween2)
+	
+	tween1.interpolate_property(
+		terrain, "modulate", Color(0, 0, 0, 0), Color(1,1,1,.92), 1, Tween.TRANS_CUBIC
+	)
+	
+	tween2.interpolate_property(
+		terrain, "rect_position", Vector2(-1700, 0) , Vector2(0,0), 1, Tween.TRANS_CUBIC
+	)
+	
+	tween1.start() 
+	tween2.start()
+	pass
+	pass
+	
+func hideTerrainleft(terrain):
+	tween1 = Tween.new()
+	add_child(tween1)
+	
+	tween2 = Tween.new()
+	add_child(tween2)
+	
+	tween1.interpolate_property(
+		terrain, "modulate",  Color(1,1,1,.92),Color(0, 0, 0, 0), 1, Tween.TRANS_CUBIC
+	)
+	tween2.interpolate_property(
+		terrain, "rect_position",  Vector2(0,0), Vector2( 1700, 0) ,1, Tween.TRANS_CUBIC
+	)
+	
+	tween1.start() 
+	tween2.start()
+	
+	pass
