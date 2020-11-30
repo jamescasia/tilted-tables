@@ -8,17 +8,13 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 var musicStreak 
-var sfxStreak
-var creditsScene
-var homeScene
+var sfxStreak 
 var tween1
 var tween2
 func _ready():
 	pass # Replace with function body.
-	musicStreak = get_node("music/streak")
-	creditsScene = load("res://scenes/credits.tscn")
-	sfxStreak = get_node("sfx/streak2")
-	homeScene = load("res://scenes/Game.tscn")
+	musicStreak = get_node("music/streak") 
+	sfxStreak = get_node("sfx/streak2") 
 	
 	
 	tween1 = Tween.new()
@@ -41,7 +37,7 @@ func _ready():
 func _input(event): 
 	if event is InputEventKey: 
 		if event.pressed and event.scancode == KEY_ESCAPE:
-			get_tree().change_scene_to(homeScene)
+			get_tree().change_scene_to(Globals.homeScene)
 
 
 func _on_music_pressed():
@@ -68,7 +64,7 @@ func _on_sfx_pressed():
 
 
 func _on_credits_pressed():
-	get_tree().change_scene_to(creditsScene)
+	get_tree().change_scene_to(Globals.creditsScene)
 	
 	pass # Replace with function body.
 	

@@ -11,8 +11,7 @@ var tween1
 var tween2
 
 enum ViewingState{ Glade, Sands, Pyres}
-var viewState = ViewingState.Glade
-var homeScene
+var viewState = ViewingState.Glade 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,8 +19,7 @@ func _ready():
 	glade = get_node("glade")
 	sands = get_node("sands")
 	pyres = get_node("pyres")
-	
-	homeScene = load("res://scenes/Game.tscn")
+	 
 	tween1 = Tween.new()
 	add_child(tween1)
 	
@@ -65,7 +63,7 @@ func _input(event):
 				
 				pass  
 		elif event.pressed and event.scancode == KEY_ESCAPE:
-			get_tree().change_scene_to(homeScene)
+			get_tree().change_scene_to(Globals.homeScene)
 
 			
 		

@@ -5,14 +5,12 @@ extends Control
 # var a = 2
 # var b = "text"
 var tween1
-var tween2
-var settingsScene
+var tween2 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 	
-	
-	settingsScene = preload("res://scenes/settings.tscn")
+	 
 	
 	tween1 = Tween.new()
 	add_child(tween1)
@@ -30,7 +28,7 @@ func _ready():
 func _input(event): 
 	if event is InputEventKey: 
 		if event.pressed and event.scancode == KEY_ESCAPE:
-			get_tree().change_scene_to(settingsScene)
+			get_tree().change_scene_to(Globals.settingsScene)
  
 func showSettings():
 	tween1.interpolate_property(

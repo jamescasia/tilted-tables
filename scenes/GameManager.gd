@@ -16,8 +16,7 @@ var numberOfStars = 1
 
 var winPopup
 var losePopup 
-
-var homeScene 
+ 
 
 var level_game
  
@@ -40,16 +39,38 @@ var tween1
 var tween2
 
 var yawa = []
-# Called when the node enters the scene tree for the first time.
+var level0
+var level1
+var level2
+var level3
+var level4
+var level5
+var level6
+var level7
+var level8
+var level9
+var level10
+var level11
+var level12
+var level13
+var level14
+var level15
+
+
+
 func _ready(): 
 	revertPlayer = get_node("AudioStreamPlayer")
 	
-	Level_base = load( Globals.LEVELS[UserData.currentLevel]["location"]) 
+#	preloadScenes()
+	
+	
+	
+#	Level_base = load( Globals.LEVELS[UserData.currentLevel]["location"]) 
+	Level_base = Globals.preloadedScenes [UserData.currentLevel]
 	viewport = get_node("viewport")
 	tip_web_monetization = get_node("Viewport/tip_web_monetization")
 	movesLabel = get_node("Viewport/HUD/Control/number")
-	wm_reminder = get_node("Viewport/wm-reminder")
-	homeScene =  ("res://scenes/Game.tscn")
+	wm_reminder = get_node("Viewport/wm-reminder") 
 	winPopup = get_node("Viewport/success_menu")
 	losePopup = get_node("Viewport/fail_menu")
 	monetizationPopup = get_node("Viewport/ActivateWM") 
@@ -81,7 +102,24 @@ func _ready():
 		
 #	showScene()
 		
-		
+
+	
+#	level0 = preload("")
+#	level1 = preload("")
+#	level2 = preload("")
+#	level3 = preload("")
+#	level4 = preload("")
+#	level5 = preload("")
+#	level6 = preload("")
+#	level7 = preload("")
+#	level8 = preload("")
+#	level9 = preload("")
+#	level10 = preload("")
+#	level11 = preload("")
+#	level12 = preload("")
+#	level13 = preload("")
+#	level14 = preload("")
+#	level15 = preload("") 
 
 		
 func _process(delta):  
@@ -206,7 +244,7 @@ func setLevelLost():
 
 func _lose_on_home_pressed():
 	
-	get_tree().change_scene(homeScene)
+	get_tree().change_scene_to(Globals.homeScene)
 	pass # Replace with function body.
 
 
@@ -223,7 +261,7 @@ func _won_on_retry_pressed():
 
 func _won_on_home_pressed():
 	
-	get_tree().change_scene(homeScene)
+	get_tree().change_scene_to(Globals.homeScene)
 	pass # Replace with function body.
 
 
@@ -298,7 +336,7 @@ func _on_restart_pressed():
 
 func _on_home_pressed():
 	hidePopup(pausePopup)
-	get_tree().change_scene(homeScene)
+	get_tree().change_scene_to(Globals.homeScene)
 	pass # Replace with function body.
 
  
