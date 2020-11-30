@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/fonts/Dosis/static/Dosis-ExtraBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://menu_label.gd" type="Script" id=2]
+[ext_resource path="res://scenes/gui/menu_label.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/textures/backspace.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 26
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[node name="revert" type="Control"]
+margin_left = 800.534
+margin_top = 134.664
+margin_right = 800.534
+margin_bottom = 134.664
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="menu_label" type="Label" parent="." instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -73.0
+margin_top = -20.5
+margin_right = 73.0
+margin_bottom = 20.5
+custom_fonts/font = SubResource( 1 )
+text = "REVERT"
+align = 1
+valign = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -70.5
+margin_top = -121.311
+margin_right = 70.5
+margin_bottom = -32.3111
+custom_styles/disabled = SubResource( 2 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -30.0815
+margin_top = -20.2296
+margin_right = 46.9185
+margin_bottom = 29.7704
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 4 )

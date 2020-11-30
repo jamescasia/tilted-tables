@@ -35,7 +35,6 @@ margin_top = -232.0
 margin_right = 1256.0
 margin_bottom = 16.0
 custom_fonts/font = SubResource( 1 )
-text = "GET THE BOXES OUTSIDE
-IN ORDER - RED, GREEN, BLUE"
+text = ""
 align = 0
 valign = 0

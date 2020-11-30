@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/fonts/Dosis/static/Dosis-ExtraBold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/gui/menu_label.tscn" type="PackedScene" id=2]
@@ -7,14 +7,15 @@
 [ext_resource path="res://assets/textures/star (2).png" type="Texture" id=5]
 [ext_resource path="res://assets/textures/lock.png" type="Texture" id=6]
 [ext_resource path="res://assets/buttons/normal_menu_button.tres" type="StyleBox" id=7]
+[ext_resource path="res://assets/textures/new_best.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 136
 font_data = ExtResource( 1 )
 
-[sub_resource type="Theme" id=4]
+[sub_resource type="Theme" id=2]
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 9
 border_width_top = 9
@@ -26,13 +27,78 @@ corner_radius_top_right = 28
 corner_radius_bottom_right = 28
 corner_radius_bottom_left = 28
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 112
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 46
 font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "best_animation"
+length = 3.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("new_best:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.6, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0, 0.6, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("new_best:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.6, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0, 0.6, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("new_best:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("new_best:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("new_best:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("new_best:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0.784314, -0.25, 0, 0.25, 0, 0.329412, -0.25, 0, 0.25, 0, 0.784314, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 3 )
+}
 
 [node name="success_menu" type="Control"]
 modulate = Color( 1, 1, 1, 0.901961 )
@@ -71,8 +137,10 @@ margin_left = -200.0
 margin_top = -136.0
 margin_right = 200.0
 margin_bottom = 24.0
-theme = SubResource( 4 )
+theme = SubResource( 2 )
 __meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -86,6 +154,7 @@ margin_top = -624.0
 margin_right = 21.0
 margin_bottom = -581.0
 rect_scale = Vector2( 1.1, 1.1 )
+rect_pivot_offset = Vector2( 24, 20 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -99,6 +168,7 @@ margin_top = -624.0
 margin_right = 142.0
 margin_bottom = -581.0
 rect_scale = Vector2( 1.1, 1.1 )
+rect_pivot_offset = Vector2( 24, 20 )
 texture = ExtResource( 5 )
 
 [node name="star3" type="TextureRect" parent="star_band"]
@@ -111,6 +181,7 @@ margin_top = -624.0
 margin_right = -98.0
 margin_bottom = -581.0
 rect_scale = Vector2( 1.1, 1.1 )
+rect_pivot_offset = Vector2( 24, 20 )
 texture = ExtResource( 5 )
 
 [node name="Button" type="Button" parent="star_band"]
@@ -124,7 +195,7 @@ margin_right = 152.0
 margin_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_styles/disabled = SubResource( 5 )
+custom_styles/disabled = SubResource( 3 )
 disabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -151,7 +222,7 @@ anchor_bottom = 0.0
 margin_left = -80.0
 margin_right = 62.0
 margin_bottom = 339.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "76
 "
 valign = 0
@@ -164,7 +235,7 @@ margin_left = -98.0
 margin_top = -87.0
 margin_right = 92.0
 margin_bottom = -5.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "MOVES"
 
 [node name="home" parent="." instance=ExtResource( 3 )]
@@ -214,5 +285,25 @@ texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="new_best" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.356269 )
+anchor_right = 0.353
+margin_left = 816.0
+margin_top = 368.0
+margin_right = 515.2
+margin_bottom = 564.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.788192, 0.788192 )
+rect_pivot_offset = Vector2( 128.802, 94.9954 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 4.0
+anims/best_animation = SubResource( 6 )
 
 [editable path="moves/number"]

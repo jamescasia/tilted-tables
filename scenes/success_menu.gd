@@ -84,48 +84,40 @@ func animateStars(numStars):
 	starband_tween.start()
 #
 	if numStars == 3:
-		star1_tween.interpolate_property(star1, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star1pos ,0.4, Tween.TRANS_EXPO, Tween.EASE_IN, 0.3)  
-#		star2_tween.interpolate_property(star1, "rect_rotation",  rand_range(-1000, -2000), 0,  0.6, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.3) 
+		star1_tween.interpolate_property(star1, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star1pos ,0.4, Tween.TRANS_CUBIC, Tween.EASE_IN, 0.3)  
+		star2_tween.interpolate_property(star1, "rect_rotation",  rand_range(-500, -1000), 0, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.5) 
 		
-		star1_tween.interpolate_property(star2, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star2pos ,0.4, Tween.TRANS_EXPO, Tween.EASE_IN, .5 )  
-#		star2_tween.interpolate_property(star2, "rect_rotation",  rand_range(-1000, -2000), 0, 0.4, Tween.TRANS_LINEAR, Tween.EASE_IN,   .5) 
+		star1_tween.interpolate_property(star2, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star2pos ,0.4, Tween.TRANS_CUBIC, Tween.EASE_IN, .5 )  
+		star2_tween.interpolate_property(star2, "rect_rotation",  rand_range(-500, -1000), 0, .5, Tween.TRANS_LINEAR, Tween.EASE_IN,   .8) 
 		
-		star1_tween.interpolate_property(star3, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star3pos ,0.4, Tween.TRANS_EXPO, Tween.EASE_IN, .7)  
-#		star2_tween.interpolate_property(star3, "rect_rotation",  rand_range(-1000, -2000), 0,  0.6, Tween.TRANS_LINEAR, Tween.EASE_IN, 1) 
-		star1_tween.playback_speed = 0.8
+		star1_tween.interpolate_property(star3, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star3pos ,0.4, Tween.TRANS_CUBIC, Tween.EASE_IN, .7)  
+		star2_tween.interpolate_property(star3, "rect_rotation",  rand_range(-500, -1000), 0, .5, Tween.TRANS_LINEAR, Tween.EASE_IN, 1) 
+		star1_tween.playback_speed = 0.8 
 		star1_tween.start()
-#		star2_tween.start()
+		star2_tween.start()
 #		star3_tween.start()
 	elif numStars == 2:
 		
-		star1_tween.interpolate_property(star1, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star1pos ,0.4, Tween.TRANS_EXPO, Tween.EASE_IN, 0.3)  
-#		star2_tween.interpolate_property(star1, "rect_rotation",  rand_range(-1000, -2000), 0,  0.6, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.3) 
+		star1_tween.interpolate_property(star1, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star1pos ,0.4, Tween.TRANS_CUBIC, Tween.EASE_IN, 0.3)  
+		star2_tween.interpolate_property(star1, "rect_rotation",  rand_range(-500, -1000), 0, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.5) 
 		
-		star1_tween.interpolate_property(star2, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star2pos ,0.4, Tween.TRANS_EXPO, Tween.EASE_IN, .5 )  
-#		star2_tween.interpolate_property(star2, "rect_rotation",  rand_range(-1000, -2000), 0, 0.4, Tween.TRANS_LINEAR, Tween.EASE_IN,   .5) 
+		star1_tween.interpolate_property(star2, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star2pos ,0.4, Tween.TRANS_CUBIC, Tween.EASE_IN, .5 )  
+		star2_tween.interpolate_property(star2, "rect_rotation",  rand_range(-500, -1000), 0, .5, Tween.TRANS_LINEAR, Tween.EASE_IN,   .8) 
 		
-#		star1_tween.interpolate_property(star3, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star3pos ,0.4, Tween.TRANS_EXPO, Tween.EASE_IN, .7)  
-#		star2_tween.interpolate_property(star3, "rect_rotation",  rand_range(-1000, -2000), 0,  0.6, Tween.TRANS_LINEAR, Tween.EASE_IN, 1) 
 		star1_tween.playback_speed = 0.8
 		star1_tween.start()
-#		star2_tween.start()
-#		star3_tween.start()
+		star2_tween.start()
 		
 	
 	elif numStars == 1:
-		star1_tween.interpolate_property(star1, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star1pos ,0.4, Tween.TRANS_EXPO, Tween.EASE_IN, 0.3)  
-#		star2_tween.interpolate_property(star1, "rect_rotation",  rand_range(-1000, -2000), 0,  0.6, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.3) 
 		
-#		star1_tween.interpolate_property(star2, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star2pos ,0.4, Tween.TRANS_EXPO, Tween.EASE_IN, .5 )  
-##		star2_tween.interpolate_property(star2, "rect_rotation",  rand_range(-1000, -2000), 0, 0.4, Tween.TRANS_LINEAR, Tween.EASE_IN,   .5) 
-#
-#		star1_tween.interpolate_property(star3, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star3pos ,0.4, Tween.TRANS_EXPO, Tween.EASE_IN, .7)  
-#		star2_tween.interpolate_property(star3, "rect_rotation",  rand_range(-1000, -2000), 0,  0.6, Tween.TRANS_LINEAR, Tween.EASE_IN, 1) 
+		star1_tween.interpolate_property(star1, "rect_position", Vector2( rand_range(-400, 1600), rand_range(-700, -1300) ) ,  star1pos ,0.4, Tween.TRANS_CUBIC, Tween.EASE_IN, 0.3)  
+		star2_tween.interpolate_property(star1, "rect_rotation",  rand_range(-500, -1000), 0, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.5) 
+		
+	 
 		star1_tween.playback_speed = 0.8
 		star1_tween.start()
-#		star2_tween.start()
-#		star3_tween.start()
-		
+		star2_tween.start()
 	
 		
 		

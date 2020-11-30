@@ -9,6 +9,20 @@ var remindMe = true
 var showHUD = true
 var seenWmReminderOnce = false
 
+
+
+
+var tip_controls_seen_once = false
+var tip_order_boxes_seen_once = false
+var tip_moving_blocks_seen_once = false
+var tip_spikes_seen_once = false
+var tip_multiple_blocks_seen_once = false
+var tip_time_powers_seen_once = false
+var tip_web_monetization_seen_once = false
+
+
+
+
 var progress = [
 	
 	{

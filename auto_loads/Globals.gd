@@ -211,3 +211,24 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+
+""" 
+show once tips:
+tip_order_boxes 5
+tip_moving_blocks
+tip_spikes 8
+tip_multiple_blocks 2
+tip_controls 0
+tip_web_monetization: 7 , 4
+
+
+
+time powers: first time web monetized
+
+show many times tips:
+tip_web_monetization: if you press backspace without mmonetization
+
+
+"""

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/gui/menu_label.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=2]
@@ -8,8 +8,10 @@
 [ext_resource path="res://scenes/fail_menu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/success_menu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/text_popup.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/textures/backspace.png" type="Texture" id=9]
+[ext_resource path="res://assets/buttons/revert_button.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Viewport.gd" type="Script" id=10]
+[ext_resource path="res://assets/textures/web_mon_logo.png" type="Texture" id=11]
+[ext_resource path="res://scenes/text_popup.gd" type="Script" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 116
@@ -30,10 +32,14 @@ outline_size = 1
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 26
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 6
 border_width_top = 6
@@ -45,11 +51,11 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 size = 44
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 size = 56
 font_data = ExtResource( 4 )
 
@@ -238,37 +244,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="success_menu" parent="Viewport" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 0 )
-margin_top = -1200.0
-margin_bottom = -1200.0
-
-[node name="fail_menu" parent="Viewport" instance=ExtResource( 6 )]
-modulate = Color( 1, 1, 1, 0 )
-margin_top = -1200.0
-margin_bottom = -1200.0
-
-[node name="pause_menu" parent="Viewport" instance=ExtResource( 5 )]
-modulate = Color( 1, 1, 1, 0 )
-margin_top = -1200.0
-margin_bottom = -480.0
-
-[node name="Polygon2D" parent="Viewport/pause_menu" index="0"]
-position = Vector2( 6, -2 )
-
-[node name="tip_controls" parent="Viewport" instance=ExtResource( 8 )]
+[node name="tip_controls" type="Control" parent="Viewport"]
+modulate = Color( 1, 1, 1, 0.784314 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_top = 1200.0
 margin_bottom = 1200.0
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 main_text = "LOL"
+
+[node name="bg" type="Polygon2D" parent="Viewport/tip_controls"]
+position = Vector2( -1200, 440 )
+scale = Vector2( 2.94, 1.48 )
+color = Color( 0, 0, 0, 0.360784 )
+polygon = PoolVector2Array( 0, 0, 0, 1200, 1200, 1200, 1200, 616, 1200, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="main_text" parent="Viewport/tip_controls" instance=ExtResource( 1 )]
+anchor_top = 1.0
+anchor_right = 0.0
+margin_left = 80.0
+margin_top = -270.0
+margin_right = 1256.0
+margin_bottom = -188.0
+custom_fonts/font = SubResource( 5 )
+text = "GET THE BOX OUTSIDE!"
+align = 0
+valign = 0
 
 [node name="buttons" type="Control" parent="Viewport/tip_controls"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -638.0
-margin_top = -175.0
-margin_right = 642.0
+margin_left = -770.433
+margin_top = -168.0
+margin_right = 509.567
+margin_bottom = 6.99969
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -293,7 +311,7 @@ margin_left = -45.0
 margin_top = -20.5
 margin_right = 45.0
 margin_bottom = 20.5
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "PAUSE"
 
 [node name="Button" type="Button" parent="Viewport/tip_controls/buttons/esc"]
@@ -305,7 +323,7 @@ margin_left = -44.5
 margin_top = -119.781
 margin_right = 44.5
 margin_bottom = -30.7809
-custom_styles/disabled = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
 disabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -320,7 +338,7 @@ margin_left = -39.5
 margin_top = -36.0
 margin_right = 39.5
 margin_bottom = 36.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Esc"
 
 [node name="rotate_ccw" type="Control" parent="Viewport/tip_controls/buttons"]
@@ -342,7 +360,7 @@ margin_left = -73.0
 margin_top = -20.5
 margin_right = 73.0
 margin_bottom = 20.5
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "ROTATE CCW"
 
 [node name="Button" type="Button" parent="Viewport/tip_controls/buttons/rotate_ccw"]
@@ -354,7 +372,7 @@ margin_left = -44.5
 margin_top = -119.781
 margin_right = 44.5
 margin_bottom = -30.7809
-custom_styles/disabled = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
 disabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -369,7 +387,7 @@ margin_left = -39.5
 margin_top = -36.0
 margin_right = 39.5
 margin_bottom = 36.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "A"
 
 [node name="rotate_cw" type="Control" parent="Viewport/tip_controls/buttons"]
@@ -391,7 +409,7 @@ margin_left = -73.0
 margin_top = -20.5
 margin_right = 73.0
 margin_bottom = 20.5
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "ROTATE CW"
 
 [node name="Button" type="Button" parent="Viewport/tip_controls/buttons/rotate_cw"]
@@ -403,7 +421,7 @@ margin_left = -44.5
 margin_top = -119.781
 margin_right = 44.5
 margin_bottom = -30.7809
-custom_styles/disabled = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
 disabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -418,57 +436,22 @@ margin_left = -39.5
 margin_top = -36.0
 margin_right = 39.5
 margin_bottom = 36.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "D"
 
-[node name="revert" type="Control" parent="Viewport/tip_controls/buttons"]
-margin_left = 800.534
-margin_top = 134.664
-margin_right = 800.534
-margin_bottom = 134.664
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
+[node name="revert" parent="Viewport/tip_controls/buttons" instance=ExtResource( 9 )]
 
-[node name="menu_label" parent="Viewport/tip_controls/buttons/revert" instance=ExtResource( 1 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -73.0
-margin_top = -20.5
-margin_right = 73.0
-margin_bottom = 20.5
-custom_fonts/font = SubResource( 5 )
-text = "REVERT"
-
-[node name="Button" type="Button" parent="Viewport/tip_controls/buttons/revert"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -70.5
-margin_top = -121.311
-margin_right = 70.5
-margin_bottom = -32.3111
-custom_styles/disabled = SubResource( 6 )
-disabled = true
+[node name="TextureRect" type="TextureRect" parent="Viewport/tip_controls/buttons/revert"]
+margin_left = 22.1501
+margin_top = -40.0161
+margin_right = 234.15
+margin_bottom = 171.984
+rect_rotation = -19.0299
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="TextureRect" type="TextureRect" parent="Viewport/tip_controls/buttons/revert/Button"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -30.0815
-margin_top = -20.2296
-margin_right = 46.9185
-margin_bottom = 29.7704
-rect_scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 9 )
 
 [node name="dismiss" type="Control" parent="Viewport/tip_controls/buttons"]
 margin_left = 1060.93
@@ -489,7 +472,7 @@ margin_left = -73.0
 margin_top = -20.5
 margin_right = 73.0
 margin_bottom = 20.5
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "DISMISS"
 
 [node name="Button" type="Button" parent="Viewport/tip_controls/buttons/dismiss"]
@@ -501,7 +484,7 @@ margin_left = -44.5
 margin_top = -119.781
 margin_right = 44.5
 margin_bottom = -30.7809
-custom_styles/disabled = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
 disabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -516,12 +499,16 @@ margin_left = -39.5
 margin_top = -36.0
 margin_right = 39.5
 margin_bottom = 36.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "S"
 
 [node name="tip_order_boxes" parent="Viewport" instance=ExtResource( 8 )]
 margin_top = 1200.0
 margin_bottom = 1200.0
+
+[node name="main_text" parent="Viewport/tip_order_boxes" index="1"]
+text = "GET THE BOXES OUTSIDE
+IN ORDER  - RED, GREEN, BLUE"
 
 [node name="tip_web_monetization" parent="Viewport" instance=ExtResource( 8 )]
 margin_top = 1200.0
@@ -531,6 +518,17 @@ main_text = "WANT TO CORRECT THE PAST? \\n ENABLE WEB MONETIZATION!"
 [node name="main_text" parent="Viewport/tip_web_monetization" index="1"]
 text = "WANT TO CORRECT THE PAST? 
 ENABLE WEB MONETIZATION!"
+
+[node name="TextureRect" type="TextureRect" parent="Viewport/tip_web_monetization"]
+margin_left = 1006.92
+margin_top = 677.222
+margin_right = 1204.92
+margin_bottom = 875.222
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="tip_moving_blocks" parent="Viewport" instance=ExtResource( 8 )]
 margin_top = 1200.0
@@ -542,6 +540,53 @@ margin_bottom = 1200.0
 
 [node name="main_text" parent="Viewport/tip_spikes" index="1"]
 text = "BEWARE OF SPIKES!"
+
+[node name="tip_multiple_blocks" parent="Viewport" instance=ExtResource( 8 )]
+margin_top = 1200.0
+margin_bottom = 1200.0
+
+[node name="main_text" parent="Viewport/tip_multiple_blocks" index="1"]
+text = "SHOOT, DID I TELL YOU THERE CAN 
+BE MORE THAN ONE BLOCK?"
+
+[node name="tip_time_powers" parent="Viewport" instance=ExtResource( 8 )]
+margin_top = 1200.0
+margin_bottom = 1200.0
+
+[node name="revert" parent="Viewport/tip_time_powers" instance=ExtResource( 9 )]
+margin_left = 381.41
+margin_top = 875.69
+margin_right = 381.41
+margin_bottom = 875.69
+
+[node name="TextureRect" type="TextureRect" parent="Viewport/tip_time_powers"]
+margin_left = 894.476
+margin_top = 683.435
+margin_right = 1092.48
+margin_bottom = 881.435
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="success_menu" parent="Viewport" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -1200.0
+margin_bottom = -1200.0
+
+[node name="fail_menu" parent="Viewport" instance=ExtResource( 6 )]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -1200.0
+margin_bottom = -1200.0
+
+[node name="pause_menu" parent="Viewport" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -1200.0
+margin_bottom = -480.0
+
+[node name="Polygon2D" parent="Viewport/pause_menu" index="0"]
+position = Vector2( 6, -2 )
 
 [node name="fly" type="Tween" parent="Viewport"]
 
@@ -560,12 +605,16 @@ text = "BEWARE OF SPIKES!"
 [connection signal="pressed" from="Viewport/pause_menu/restart_button" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Viewport/pause_menu/home_button" to="." method="_on_home_pressed"]
 
+[editable path="Viewport/tip_order_boxes"]
+
+[editable path="Viewport/tip_web_monetization"]
+
+[editable path="Viewport/tip_spikes"]
+
+[editable path="Viewport/tip_multiple_blocks"]
+
 [editable path="Viewport/success_menu"]
 
 [editable path="Viewport/fail_menu"]
 
 [editable path="Viewport/pause_menu"]
-
-[editable path="Viewport/tip_web_monetization"]
-
-[editable path="Viewport/tip_spikes"]

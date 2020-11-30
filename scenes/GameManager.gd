@@ -30,7 +30,7 @@ var revertRotTween
 var revertBlockTweens =[]
 var timer
 var showAndHideTimer
-
+var tip_web_monetization
 var wm_reminder 
 
 
@@ -41,7 +41,7 @@ func _ready():
 	
 	
 	Level_base = load( Globals.LEVELS[UserData.currentLevel]["location"]) 
-	
+	tip_web_monetization = get_node("Viewport/tip_web_monetization")
 	movesLabel = get_node("Viewport/HUD/Control/number")
 	wm_reminder = get_node("Viewport/wm-reminder")
 	homeScene =  ("res://scenes/Game.tscn")
@@ -74,13 +74,13 @@ func _ready():
 		var rbt = Tween.new()
 		add_child(rbt)
 		revertBlockTweens.append(rbt)
-		 
-	   
- 
+		
+		
+
 		
 func _process(delta):  
 #	print(numberOfMoves, " ", len(moveStack ), " ", moveStack, isReverting)
-	canRevert = (not isReverting )and level_game.table.canRotate and len(moveStack)>=1 and UserData.isMonetized
+	canRevert = (not isReverting )and level_game.table.canRotate and len(moveStack)>=1  
 	movesLabel.set_text(  str (numberOfMoves))
 func _input(event):
 	if event is InputEventKey: 
@@ -93,7 +93,13 @@ func _input(event):
 			hidePopup(pausePopup)
 			
 		if event.pressed and event.scancode == KEY_BACKSPACE and gameState == Globals.GameState.RUNNING and canRevert:
-			revertMove()
+			
+			if UserData.isMonetized:
+				revertMove()
+			else:
+				tip_web_monetization.showPopup(3.2)
+				
+				pass
 				 
 				  
 				
@@ -281,8 +287,5 @@ func _on_pause_pressed():
 	
 	pass # Replace with function body.
 
-
-func _on_revert_pressed():
-	if gameState == Globals.GameState.RUNNING and canRevert:
-		revertMove()
+ 
 	pass # Replace with function body.
