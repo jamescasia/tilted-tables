@@ -33,14 +33,15 @@ var showAndHideTimer
 var tip_web_monetization
 var wm_reminder 
 
-
+var revertPlayer
 
 var yawa = []
 # Called when the node enters the scene tree for the first time.
 func _ready(): 
-	
+	revertPlayer = get_node("AudioStreamPlayer")
 	
 	Level_base = load( Globals.LEVELS[UserData.currentLevel]["location"]) 
+	 
 	tip_web_monetization = get_node("Viewport/tip_web_monetization")
 	movesLabel = get_node("Viewport/HUD/Control/number")
 	wm_reminder = get_node("Viewport/wm-reminder")
@@ -108,6 +109,8 @@ func pushToMoveStack(move):
 	 
 	
 func revertMove(): 
+	revertPlayer.play()
+	
 	 
 	isReverting = true 
 	 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sand_tiles_19x11.obj-64c1cd4f1bd4260dec66aa7bb17b53c2.mesh"
+
+[deps]
+
+files=[ "res://.import/sand_tiles_19x11.obj-64c1cd4f1bd4260dec66aa7bb17b53c2.mesh" ]
+
+source_file="res://assets/maps/terrain/sand_tiles_19x11.obj"
+dest_files=[ "res://.import/sand_tiles_19x11.obj-64c1cd4f1bd4260dec66aa7bb17b53c2.mesh", "res://.import/sand_tiles_19x11.obj-64c1cd4f1bd4260dec66aa7bb17b53c2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

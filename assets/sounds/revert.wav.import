@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/revert.wav-cceade914619019b598672bd80745551.sample"
+
+[deps]
+
+source_file="res://assets/sounds/revert.wav"
+dest_files=[ "res://.import/revert.wav-cceade914619019b598672bd80745551.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

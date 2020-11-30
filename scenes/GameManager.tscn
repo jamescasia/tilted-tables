@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/gui/menu_label.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://scenes/text_popup.gd" type="Script" id=12]
 [ext_resource path="res://assets/buttons/d_button.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/buttons/a_button.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/sounds/revert.wav" type="AudioStream" id=15]
 
 [sub_resource type="DynamicFont" id=3]
 size = 116
@@ -64,13 +65,12 @@ font_data = ExtResource( 4 )
 [node name="GameManager" type="Spatial"]
 script = ExtResource( 2 )
 
-[node name="Viewport" type="ViewportContainer" parent="."]
+[node name="Viewport" type="Control" parent="."]
 margin_right = 1600.0
 margin_bottom = 900.0
 script = ExtResource( 10 )
 __meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
 [node name="HUD" type="Control" parent="Viewport"]
@@ -119,6 +119,7 @@ custom_fonts/font = SubResource( 4 )
 text = "MOVES"
 
 [node name="ActivateWM" type="Control" parent="Viewport"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.831
 anchor_top = 0.039
@@ -199,6 +200,7 @@ __meta__ = {
 }
 
 [node name="wm-reminder" type="Control" parent="Viewport"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.831
 anchor_top = 0.039
@@ -511,6 +513,9 @@ margin_top = 875.69
 margin_right = 381.41
 margin_bottom = 875.69
 
+[node name="menu_label" parent="Viewport/tip_time_powers/revert" index="0"]
+visible = false
+
 [node name="TextureRect" type="TextureRect" parent="Viewport/tip_time_powers"]
 margin_left = 894.476
 margin_top = 683.435
@@ -521,6 +526,16 @@ texture = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="menu_label" parent="Viewport/tip_time_powers" instance=ExtResource( 1 )]
+margin_left = 74.3353
+margin_top = 661.735
+margin_right = 74.3353
+margin_bottom = 104.735
+text = "YOU HAVE TIME POWERS!
+PRESS                     TO REVERT"
+align = 0
+valign = 0
 
 [node name="success_menu" parent="Viewport" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0 )
@@ -543,6 +558,10 @@ position = Vector2( 6, -2 )
 [node name="fly" type="Tween" parent="Viewport"]
 
 [node name="fade" type="Tween" parent="Viewport"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -4.0
 [connection signal="pressed" from="Viewport/ActivateWM/yes" to="." method="_monetization_on_yes_pressed"]
 [connection signal="pressed" from="Viewport/ActivateWM/no" to="." method="_monetization_on_no_pressed"]
 [connection signal="pressed" from="Viewport/success_menu/home" to="Viewport/success_menu" method="_won_on_home_pressed"]
@@ -564,6 +583,8 @@ position = Vector2( 6, -2 )
 [editable path="Viewport/tip_spikes"]
 
 [editable path="Viewport/tip_multiple_blocks"]
+
+[editable path="Viewport/tip_time_powers/revert"]
 
 [editable path="Viewport/success_menu"]
 
