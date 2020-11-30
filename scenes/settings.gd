@@ -64,7 +64,7 @@ func _on_sfx_pressed():
 
 
 func _on_credits_pressed():
-	get_tree().change_scene_to(Globals.creditsScene)
+	get_tree().change_scene_to(Globals.creditScene)
 	
 	pass # Replace with function body.
 	

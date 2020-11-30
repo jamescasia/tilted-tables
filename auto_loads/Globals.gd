@@ -205,7 +205,125 @@ var LEVELS = [
 		
 		"least_moves_solution" : 25
 		
+	},{
+		"level":13,
+		"terrain": "sands", 
+		"is_order": true,
+		"blocks": 3,
+		"size": Vector2(19,13), 
+		"spikes": [Vector3(-4,0,5), Vector3(-1,0,7) , Vector3(5, 0, 7), Vector3(1,0,-6), Vector3(-3,0,-3), Vector3(-1,0,-7) ],
+		"finish_coord": Vector3(0, 0, -9),
+		"block_0_start_coord":  Vector3(  -2,0,4), 
+		"block_1_start_coord": Vector3(2,0,-2),
+		"block_2_start_coord":Vector3(2,0,4),  
+		"location": "res://scenes/levels/level_13/level_13.tscn",
+		
+		"least_moves_solution" : 16
+		
 	},
+
+	{
+		"level":14,
+		"terrain": "sands", 
+		"is_order": true,
+		"blocks": 3,
+		"size": Vector2(19,13), 
+		"spikes": [Vector3(-4,0,5), Vector3(-1,0,7) , Vector3(5, 0, 7), Vector3(1,0,-6), Vector3(-3,0,-3), Vector3(-1,0,-7) ],
+		"finish_coord": Vector3(0, 0, -9),
+		"block_0_start_coord":  Vector3(  -2,0,4), 
+		"block_1_start_coord": Vector3(2,0,-2),
+		"block_2_start_coord":Vector3(2,0,4),  
+		"location": "res://scenes/levels/level_14/level_14.tscn",
+		
+		"least_moves_solution" : 16
+		
+	},
+
+	{
+		"level":15,
+		"terrain": "sands", 
+		"is_order": true,
+		"blocks": 2,
+		"size": Vector2(19,13), 
+		"spikes": [
+			
+			Vector3(6,0,8),
+			Vector3(6,0,7),
+			Vector3(6,0,6),
+			Vector3(6,0,5),
+			Vector3(6,0,4),
+			Vector3(6,0,3),
+			Vector3(6,0,2),
+			Vector3(6,0,1),
+			Vector3(6,0,0),
+			Vector3(6,0,-1),
+			Vector3(6,0,-2),
+			Vector3(6,0,-3),
+			Vector3(6,0,-4),
+			Vector3(6,0,-5),
+			Vector3(6,0,-6),
+			Vector3(6,0,-7),
+			Vector3(6,0,-8), 
+
+			Vector3(-6,0,8),
+			Vector3(-6,0,7),
+			Vector3(-6,0,6),
+			Vector3(-6,0,5),
+			Vector3(-6,0,4),
+			Vector3(-6,0,3),
+			Vector3(-6,0,2),
+			Vector3(-6,0,1),
+			Vector3(-6,0,0),
+			Vector3(-6,0,-1),
+			Vector3(-6,0,-2),
+			Vector3(-6,0,-3),
+			Vector3(-6,0,-4),
+			Vector3(-6,0,-5),
+			Vector3(-6,0,-6),
+			Vector3(-6,0,-7),
+			Vector3(-6,0,-8), 
+
+
+			
+			Vector3( 6,0, 8), 
+			Vector3( 5,0, 8), 
+			Vector3( 4,0, 8), 
+			Vector3( 3,0, 8), 
+			Vector3( 2,0, 8), 
+			Vector3( 1,0, 8), 
+			Vector3( 0,0, 8), 
+			Vector3( -1,0, 8), 
+			Vector3( -2,0, 8), 
+			Vector3( -3,0, 8), 
+			Vector3( -4,0, 8), 
+			Vector3( -5,0, 8), 
+			Vector3( -6,0, 8), 
+			
+				Vector3( 6,0, -8), 
+			Vector3( 5,0, -8), 
+			Vector3( 4,0, -8), 
+			Vector3( 3,0, -8), 
+			Vector3( 2,0, -8), 
+			Vector3( 1,0, -8), 
+			Vector3( 0,0, -8), 
+			Vector3( -1,0, -8), 
+			Vector3( -2,0, -8), 
+			Vector3( -3,0,- 8), 
+			Vector3( -4,0, -8), 
+			Vector3( -5,0, -8), 
+			Vector3( -6,0, -8), 
+			
+			
+			 ],
+		"finish_coord": Vector3(0, 0, -9),
+		"block_0_start_coord":  Vector3(  4,0,5), 
+		"block_1_start_coord": Vector3(-3,0,-3), 
+		"location": "res://scenes/levels/level_15/level_15.tscn",
+		
+		"least_moves_solution" : 26
+		
+	},
+
 
 
 
