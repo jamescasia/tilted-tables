@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://assets/maps/table-green.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/maps/terrain/glades2.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/maps/rebuilt/map0.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://scenes/levels/level_base/level_base.gd" type="Script" id=3]
 [ext_resource path="res://scenes/levels/level_base/table_base.gd" type="Script" id=4]
@@ -42,6 +42,11 @@ material/0 = null
 material/1 = null
 material/2 = null
 material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
 
 [node name="StaticBody" type="StaticBody" parent="table_base/MeshInstance"]
 physics_material_override = SubResource( 1 )

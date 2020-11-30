@@ -43,6 +43,8 @@ var blocksLeft
 var forsaken = false
 
 var camera 
+var camTween
+var camSize
 
 var winState = Globals.WinState.NONE
 func setLevelInfo(linf):
@@ -91,12 +93,13 @@ func _ready():
 	
 	if levelInfo["terrain"] == "grass":
 		terrainMesh.mesh = (glade_mesh)
-		camera.size = 13
+		camSize = 13
 		
 	elif levelInfo["terrain"] == "sands":
 		terrainMesh.mesh = (sand_mesh)
-		
-		camera.size = 15.5
+		if UserData.currentLevel == 8:
+			camSize = 13.2
+		camSize = 15.5
 	
 	if levelInfo.get("spikes")!= null:
 		for loc in levelInfo["spikes"]:
@@ -109,11 +112,19 @@ func _ready():
 			
 			
 #	setCurrentLevelState()
+	camTween = Tween.new()
+	add_child(camTween)
+	camera.size = camSize
 	
-		
+	zoomin()
 	
-	 
-	
+func zoomin():
+	camTween.interpolate_property(
+		camera, "size", 21, camSize, 0.8, Tween.TRANS_EXPO
+	)
+	camTween.start()
+	pass	 
+
 func setCurrentLevelState():
 	currentLevelState = {}
 	

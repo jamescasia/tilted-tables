@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Dosis/static/Dosis-ExtraBold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/gui/menu_button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/gui/menu_label.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/gui/main_bg.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -12,10 +13,13 @@ font_data = ExtResource( 2 )
 [node name="Game" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 800, 448 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="main_bg" parent="." instance=ExtResource( 5 )]
 
 [node name="menu_label" parent="." instance=ExtResource( 4 )]
 anchor_left = 0.5

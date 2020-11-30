@@ -60,7 +60,9 @@ func showTips():
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if UserData.isMonetized and not UserData.tip_time_powers_seen_once:
+	var noneShowing = not tip_controls.is_shown and not tip_order_boxes.is_shown and not tip_web_monetization.is_shown and not tip_moving_blocks.is_shown and not tip_spikes.is_shown and not tip_multiple_blocks.is_shown
+ 
+	if UserData.isMonetized and not UserData.tip_time_powers_seen_once and noneShowing:
 		UserData.tip_time_powers_seen_once = true
 		tip_time_powers.showPopup(5)
 		

@@ -1,4 +1,4 @@
-extends Spatial
+extends Control
 
 
 var gameState = Globals.GameState.NOTSTARTED
@@ -35,13 +35,17 @@ var wm_reminder
 
 var revertPlayer
 
+var viewport
+var tween1
+var tween2
+
 var yawa = []
 # Called when the node enters the scene tree for the first time.
 func _ready(): 
 	revertPlayer = get_node("AudioStreamPlayer")
 	
 	Level_base = load( Globals.LEVELS[UserData.currentLevel]["location"]) 
-	 
+	viewport = get_node("viewport")
 	tip_web_monetization = get_node("Viewport/tip_web_monetization")
 	movesLabel = get_node("Viewport/HUD/Control/number")
 	wm_reminder = get_node("Viewport/wm-reminder")
@@ -58,13 +62,6 @@ func _ready():
 	gameState = Globals.GameState.RUNNING
 
 
-#	if not UserData.isMonetized:
-#		showPopup(monetizationPopup) 
-#	else: 
-#		if not UserData.seenWmReminderOnce:
-#			UserData.seenWmReminderOnce = true
-#			showAndHide(wm_reminder)
-#		pass
 		
 	level_game = Level_base.instance()
 	level_game.setLevelInfo(Globals.LEVELS[UserData.currentLevel])
@@ -75,6 +72,14 @@ func _ready():
 		var rbt = Tween.new()
 		add_child(rbt)
 		revertBlockTweens.append(rbt)
+	
+	tween1 = Tween.new()
+	add_child(tween1)
+	
+	tween2 = Tween.new()
+	add_child(tween2)
+		
+#	showScene()
 		
 		
 
@@ -104,12 +109,26 @@ func _input(event):
 				 
 				  
 				
+				
+		
+func showScene():
+	tween1.interpolate_property(
+		self, "rect_scale", Vector2(1.6, 1.6), Vector2(1, 1), .4, Tween.TRANS_CIRC, Tween.EASE_IN, 3
+	)
+	tween2.interpolate_property(
+		self, "modulation", Color(1,1,1,0), Color(1,1,1,1), .4,Tween.TRANS_CIRC, Tween.EASE_IN, 3
+	)
+	tween2.start()
+	tween1.start()
+	pass
+	
 func pushToMoveStack(move): 
 	moveStack.append(move)  
 	 
 	
 func revertMove(): 
-	revertPlayer.play()
+	if UserData.soundEnabled:
+		revertPlayer.play()
 	
 	 
 	isReverting = true 

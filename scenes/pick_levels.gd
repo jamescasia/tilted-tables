@@ -22,6 +22,13 @@ func _ready():
 	pyres = get_node("pyres")
 	
 	homeScene = load("res://scenes/Game.tscn")
+	tween1 = Tween.new()
+	add_child(tween1)
+	
+	tween2 = Tween.new()
+	add_child(tween2)
+	
+	showPickLevelsMenu()
 	
 	pass # Replace with function body.
 func _input(event): 
@@ -62,14 +69,19 @@ func _input(event):
 
 			
 		
-
-
-func showTerrain(terrain):
-	tween1 = Tween.new()
-	add_child(tween1)
+func showPickLevelsMenu():
+	tween1.interpolate_property(
+		glade, "rect_scale", Vector2(1.6, 1.6), Vector2(1, 1), .4, Tween.TRANS_BACK
+	)
+	tween2.interpolate_property(
+		glade, "modulation", Color(1,1,1,0), Color(1,1,1,.92), .4,Tween.TRANS_BACK
+	)
+	tween2.start()
+	tween1.start()
+	pass
 	
-	tween2 = Tween.new()
-	add_child(tween2)
+
+func showTerrain(terrain): 
 	
 	tween1.interpolate_property(
 		terrain, "modulate", Color(0, 0, 0, 0), Color(1,1,1,.92), 1, Tween.TRANS_CUBIC
@@ -83,12 +95,7 @@ func showTerrain(terrain):
 	tween2.start()
 	pass
 	
-func hideTerrain(terrain):
-	tween1 = Tween.new()
-	add_child(tween1)
-	
-	tween2 = Tween.new()
-	add_child(tween2)
+func hideTerrain(terrain): 
 	
 	tween1.interpolate_property(
 		terrain, "modulate",  Color(1,1,1,.92),Color(0, 0, 0, 0), 1, Tween.TRANS_CUBIC
@@ -103,11 +110,7 @@ func hideTerrain(terrain):
 	
 
 func showTerrainleft(terrain):
-	tween1 = Tween.new()
-	add_child(tween1)
 	
-	tween2 = Tween.new()
-	add_child(tween2)
 	
 	tween1.interpolate_property(
 		terrain, "modulate", Color(0, 0, 0, 0), Color(1,1,1,.92), 1, Tween.TRANS_CUBIC
@@ -122,12 +125,7 @@ func showTerrainleft(terrain):
 	pass
 	pass
 	
-func hideTerrainleft(terrain):
-	tween1 = Tween.new()
-	add_child(tween1)
-	
-	tween2 = Tween.new()
-	add_child(tween2)
+func hideTerrainleft(terrain): 
 	
 	tween1.interpolate_property(
 		terrain, "modulate",  Color(1,1,1,.92),Color(0, 0, 0, 0), 1, Tween.TRANS_CUBIC

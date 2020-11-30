@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/gui/menu_label.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/star (2).png" type="Texture" id=2]
@@ -6,8 +6,13 @@
 [ext_resource path="res://assets/buttons/normal_level_button.tres" type="StyleBox" id=4]
 [ext_resource path="res://assets/textures/lock.png" type="Texture" id=5]
 [ext_resource path="res://assets/buttons/level_button_pressed.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/fonts/Dosis/static/Dosis-ExtraBold.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 112
+font_data = ExtResource( 7 )
 
 [node name="level_button" type="Button"]
 anchor_right = 1.0
@@ -33,6 +38,7 @@ margin_left = -90.0
 margin_top = 7.0
 margin_right = 90.0
 margin_bottom = 264.0
+custom_fonts/font = SubResource( 2 )
 text = "0
 "
 valign = 0

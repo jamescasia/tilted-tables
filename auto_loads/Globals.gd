@@ -176,7 +176,7 @@ var LEVELS = [
 
 	{
 		"level":11,
-		"terrain": "sand", 
+		"terrain": "sands", 
 		"is_order": true,
 		"blocks": 3,
 		"size": Vector2(19,11), 
@@ -188,6 +188,22 @@ var LEVELS = [
 		"location": "res://scenes/levels/level_11/level_11.tscn",
 		
 		"least_moves_solution" : 37
+		
+	},
+
+	{
+		"level":12,
+		"terrain": "sands", 
+		"is_order": true,
+		"blocks": 2,
+		"size": Vector2(19,13), 
+		"spikes": [Vector3(2,0,5), Vector3(-2,0,0) , Vector3(5, 0, -2), Vector3(1,0,-6), Vector3(3,0,-6), Vector3(1,0,3), Vector3(0,0,-8)],
+		"finish_coord": Vector3(6, 0, -7),
+		"block_0_start_coord": Vector3(5,0,-5),
+		"block_1_start_coord": Vector3(-2,0,5), 
+		"location": "res://scenes/levels/level_12/level_12.tscn",
+		
+		"least_moves_solution" : 25
 		
 	},
 
