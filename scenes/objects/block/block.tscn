@@ -3,13 +3,13 @@
 [ext_resource path="res://scenes/objects/block/block.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/player-jelly.obj" type="ArrayMesh" id=2]
 
-[sub_resource type="Skin" id=5]
+[sub_resource type="Skin" id=1]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=2]
 margin = 0.001
 extents = Vector3( 0.5, 0.5, 0.5 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 1, 0.305882, 0.305882, 1 )
 emission_enabled = true
 emission = Color( 1, 0.14902, 0.14902, 1 )
@@ -17,11 +17,11 @@ emission_energy = 2.82
 emission_operator = 1
 emission_on_uv2 = true
 
-[sub_resource type="CubeMesh" id=3]
-material = SubResource( 2 )
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
 size = Vector3( 0.4, 0.4, 0.4 )
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=5]
 min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, 360 ), 0.0, 0.0, 0, 0, Vector2( 1, -360 ), 0.0, 0.0, 0, 0 ]
@@ -34,12 +34,12 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.53674e-07 )
 use_in_baked_light = true
 mesh = ExtResource( 2 )
-skin = SubResource( 5 )
+skin = SubResource( 1 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Area" type="Area" parent="."]
 transform = Transform( 1, 2.05205e-11, 1.16415e-10, 1.87015e-11, 1, 0, -1.16415e-10, -5.82077e-11, 1, 0, 0, 0 )
@@ -48,7 +48,7 @@ angular_damp = 0.0
 
 [node name="CollisionShape2" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 2.05205e-11, 1.16415e-10, 1.87015e-11, 1, 0, -1.16415e-10, -5.82077e-11, 1, 0, 0.5, -4.76837e-07 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="particles" type="CPUParticles" parent="."]
 emitting = false
@@ -58,7 +58,7 @@ one_shot = true
 explosiveness = 0.5
 randomness = 0.08
 lifetime_randomness = 0.17
-mesh = SubResource( 3 )
+mesh = SubResource( 4 )
 emission_shape = 2
 emission_box_extents = Vector3( 1, 1, 1 )
 emission_colors = PoolColorArray( 1, 0.243137, 0.243137, 1 )
@@ -68,7 +68,7 @@ gravity = Vector3( 0, -10, 0 )
 initial_velocity = 16.0
 initial_velocity_random = 1.0
 angular_velocity = 2.0
-angular_velocity_curve = SubResource( 4 )
+angular_velocity_curve = SubResource( 5 )
 color = Color( 1, 0, 0, 1 )
 
 [node name="destroy_particles" type="CPUParticles" parent="."]
@@ -79,7 +79,7 @@ one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 0.17
-mesh = SubResource( 3 )
+mesh = SubResource( 4 )
 emission_shape = 2
 emission_box_extents = Vector3( 1, 1, 1 )
 emission_colors = PoolColorArray( 1, 0.243137, 0.243137, 1 )
@@ -90,7 +90,7 @@ gravity = Vector3( 0, -10, 0 )
 initial_velocity = 50.0
 initial_velocity_random = 1.0
 angular_velocity = 2.0
-angular_velocity_curve = SubResource( 4 )
+angular_velocity_curve = SubResource( 5 )
 color = Color( 1, 0, 0, 1 )
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
 [connection signal="area_exited" from="Area" to="." method="_on_Area_area_exited"]
