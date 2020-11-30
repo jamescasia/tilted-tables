@@ -37,7 +37,7 @@ func set_text():
 	
 func showPopup(time):
 	is_shown = true
-	tween.interpolate_property(self, "rect_position", Vector2(0,1200 ) , Vector2(0, 0), 1, Tween.TRANS_CIRC)
+	tween.interpolate_property(self, "rect_position", Vector2(0,1200 ) , Vector2(0, 0), 1, Tween.TRANS_CIRC, 1)
 	tween.start()
 	timer.one_shot = true
 	timer.start(time)

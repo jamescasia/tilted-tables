@@ -14,7 +14,7 @@ var lock
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	gameManagerScene = load("res://scenes/GameManager.tscn")
+	gameManagerScene = preload("res://scenes/GameManager.tscn")
 	levelLabel = get_node("menu_label")
 	lock = get_node("lock")
 	star1 = get_node("star1")

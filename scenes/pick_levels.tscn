@@ -84,7 +84,7 @@ resource_name = "New Anim"
 length = 3.0
 loop = true
 tracks/0/type = "bezier"
-tracks/0/path = NodePath("Button2:rect_scale:x")
+tracks/0/path = NodePath("Control/Button2:rect_scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -94,7 +94,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 tracks/1/type = "bezier"
-tracks/1/path = NodePath("Button2:rect_scale:y")
+tracks/1/path = NodePath("Control/Button2:rect_scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -104,7 +104,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 tracks/2/type = "bezier"
-tracks/2/path = NodePath("Button:rect_scale:x")
+tracks/2/path = NodePath("Control/Button:rect_scale:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -114,7 +114,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 tracks/3/type = "bezier"
-tracks/3/path = NodePath("Button:rect_scale:y")
+tracks/3/path = NodePath("Control/Button:rect_scale:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -124,7 +124,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 tracks/4/type = "bezier"
-tracks/4/path = NodePath("Button2:modulate:r")
+tracks/4/path = NodePath("Control/Button2:modulate:r")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -134,7 +134,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 tracks/5/type = "bezier"
-tracks/5/path = NodePath("Button2:modulate:g")
+tracks/5/path = NodePath("Control/Button2:modulate:g")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -144,7 +144,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 tracks/6/type = "bezier"
-tracks/6/path = NodePath("Button2:modulate:b")
+tracks/6/path = NodePath("Control/Button2:modulate:b")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -154,7 +154,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 tracks/7/type = "bezier"
-tracks/7/path = NodePath("Button2:modulate:a")
+tracks/7/path = NodePath("Control/Button2:modulate:a")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -164,7 +164,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 tracks/8/type = "bezier"
-tracks/8/path = NodePath("Button:modulate:r")
+tracks/8/path = NodePath("Control/Button:modulate:r")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -174,7 +174,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 tracks/9/type = "bezier"
-tracks/9/path = NodePath("Button:modulate:g")
+tracks/9/path = NodePath("Control/Button:modulate:g")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -184,7 +184,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 tracks/10/type = "bezier"
-tracks/10/path = NodePath("Button:modulate:b")
+tracks/10/path = NodePath("Control/Button:modulate:b")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -194,7 +194,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 tracks/11/type = "bezier"
-tracks/11/path = NodePath("Button:modulate:a")
+tracks/11/path = NodePath("Control/Button:modulate:a")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -641,16 +641,28 @@ autoplay = "New Anim"
 playback_speed = 1.8
 "anims/New Anim" = SubResource( 2 )
 
-[node name="Button2" parent="." instance=ExtResource( 8 )]
-modulate = Color( 1, 1, 1, 0.625412 )
-margin_left = 680.0
-margin_top = -2.0
-margin_right = 769.0
-margin_bottom = 87.0001
-rect_scale = Vector2( 1.06104, 1.06104 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0.533333 )
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" parent="Control" instance=ExtResource( 8 )]
+modulate = Color( 1, 1, 1, 0.592162 )
+margin_left = 1456.19
+margin_top = 422.884
+margin_right = 1545.19
+margin_bottom = 511.884
+rect_scale = Vector2( 1.078, 1.078 )
 rect_pivot_offset = Vector2( 47.6477, 63.9771 )
 
-[node name="TextureRect2" type="TextureRect" parent="Button2"]
+[node name="TextureRect2" type="TextureRect" parent="Control/Button2"]
 margin_left = 8.0
 margin_top = 96.0
 margin_right = 85.0
@@ -661,18 +673,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" parent="." instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 0.625412 )
+[node name="Button" parent="Control" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0.592162 )
 anchor_left = 0.0
 anchor_right = 0.0
-margin_left = 33.0
-margin_top = -1.0
-margin_right = 122.0
-margin_bottom = 88.0001
-rect_scale = Vector2( 1.06104, 1.06104 )
+margin_left = 29.2425
+margin_top = 423.963
+margin_right = 118.242
+margin_bottom = 512.963
+rect_scale = Vector2( 1.078, 1.078 )
 rect_pivot_offset = Vector2( 46.9892, 62.9855 )
 
-[node name="TextureRect" type="TextureRect" parent="Button"]
+[node name="TextureRect" type="TextureRect" parent="Control/Button"]
 margin_left = 8.0
 margin_top = 96.0
 margin_right = 85.0
@@ -681,7 +693,3 @@ texture = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "New Anim"
-"anims/New Anim" = SubResource( 3 )

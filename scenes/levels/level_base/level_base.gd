@@ -62,7 +62,7 @@ func _ready():
 	light = get_node("DirectionalLight")
 	light.rotation_degrees = Vector3(-48, 90, -0.55)
 	light.shadow_enabled = true
-	spikeScene = load('res://scenes/objects/spike/Spike.tscn')
+	spikeScene = preload('res://scenes/objects/spike/Spike.tscn')
 	env_file = load('res://assets/environments/env.tres')
 	glade_mesh = load("res://assets/maps/terrain/glades2.obj")
 	sand_mesh = load('res://assets/maps/terrain/sands.obj')
@@ -76,7 +76,7 @@ func _ready():
 	print(levelInfo)
 	gameState = get_parent().gameState
 	 
-	Block = load("res://scenes/objects/block/block.tscn")
+	Block = preload("res://scenes/objects/block/block.tscn")
 	
 	for p in range(levelInfo["blocks"]):
 		initializeBlock(p) 

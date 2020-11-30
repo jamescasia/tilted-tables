@@ -11,7 +11,7 @@ func _ready():
 	pass # Replace with function body.
 	
 	
-	settingsScene = load("res://scenes/settings.tscn")
+	settingsScene = preload("res://scenes/settings.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

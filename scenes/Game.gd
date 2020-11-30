@@ -23,6 +23,9 @@ func _ready():
 	UserData.loadProgress()
 	UserData.loadConfig()
 	
+	for lvl in Globals.LEVELS:
+		load(str(lvl["location"]))
+	
 	
 	
 

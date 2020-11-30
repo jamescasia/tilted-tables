@@ -13,7 +13,7 @@ var stream
 
 # Called when the node enters the scene tree for the first time.
 func _ready(): 
-	musicPlayerScene = load("res://scenes/musicPlayer.tscn")
+	musicPlayerScene = preload("res://scenes/musicPlayer.tscn")
 	
 	musicPlayer = musicPlayerScene.instance()
 	add_child(musicPlayer) 
