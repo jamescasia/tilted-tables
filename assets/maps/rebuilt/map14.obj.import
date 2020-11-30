@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/map14.obj-841f8c024c8d7e6c36f8526225c9e09d.mesh"
+
+[deps]
+
+files=[ "res://.import/map14.obj-841f8c024c8d7e6c36f8526225c9e09d.mesh" ]
+
+source_file="res://assets/maps/rebuilt/map14.obj"
+dest_files=[ "res://.import/map14.obj-841f8c024c8d7e6c36f8526225c9e09d.mesh", "res://.import/map14.obj-841f8c024c8d7e6c36f8526225c9e09d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

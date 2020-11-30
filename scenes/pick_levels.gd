@@ -136,3 +136,7 @@ func hideTerrainleft(terrain):
 	tween2.start()
 	
 	pass
+
+
+func _on_level_button_pressed():
+	pass # Replace with function body.

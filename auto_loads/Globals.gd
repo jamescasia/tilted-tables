@@ -94,7 +94,7 @@ var LEVELS = [
 		"block_2_start_coord":  Vector3(4, 0, 4),
 		"location": "res://scenes/levels/level_5/level_5.tscn",
 		
-		"least_moves_solution" : 30
+		"least_moves_solution" : 26
 		
 	},
 	
@@ -225,17 +225,15 @@ var LEVELS = [
 	{
 		"level":14,
 		"terrain": "sands", 
-		"is_order": true,
-		"blocks": 3,
+		"is_order": false,
+		"blocks":1,
 		"size": Vector2(19,13), 
-		"spikes": [Vector3(-4,0,5), Vector3(-1,0,7) , Vector3(5, 0, 7), Vector3(1,0,-6), Vector3(-3,0,-3), Vector3(-1,0,-7) ],
-		"finish_coord": Vector3(0, 0, -9),
-		"block_0_start_coord":  Vector3(  -2,0,4), 
-		"block_1_start_coord": Vector3(2,0,-2),
-		"block_2_start_coord":Vector3(2,0,4),  
+		"spikes": [Vector3(-4,0,4), Vector3(  3,0,5) , Vector3(-3, 0, -2), Vector3(0,0,-4) ],
+		"finish_coord": Vector3(-6, 0, -7),
+		"block_0_start_coord":  Vector3(   2,0,4),  
 		"location": "res://scenes/levels/level_14/level_14.tscn",
 		
-		"least_moves_solution" : 16
+		"least_moves_solution" : 25
 		
 	},
 
@@ -305,14 +303,13 @@ var LEVELS = [
 			Vector3( 3,0, -8), 
 			Vector3( 2,0, -8), 
 			Vector3( 1,0, -8), 
-			Vector3( 0,0, -8), 
+			#Vector3( 0,0, -8), 
 			Vector3( -1,0, -8), 
 			Vector3( -2,0, -8), 
 			Vector3( -3,0,- 8), 
 			Vector3( -4,0, -8), 
 			Vector3( -5,0, -8), 
-			Vector3( -6,0, -8), 
-			
+			Vector3( -6,0, -8),  
 			
 			 ],
 		"finish_coord": Vector3(0, 0, -9),
@@ -321,6 +318,20 @@ var LEVELS = [
 		"location": "res://scenes/levels/level_15/level_15.tscn",
 		
 		"least_moves_solution" : 26
+		
+	},
+
+		{
+		"level":18,
+		"terrain": "sands", 
+		"is_order": false,
+		"blocks":1,
+		"size": Vector2(19,13),  
+		"finish_coord": Vector3(2, 0, -9),
+		"block_0_start_coord":  Vector3(   -6,0,8),  
+		"location": "res://scenes/levels/level_14/level_14.tscn",
+		
+		"least_moves_solution" : 25
 		
 	},
 
@@ -335,7 +346,7 @@ var LEVELS = [
 ]
 
 
-var preloadedScenes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+var preloadedScenes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,18]
 var homeScene
 var settingsScene
 var creditScene
@@ -384,6 +395,8 @@ func preloadScenes():
 	preloadedScenes[13] = preload("res://scenes/levels/level_13/level_13.tscn")
 	preloadedScenes[14] = preload("res://scenes/levels/level_14/level_14.tscn")
 	preloadedScenes[15] = preload("res://scenes/levels/level_15/level_15.tscn") 
+	preloadedScenes[16] = preload("res://scenes/levels/level_18/level_18.tscn") 
+	
 
 
 """ 

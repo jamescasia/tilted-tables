@@ -66,6 +66,8 @@ func _ready():
 	
 	
 #	Level_base = load( Globals.LEVELS[UserData.currentLevel]["location"]) 
+	if UserData.currentLevel == 18:
+		UserData.currentLevel = 16 
 	Level_base = Globals.preloadedScenes [UserData.currentLevel]
 	viewport = get_node("viewport")
 	tip_web_monetization = get_node("Viewport/tip_web_monetization")
@@ -266,9 +268,10 @@ func _won_on_home_pressed():
 
 
 func _won_on_next_pressed(): 
-	if UserData.progress[UserData.currentLevel+1]["unlocked"]:
-		UserData.currentLevel+=1
-		get_tree().reload_current_scene() 
+	if UserData.currentLevel <15:
+		if UserData.progress[UserData.currentLevel+1]["unlocked"] :
+			UserData.currentLevel+=1
+			get_tree().reload_current_scene() 
 		
 	 
 

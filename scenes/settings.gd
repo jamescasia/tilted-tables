@@ -10,11 +10,13 @@ extends Control
 var musicStreak 
 var sfxStreak 
 var tween1
+var checkout
 var tween2
 func _ready():
 	pass # Replace with function body.
 	musicStreak = get_node("music/streak") 
 	sfxStreak = get_node("sfx/streak2") 
+	checkout = get_node("reveal/menu_label")
 	
 	
 	tween1 = Tween.new()
@@ -78,3 +80,9 @@ func showSettings():
 	tween2.start()
 	tween1.start()
 	pass
+
+
+func _on_reveal_pressed():
+	checkout.visible = not checkout.visible
+	
+	pass # Replace with function body.

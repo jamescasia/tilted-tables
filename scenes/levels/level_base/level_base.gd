@@ -99,6 +99,8 @@ func _ready():
 		terrainMesh.mesh = (sand_mesh)
 		if UserData.currentLevel == 8:
 			camSize = 13.2
+		if UserData.currentLevel == 16:
+			camSize = 20
 		camSize = 15.5
 	
 	if levelInfo.get("spikes")!= null:

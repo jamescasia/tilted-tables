@@ -55,10 +55,12 @@ func _ready():
 #func _process(delta):
 #	pass
 func _on_button_pressed():
+	
+	if UserData.progress[UserData.currentLevel]["unlocked"]:
 	  
 	
-	UserData.userState = UserData.UserState.INGAME
-	UserData.currentLevel = level 
-	get_tree().change_scene_to(gameManagerScene)
+		UserData.userState = UserData.UserState.INGAME
+		UserData.currentLevel = level 
+		get_tree().change_scene_to(gameManagerScene)
 	
 	pass

@@ -10,24 +10,23 @@
 [ext_resource path="res://assets/buttons/a_button.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/textures/backspace.png" type="Texture" id=9]
 
-[sub_resource type="DynamicFont" id=4]
-size = 86
-font_data = ExtResource( 6 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 86
-font_data = ExtResource( 6 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 86
-font_data = ExtResource( 6 )
-
 [sub_resource type="DynamicFont" id=1]
+size = 86
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 86
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 86
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 50
 font_data = ExtResource( 6 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "New Anim"
+[sub_resource type="Animation" id=5]
 length = 3.0
 loop = true
 tracks/0/type = "bezier"
@@ -91,8 +90,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0, 1.5, 3 )
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "New Anim"
+[sub_resource type="Animation" id=6]
 length = 3.0
 loop = true
 tracks/0/type = "bezier"
@@ -254,7 +252,7 @@ margin_left = 200.0
 margin_top = 48.0
 margin_right = 668.0
 margin_bottom = 175.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 text = "THE GLADE"
 
 [node name="buttons" type="Control" parent="glade"]
@@ -388,7 +386,7 @@ margin_left = 200.0
 margin_top = 48.0
 margin_right = -924.0
 margin_bottom = -725.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 text = "THE SANDS"
 
 [node name="buttons" type="Control" parent="sands"]
@@ -521,7 +519,7 @@ margin_left = 200.0
 margin_top = 48.0
 margin_right = -929.0
 margin_bottom = -725.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 text = "THE PYRES"
 
 [node name="buttons" type="Control" parent="pyres"]
@@ -604,7 +602,6 @@ margin_left = 72.0
 margin_top = 208.0
 margin_right = 232.0
 margin_bottom = 376.0
-disabled = true
 level = 18
 
 [node name="level_button2" parent="pyres/buttons/group3" instance=ExtResource( 2 )]
@@ -648,17 +645,17 @@ margin_right = -1016.0
 margin_bottom = -660.0
 rect_scale = Vector2( 1.12, 1.12 )
 rect_pivot_offset = Vector2( 160, 32 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "(COMING SOON)"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="pyres/coming_soon"]
 autoplay = "New Anim"
 playback_speed = 1.8
-"anims/New Anim" = SubResource( 2 )
+"anims/New Anim" = SubResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 3 )
+"anims/New Anim" = SubResource( 6 )
 
 [node name="Control" type="Control" parent="."]
 modulate = Color( 1, 1, 1, 0.533333 )
@@ -669,12 +666,11 @@ __meta__ = {
 }
 
 [node name="Button2" parent="Control" instance=ExtResource( 8 )]
-modulate = Color( 1, 1, 1, 0.592162 )
+modulate = Color( 1, 1, 1, 0.745098 )
 margin_left = 1456.19
 margin_top = 422.884
 margin_right = 1545.19
 margin_bottom = 511.884
-rect_scale = Vector2( 1.078, 1.078 )
 rect_pivot_offset = Vector2( 47.6477, 63.9771 )
 
 [node name="TextureRect2" type="TextureRect" parent="Control/Button2"]
@@ -689,14 +685,13 @@ __meta__ = {
 }
 
 [node name="Button" parent="Control" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 0.592162 )
+modulate = Color( 1, 1, 1, 0.745098 )
 anchor_left = 0.0
 anchor_right = 0.0
 margin_left = 29.2425
 margin_top = 423.963
 margin_right = 118.242
 margin_bottom = 512.963
-rect_scale = Vector2( 1.078, 1.078 )
 rect_pivot_offset = Vector2( 46.9892, 62.9855 )
 
 [node name="TextureRect" type="TextureRect" parent="Control/Button"]

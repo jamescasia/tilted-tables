@@ -41,8 +41,8 @@ func _ready():
 #	preload("res://scenes/levels/level_4/level_4.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-#	UserData.isMonetized = JavaScript.eval("(document.monetization !== null);") and JavaScript.eval("(document.monetization.state === 'started');")  
-	UserData.isMonetized = true
+	UserData.isMonetized = JavaScript.eval("(document.monetization !== null);") and JavaScript.eval("(document.monetization.state === 'started');")  
+#	UserData.isMonetized = true
  
 func showHome():
 	tween1.interpolate_property(

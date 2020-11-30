@@ -92,12 +92,14 @@ func _process(delta):
 		gravity.z = 16
 #		callOnceAudio = false
 		
-	if vel2.x < 0.01:
+	if vel2.x < 0.1:
 		vel2.x = 0
-	if vel2.y < 0.01:
+	if vel2.y < 0.1:
 		vel2.y = 0
-	if vel2.z < 0.01:
+	if vel2.z < 0.1:
 		vel2.z = 0
+		
+	print(vel2)
 		
 		 
 #	 

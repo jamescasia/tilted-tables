@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/gui/menu_button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/gui/menu_label.tscn" type="PackedScene" id=2]
@@ -8,6 +8,10 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 82
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
 font_data = ExtResource( 4 )
 
 [node name="settings" type="Control"]
@@ -85,6 +89,16 @@ margin_top = -79.0
 margin_right = 0.0
 margin_bottom = 0.0
 text = "REVEAL"
+
+[node name="menu_label" parent="reveal" instance=ExtResource( 2 )]
+visible = false
+margin_left = -331.0
+margin_top = 3.0
+margin_right = -289.0
+margin_bottom = -14.0
+custom_fonts/font = SubResource( 2 )
+text = "CHECK OUT 18!!"
 [connection signal="pressed" from="music" to="." method="_on_music_pressed"]
 [connection signal="pressed" from="sfx" to="." method="_on_sfx_pressed"]
 [connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="reveal" to="." method="_on_reveal_pressed"]
