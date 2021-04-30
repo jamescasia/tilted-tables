@@ -56,9 +56,7 @@ func _ready():
 #	pass
 func _on_button_pressed():
 	
-	if UserData.progress[UserData.currentLevel]["unlocked"]:
-	  
-	
+	if UserData.progress[level]["unlocked"] or   level == 18 or true: 
 		UserData.userState = UserData.UserState.INGAME
 		UserData.currentLevel = level 
 		get_tree().change_scene_to(gameManagerScene)
